@@ -5,7 +5,7 @@ set guifont=Monaco:h15.00
 set vb
 
 " No toolbar
-set guioptions-=T
+"set guioptions-=T
 
 " Use console dialogs
 set guioptions+=c
