@@ -10,6 +10,10 @@ set vb
 " Use console dialogs
 set guioptions+=c
 
+" window size
+set lines=40
+set columns=80
+
 " Local config
 if filereadable(".gvimrc.local")
   source .gvimrc.local

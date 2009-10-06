@@ -5,7 +5,8 @@ files = [
   'vimrc',
   'gvimrc',
   'irbrc',
-  "profile"
+  "profile",
+  "bash_completion.d"
 ]
 
 desc "Install"
