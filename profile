@@ -2,6 +2,8 @@
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+source $HOME/.bash_completion.d/git-completion.bash
+
 #export LSCOLORS=gxfxcxdxbxegedabagacad
 export EDITOR="vim"
 alias ls="ls -lGF"
