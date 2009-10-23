@@ -1,6 +1,5 @@
 " Patrik Sundberg's .vimrc
 " 
-
 set nocompatible        " We don't want vi compatibility.
 
 filetype on             " Automatically detect file types.
@@ -49,8 +48,8 @@ set mouse=a             " Mouse in all modes
 nmap <silent> <Leader>p :NERDTreeToggle<CR>
 
 "make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
+"nnoremap <C-L> :nohls<CR><C-L>
+"inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer and use relative paths
 nnoremap <C-B> :BufExplorer<cr>
@@ -68,11 +67,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 highlight Pmenu gui=bold guibg=#CECECE guifg=#444444
 
 " Minibuffer Explorer Settings
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
 "let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplUseSingleClick = 1
+"let g:miniBufExplModSelTarget = 1
+"let g:miniBufExplUseSingleClick = 1
 
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
@@ -89,3 +88,12 @@ map <F8> :execute 'mksession! ' . v:this_session<CR>
 
 "map for taglist 
 nnoremap <Leader>t :TlistToggle<CR>
+
+" Buffer Mappings
+map <C-N> :bn<CR>
+map <C-P> :bp<CR>
+
+" tab mappings
+map <C-Down> :tabn<CR>
+map <C-Up> :tabp<CR>
+map <D-t> :tabnew<CR>
