@@ -1,5 +1,8 @@
 # MacPorts Installer addition on 2009-09-27_at_12:58:44: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+if [ `uname` = "Darwin" ]; then
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  export MANPATH=/opt/local/share/man:/usr/local/share/man:$MANPATH
+fi
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 source $HOME/.bash_completion.d/git-completion.bash
@@ -11,7 +14,6 @@ alias ri="ri -Tf ansi"
 alias more="less"
 
 export CLICOLOR_FORCE=yes
-export MANPATH=/opt/local/share/man:/usr/local/share/man:$MANPATH
 
 scm_ps1() {
   local s=
