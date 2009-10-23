@@ -5,6 +5,10 @@ if [ `uname` = "Darwin" ]; then
 fi
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+if [ `uname` = "Linux" ]; then
+  export PATH=$PATH:/var/lib/gems/1.8/bin
+fi
+
 source $HOME/.bash_completion.d/git-completion.bash
 
 #export LSCOLORS=gxfxcxdxbxegedabagacad
