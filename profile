@@ -1,20 +1,22 @@
-# MacPorts Installer addition on 2009-09-27_at_12:58:44: adding an appropriate PATH variable for use with MacPorts.
-if [ `hostname` = "radiac" ]; then
+my_hostname=`hostname` 
+echo "Starting shell on $my_hostname"
+
+if [ $my_hostname="radiac" ]; then
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   export MANPATH=/opt/local/share/man:/usr/local/share/man:$MANPATH
 fi
-# Finished adapting your PATH environment variable for use with MacPorts.
 
-if [ `hostname` = "bob" ]; then
+if [ $my_hostname="bob" ]; then
   export PATH=$PATH:/var/lib/gems/1.8/bin
 fi
 
-if [ `hostname` = "lnpsprod1" ]; then
+if [ $my_hostname="lnpsprod1" ]; then
   export PATH=/home/psundberg/user-root/bin:/home/psundberg/user-root/jruby-1.4.0/bin:/home/psundberg/user-root/jdk1.6.0_17/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/X11
   export JAVA_HOME=/home/psundberg/user-root/jdk1.6.0_17
+  eval `keychain --eval --agents ssh id_rsa`
 fi
 
-if [ `hostname` = "LNWTR074" ]; then
+if [ $my_hostname="LNWTR074" ]; then
   export PATH=$PATH:/bin
   keychain .ssh/id_rsa
   source .keychain/LNWTR074-sh
