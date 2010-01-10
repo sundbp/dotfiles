@@ -21,6 +21,12 @@ task :install do
     FileUtils.cp_r(file, target_file)
     puts "  Copied #{file} to #{target_file}"
   end
+
+  if RUBY_PLATFORM =~ /mingw|java/
+    puts "Copying .profile to .bashrc.."
+    FileUtils.cp File.join(home, ".profile"), File.join(home, ".bashrc")
+  end
+  puts "done."
 end
 
 task :default => [:install]
