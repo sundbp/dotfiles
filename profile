@@ -22,7 +22,7 @@ if [ $my_hostname = "lnpsprod1" ]; then
   fi
 fi
 
-if [ $my_hostname = "LNWTR074" ]; then
+if [ ${my_hostname:0:8} = "LNWTR074" ]; then
   #echo "Applying settings specific to lnwtr074.."
   export PATH=$PATH:/bin
   export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
