@@ -16,7 +16,7 @@ if [ $my_hostname = "lnpsprod1" ]; then
   #echo "Applying settings specific to lnpsprod1.."
   export PATH=/home/psundberg/user-root/bin:/home/psundberg/user-root/jruby-1.4.0/bin:/home/psundberg/user-root/jdk1.6.0_17/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/X11
   export JAVA_HOME=/home/psundberg/user-root/jdk1.6.0_17
-  eval `keychain --eval --agents ssh id_rsa` > /dev/null 2>&1
+  eval `keychain -q --eval --agents ssh id_rsa`
   if [[ -s /home/psundberg/.rvm/scripts/rvm ]]; then
     source /home/psundberg/.rvm/scripts/rvm
   fi
