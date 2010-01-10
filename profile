@@ -1,27 +1,31 @@
 my_hostname=`hostname` 
-echo "Starting shell on $my_hostname"
+#echo "Starting shell on $my_hostname"
 
 if [ $my_hostname = "radiac" ]; then
-  echo "Applying settings specific to radiac.."
+  #echo "Applying settings specific to radiac.."
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   export MANPATH=/opt/local/share/man:/usr/local/share/man:$MANPATH
 fi
 
 if [ $my_hostname = "bob" ]; then
-  echo "Applying settings specific to bob.."
+  #echo "Applying settings specific to bob.."
   export PATH=$PATH:/var/lib/gems/1.8/bin
 fi
 
 if [ $my_hostname = "lnpsprod1" ]; then
-  echo "Applying settings specific to lnpsprod1.."
+  #echo "Applying settings specific to lnpsprod1.."
   export PATH=/home/psundberg/user-root/bin:/home/psundberg/user-root/jruby-1.4.0/bin:/home/psundberg/user-root/jdk1.6.0_17/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/X11
   export JAVA_HOME=/home/psundberg/user-root/jdk1.6.0_17
-  eval `keychain --eval --agents ssh id_rsa`
+  eval `keychain --eval --agents ssh id_rsa` > /dev/null 2>&1
+  if [[ -s /home/psundberg/.rvm/scripts/rvm ]]; then
+    source /home/psundberg/.rvm/scripts/rvm
+  fi
 fi
 
 if [ $my_hostname = "LNWTR074" ]; then
-  echo "Applying settings specific to lnwtr074.."
+  #echo "Applying settings specific to lnwtr074.."
   export PATH=$PATH:/bin
+  export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
   keychain .ssh/id_rsa
   source .keychain/LNWTR074-sh
 fi
