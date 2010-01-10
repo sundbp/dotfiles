@@ -19,7 +19,7 @@ if [ $my_hostname = "lnpsprod1" ]; then
   eval `keychain --eval --agents ssh id_rsa`
 fi
 
-if [ $my_hostname = "LNWTR074" ]; then
+if [ ${my_hostname:0:8} = "LNWTR074" ]; then
   echo "Applying settings specific to lnwtr074.."
   export PATH=$PATH:/bin
   keychain .ssh/id_rsa
