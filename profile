@@ -14,6 +14,12 @@ if [ `hostname` = "lnpsprod1" ]; then
   export JAVA_HOME=/home/psundberg/user-root/jdk1.6.0_17
 fi
 
+if [ `hostname` = "LNWTR074" ]; then
+  export PATH=$PATH:/bin
+  keychain .ssh/id_rsa
+  source .keychain/LNWTR074-sh
+fi
+
 source $HOME/.bash_completion.d/git-completion.bash
 
 #export LSCOLORS=gxfxcxdxbxegedabagacad
