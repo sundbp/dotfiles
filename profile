@@ -22,12 +22,14 @@ if [ $my_hostname = "lnpsprod1" ]; then
   fi
 fi
 
-if [ ${my_hostname:0:8} = "LNWTR074" ]; then
+if [ ${my_hostname:0:8} = "LNWTR074" -o ${my_hostname:0:8} = "LNWTR033" ]; then
   #echo "Applying settings specific to lnwtr074.."
+  my_hostname=${my_hostname:0:8}
+  keychain_script="$HOME/.keychain/$my_hostname-sh"
   export PATH=/bin:$PATH
   export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
-  keychain .ssh/id_rsa
-  source .keychain/LNWTR074-sh
+  keychain "$HOME/.ssh/id_rsa"
+  source $keychain_script 
 fi
 
 source $HOME/.bash_completion.d/git-completion.bash
