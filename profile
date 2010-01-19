@@ -17,6 +17,7 @@ if [ $my_hostname = "lnpsprod1" ]; then
   export PATH=/dat/schurman/user-root/bin:/dat/schurman/user-root/jdk1.6.0_17/bin:/dat/schurman/user-root/apache-ant-1.7.0/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/local/X11
   export JAVA_HOME=/dat/schurman/user-root/jdk1.6.0_17
   export ANT_HOME=/dat/schurman/user-root/apache-ant-1.7.0
+  export PGDATA=/dat/schurman/pgsql/data
   eval `keychain -q --eval --agents ssh id_rsa`
   if [[ -s $HOME/.rvm/scripts/rvm ]]; then
     source $HOME/.rvm/scripts/rvm
