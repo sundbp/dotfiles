@@ -38,7 +38,7 @@ source $HOME/.bash_completion.d/git-completion.bash
 
 #export LSCOLORS=gxfxcxdxbxegedabagacad
 export EDITOR="vim"
-alias ls="ls -lGF"
+alias ls="ls -lF"
 alias ri="ri -Tf ansi"
 alias more="less"
 
