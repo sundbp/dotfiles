@@ -23,6 +23,7 @@ if [ $my_hostname = "lnpsprod1" ]; then
   if [[ -s $HOME/.rvm/scripts/rvm ]]; then
     source $HOME/.rvm/scripts/rvm
   fi
+  umask 0002
 fi
 
 if [ ${my_hostname:0:8} = "LNWTR074" -o ${my_hostname:0:8} = "LNWTR033" ]; then
