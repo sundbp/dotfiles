@@ -36,6 +36,10 @@ if [ ${my_hostname:0:8} = "LNWTR074" -o ${my_hostname:0:8} = "LNWTR033" ]; then
   source $keychain_script 
 fi
 
+if [ $my_hostname = "NT51P9393" -o $my_hostname = "NT51P9342" ]; then
+  export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
+fi
+
 source $HOME/.bash_completion.d/git-completion.bash
 
 #export LSCOLORS=gxfxcxdxbxegedabagacad
