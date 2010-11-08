@@ -40,6 +40,12 @@ if [ $my_hostname = "NT51P9393" -o $my_hostname = "NT51P9342" ]; then
   export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
 fi
 
+if [ $my_hostname = "pts-vbox" ]; then
+  if [[ -s $HOME/.rvm/scripts/rvm ]]; then
+    source $HOME/.rvm/scripts/rvm
+  fi
+fi
+
 source $HOME/.bash_completion.d/git-completion.bash
 
 #export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -62,6 +68,6 @@ scm_ps1() {
 export PS1="\[\033[00;32m\]\u\[\033[00;32m\]@\[\033[00;32m\]\h:\[\033[01;34m\]\w \[\033[31m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
  
 #export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
-export PROMPT_COMMAND='echo -ne "\033]0;bash\007"'
+#export PROMPT_COMMAND='echo -ne "\033]0;bash\007"'
 
 export LESS="-R"
