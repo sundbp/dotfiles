@@ -37,7 +37,8 @@ if [ ${my_hostname:0:8} = "LNWTR074" -o ${my_hostname:0:8} = "LNWTR033" ]; then
 fi
 
 if [ $my_hostname = "NT51P9393" -o $my_hostname = "NT51P9342" ]; then
-  export GIT_SSH=/cygdrive/c/Program\ Files/PuTTY/plink.exe
+  export http_proxy=$HTTP_PROXY
+  export https_proxy=$HTTP_PROXY
 fi
 
 source $HOME/.bash_completion.d/git-completion.bash
