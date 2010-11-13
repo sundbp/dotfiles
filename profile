@@ -1,10 +1,35 @@
+source $HOME/.bash_completion.d/git-completion.bash
+
+export EDITOR="vim"
+alias ls="ls -lF"
+alias ri="ri -Tf ansi"
+alias more="less"
+export LESS="-R"
+
+export CLICOLOR_FORCE=yes
+
+scm_ps1() {
+  local s=
+  if [[ -d ".svn" ]] ; then
+    s=\(svn\)
+  else
+    s=$(__git_ps1 "(git:%s)")
+  fi
+  echo -n "$s"
+}
+export PS1="\[\033[00;32m\]\u\[\033[00;32m\]@\[\033[00;32m\]\h:\[\033[01;34m\]\w \[\033[31m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+
 my_hostname=`hostname` 
 #echo "Starting shell on $my_hostname"
 
-if [ $my_hostname = "radiac" ]; then
+if [ $my_hostname = "radiac.local" ]; then
   #echo "Applying settings specific to radiac.."
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
   export MANPATH=/opt/local/share/man:/usr/local/share/man:$MANPATH
+  export LSCOLORS=gxfxcxdxbxegedabagacad
+  export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
+  export PROMPT_COMMAND='echo -ne "\033]0;bash\007"'
 fi
 
 if [ $my_hostname = "bob" ]; then
@@ -46,29 +71,3 @@ if [ $my_hostname = "pts-vbox" ]; then
     source $HOME/.rvm/scripts/rvm
   fi
 fi
-
-source $HOME/.bash_completion.d/git-completion.bash
-
-#export LSCOLORS=gxfxcxdxbxegedabagacad
-export EDITOR="vim"
-alias ls="ls -lF"
-alias ri="ri -Tf ansi"
-alias more="less"
-
-export CLICOLOR_FORCE=yes
-
-scm_ps1() {
-  local s=
-  if [[ -d ".svn" ]] ; then
-    s=\(svn\)
-  else
-    s=$(__git_ps1 "(git:%s)")
-  fi
-  echo -n "$s"
-}
-export PS1="\[\033[00;32m\]\u\[\033[00;32m\]@\[\033[00;32m\]\h:\[\033[01;34m\]\w \[\033[31m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
- 
-#export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
-#export PROMPT_COMMAND='echo -ne "\033]0;bash\007"'
-
-export LESS="-R"
