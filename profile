@@ -35,6 +35,7 @@ fi
 if [ $my_hostname = "bob" ]; then
   #echo "Applying settings specific to bob.."
   export PATH=$PATH:/var/lib/gems/1.8/bin
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi
 
 if [ $my_hostname = "lnpsprod1" ]; then
