@@ -64,6 +64,8 @@ fi
 if [ $my_hostname = "NT51P9393" -o $my_hostname = "NT51P9342" ]; then
   export http_proxy=$HTTP_PROXY
   export https_proxy=$HTTP_PROXY
+  keychain ~/.ssh/id_rsa
+  . ~/.keychain/$HOSTNAME-sh
 fi
 
 if [ $my_hostname = "pts-vbox" ]; then
