@@ -3,3 +3,6 @@
 "colorscheme solarized
 
 colorscheme molokai
+
+" remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
