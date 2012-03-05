@@ -4,9 +4,10 @@
 #
 # This sets up my dot files.
 
-read -p "This DELETES your current dot files. Are you sure you want to proceed? " -n 1 -r
+read -p "This DELETES your current dot files. Are you sure you want to proceed? [y or n]" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
+  echo "Skipping install.."
   exit
 fi
 
@@ -48,8 +49,8 @@ if [ ! `hostname -f` = "dev.vannavolga.info" ];then
   rm ~/.vimrc.before
   rm ~/.vimrc.after
   ln -s $DIR/vim ~/.vim 
-  ln -s $DIR/vimrc ~/.vimrc
-  ln -s $DIR/gvimrc ~/.gvimrc
+  ln -s $DIR/vim/janus/vim/vimrc ~/.vimrc
+  ln -s $DIR/vim/janus/vim/gvimrc ~/.gvimrc
   ln -s $DIR/.vimrc.before ~/.vimrc.before
   ln -s $DIR/.vimrc.after ~/.vimrc.after
 fi
