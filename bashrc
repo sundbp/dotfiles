@@ -85,7 +85,9 @@ scm_ps1() {
 export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[01;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
 
 # node.js stuff
-#source ~/.nvm/nvm.sh
+if [ -f ~/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+fi
 
 export http_proxy=http://nt51p9342:9201/
 export https_proxy=$http_proxy
