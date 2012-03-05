@@ -57,5 +57,5 @@ fi
 rm ~/.janus
 ln -s $DIR/janus ~/.janus
 
-echo "\n"
+echo ""
 echo "Setup of your dot files completed!"
