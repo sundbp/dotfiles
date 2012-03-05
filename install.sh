@@ -48,8 +48,8 @@ if [ ! `hostname -f` = "dev.vannavolga.info" ];then
   rm ~/.vimrc.before
   rm ~/.vimrc.after
   ln -s $DIR/vim ~/.vim 
-  ln -s $DIR/vim ~/.vimrc
-  ln -s $DIR/vim ~/.gvimrc
-  ln -s $DIR/vim ~/.vimrc.before
-  ln -s $DIR/vim ~/.vimrc.after
+  ln -s $DIR/vimrc ~/.vimrc
+  ln -s $DIR/gvimrc ~/.gvimrc
+  ln -s $DIR/.vimrc.before ~/.vimrc.before
+  ln -s $DIR/.vimrc.after ~/.vimrc.after
 fi
