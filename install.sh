@@ -17,7 +17,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 # bash
 rm ~/.bash_profile
 rm ~/.bashrc
-rm -r ~/.bash_completion.d
+rm ~/.bash_completion.d
 ln -s $DIR/bash_profile ~/.bash_profile
 ln -s $DIR/bashrc ~/.bashrc
 ln -s $DIR/bash_completion.d ~/.bash_completion.d
@@ -31,7 +31,7 @@ rm ~/.gitconfig
 ln -s $DIR/gitconfig ~/.gitconfig
 
 # tmux
-rm -r ~/.tmux
+rm ~/.tmux
 rm ~/.tmux.conf
 ln -s $DIR/tmux ~/.tmux
 ln -s $DIR/tmux.conf ~/.tmux.conf
@@ -41,4 +41,15 @@ rm ~/.dircolors
 ln -s $DIR/dircolors ~/.dircolors
 
 # vim and janus
-
+if [ ! `hostname -f` = "dev.vannavolga.info" ];then
+  rm ~/.vim
+  rm ~/.vimrc
+  rm ~/.gvimrc
+  rm ~/.vimrc.before
+  rm ~/.vimrc.after
+  ln -s $DIR/vim ~/.vim 
+  ln -s $DIR/vim ~/.vimrc
+  ln -s $DIR/vim ~/.gvimrc
+  ln -s $DIR/vim ~/.vimrc.before
+  ln -s $DIR/vim ~/.vimrc.after
+fi
