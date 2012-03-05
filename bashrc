@@ -47,7 +47,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias tmux="tmux -2"
 alias rr="rbenv rehash"
-export EDITOR="vim"
+export EDITOR="vim -f"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -93,3 +93,5 @@ if [[ `hostname` =~ NT51P.* ]];then
   export http_proxy=http://nt51p9342:9201/
   export https_proxy=$http_proxy
 fi
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
