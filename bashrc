@@ -89,5 +89,7 @@ if [ -f ~/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
 fi
 
-export http_proxy=http://nt51p9342:9201/
-export https_proxy=$http_proxy
+if [[ `hostname` =~ NT51P.* ]];then
+  export http_proxy=http://nt51p9342:9201/
+  export https_proxy=$http_proxy
+fi
