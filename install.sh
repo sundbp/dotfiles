@@ -56,3 +56,5 @@ if [ ! `hostname -f` = "dev.vannavolga.info" ];then
 fi
 rm ~/.janus
 ln -s $DIR/janus ~/.janus
+
+echo "\nSetup of your dot files completed!"
