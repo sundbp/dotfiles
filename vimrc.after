@@ -7,6 +7,8 @@ colorscheme molokai
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" default to pase mode + set F6 to toggle paste mode
+set invpaste
 nmap <F6> :set invpaste paste?<CR>
 set pastetoggle=<F6>
 
