@@ -6,3 +6,9 @@ colorscheme molokai
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+nmap <F6> :set invpaste paste?<CR>
+set pastetoggle=<F6>
+
+set cc=120
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey

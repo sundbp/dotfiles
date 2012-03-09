@@ -26,8 +26,9 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # path
-export PATH="./b:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="./b:$PATH"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
