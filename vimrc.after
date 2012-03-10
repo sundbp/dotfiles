@@ -14,3 +14,5 @@ set pastetoggle=<F6>
 
 set cc=120
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+
+set statusline+=%{fugitive#statusline()} "  Git Hotness
