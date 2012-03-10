@@ -31,4 +31,4 @@ map <F7> :source ~/.session.vim <cr>
 
 " extra mappings for mru and buffer search
 nmap <c-P> :CtrlPMRU<cr>
-nmap <c-l> :CtrlPBuffer<cr>
+nmap <c-o> :CtrlPBuffer<cr>
