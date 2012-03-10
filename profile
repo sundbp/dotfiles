@@ -4,6 +4,7 @@ export EDITOR="vim"
 alias ls="ls -lF"
 alias ri="ri -Tf ansi"
 alias more="less"
+alias be="bundle exec"
 export LESS="-R"
 
 export CLICOLOR_FORCE=yes
@@ -65,6 +66,9 @@ fi
 if [ $my_hostname = "NT51P9393" -o $my_hostname = "NT51P9342" ]; then
   export http_proxy=$HTTP_PROXY
   export https_proxy=$HTTP_PROXY
+  export GIT_SSL_NO_VERIFY=true
+  keychain ~/.ssh/id_rsa
+  . ~/.keychain/$HOSTNAME-sh
 fi
 
 if [ $my_hostname = "pts-vbox" ]; then
