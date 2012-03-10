@@ -16,3 +16,6 @@ set cc=120
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 
 set statusline+=%{fugitive#statusline()} "  Git Hotness
+
+"switch back to current file and closes fugitive buffer
+nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
