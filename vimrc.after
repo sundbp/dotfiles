@@ -28,3 +28,7 @@ nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
 " save/load session
 map <F6> :mksession! ~/.session.vim <cr>
 map <F7> :source ~/.session.vim <cr>
+
+" extra mappings for mru and buffer search
+nmap <c-P> :CtrlPMRU<cr>
+nmap <c-l> :CtrlPBuffer<cr>
