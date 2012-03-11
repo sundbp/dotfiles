@@ -23,12 +23,12 @@ set statusline+=%{fugitive#statusline()} "  Git Hotness
 set ssop-=options " do not store global and local values in a session
 
 "switch back to current file and closes fugitive buffer
-nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr>
+nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 
 " save/load session
 map <F6> :mksession! ~/.session.vim <cr>
 map <F7> :source ~/.session.vim <cr>
 
 " extra mappings for mru and buffer search
-nmap <c-P> :CtrlPMRU<cr>
-nmap <c-o> :CtrlPBuffer<cr>
+nmap <c-o> :CtrlPMRU<cr>
+nmap <c-i> :CtrlPBuffer<cr>
