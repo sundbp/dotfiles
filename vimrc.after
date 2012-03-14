@@ -7,8 +7,7 @@ colorscheme molokai
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" default to pase mode + set F6 to toggle paste mode
-set invpaste
+" set F6 to toggle paste mode
 nmap <F6> :set invpaste paste?<CR>
 set pastetoggle=<F6>
 
@@ -26,8 +25,8 @@ set ssop-=options " do not store global and local values in a session
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 
 " save/load session
-map <F6> :mksession! ~/.session.vim <cr>
-map <F7> :source ~/.session.vim <cr>
+map <F7> :mksession! ~/.session.vim <cr>
+map <F8> :source ~/.session.vim <cr>
 
 " extra mappings for mru and buffer search
 nmap <c-o> :CtrlPMRU<cr>
