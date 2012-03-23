@@ -46,7 +46,7 @@ if [ ! `hostname -f` = "dev.vannavolga.info" ];then
   rm ~/.vim
   rm ~/.vimrc
   rm ~/.gvimrc
-  ln -s $DIR/vim ~/.vim 
+  ln -s $DIR/vim ~/.vim
   ln -s $DIR/vim/janus/vim/vimrc ~/.vimrc
   ln -s $DIR/vim/janus/vim/gvimrc ~/.gvimrc
 fi
@@ -56,6 +56,9 @@ ln -s $DIR/vimrc.before ~/.vimrc.before
 ln -s $DIR/vimrc.after ~/.vimrc.after
 rm ~/.janus
 ln -s $DIR/janus ~/.janus
+
+rm ~/.pryrc
+ln -s $DIR/pryrc ~/.pryrc
 
 echo ""
 echo "Setup of your dot files completed!"

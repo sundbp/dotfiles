@@ -89,6 +89,10 @@ if [[ `hostname` =~ NT51P.* ]];then
   export http_proxy=http://nt51p9342:9201/
   export https_proxy=$http_proxy
 fi
+if [[ `hostname` =~ tbserver ]];then
+  export http_proxy=http://nt51p9342:9201/
+  export https_proxy=$http_proxy
+fi
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 

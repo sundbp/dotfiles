@@ -4,3 +4,6 @@
 [submodule "janus/slim"]
 	path = janus/slim
 	url = http://github.com/bbommarito/vim-slim.git
+[submodule "janus/less"]
+	path = janus/less
+	url = http://github.com/groenewege/vim-less.git
