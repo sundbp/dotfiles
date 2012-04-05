@@ -106,5 +106,10 @@ if [ -d ~/.rbenv ];then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
+
+if [ -d ~/.cabal ];then
+  export PATH="$PATH:$HOME/.cabal/bin"
+fi
+
 export PATH="./b:$PATH"
 
