@@ -64,6 +64,9 @@ ln -s $DIR/pryrc ~/.pryrc
 rm ~/.snxrc
 ln -s $DIR/snxrc ~/.snxrc
 
+rm ~/.config/rc.lua
+ln -s $DIR/rc.lua ~/.config/rc.lua
+
 echo ""
 echo "Setup of your dot files completed!"
 
