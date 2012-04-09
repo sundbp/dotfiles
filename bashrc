@@ -122,3 +122,6 @@ if [ "$TERM" == "xterm" -a `hostname` == 'ronald' ]; then
   # No it isn't, it's gnome-terminal
   export TERM=xterm-256color
 fi
+
+# stray UBUNTU_MENUPROXY
+unset UBUNTU_MENUPROXY
