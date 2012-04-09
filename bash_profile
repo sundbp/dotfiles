@@ -31,19 +31,21 @@ function test_identities {
 if [ -n "$SSH_AGENT_PID" ]; then
     ps ux | grep "$SSH_AGENT_PID" | grep ssh-agent > /dev/null
     if [ $? -eq 0 ]; then
-	test_identities
+      test_identities
     fi
 # if $SSH_AGENT_PID is not properly set, we might be able to load one from
 # $SSH_ENV
 else
     if [ -f "$SSH_ENV" ]; then
-	. "$SSH_ENV" > /dev/null
+      "$SSH_ENV" > /dev/null
     fi
     ps ux | grep "$SSH_AGENT_PID" | grep -v grep | grep ssh-agent > /dev/null
     if [ $? -eq 0 ]; then
         test_identities
     else
-        start_agent
+        if [ `hostname` != "ronald" ]; then
+          start_agent
+        fi
     fi
 fi
 

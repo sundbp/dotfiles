@@ -16,6 +16,7 @@ while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # bash
+rm ~/.profile
 rm ~/.bash_profile
 rm ~/.bashrc
 rm ~/.bash_completion.d
