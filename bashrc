@@ -116,3 +116,9 @@ export PATH="./b:$PATH"
 # vpn related - SNX messes up resolv.conf
 alias fix_resolvconf='sudo rm /etc/resolv.conf && echo "nameserver 127.0.0.1" > /tmp/rconf && echo "search glennt.london.glencore.com" >> /tmp/rconf && sudo cp /tmp/rconf /etc/resolv.conf'
 alias connect_vpn='snx && fix_resolvconf'
+
+# TERM
+if [ "$TERM" == "xterm" -a `hostname` == 'ronald' ]; then
+  # No it isn't, it's gnome-terminal
+  export TERM=xterm-256color
+fi

@@ -70,6 +70,8 @@ ln -s $DIR/rc.lua ~/.config/rc.lua
 rm ~/.xsession
 ln -s $DIR/xsession ~/.xsession
 
+rm ~/.Xdefaults
+ln -s $DIR/Xdefaults ~/.Xdefaults
+
 echo ""
 echo "Setup of your dot files completed!"
-
