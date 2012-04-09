@@ -1,8 +1,8 @@
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
-colorscheme molokai
+"colorscheme molokai
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
