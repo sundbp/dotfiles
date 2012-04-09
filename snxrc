@@ -1,0 +1,5 @@
+server www.totheofficevpn.com
+username pts.uk
+reauth yes
+debug yes 5
+

@@ -60,5 +60,9 @@ ln -s $DIR/janus ~/.janus
 rm ~/.pryrc
 ln -s $DIR/pryrc ~/.pryrc
 
+rm ~/.snxrc
+ln -s $DIR/snxrc ~/.snxrc
+
 echo ""
 echo "Setup of your dot files completed!"
+
