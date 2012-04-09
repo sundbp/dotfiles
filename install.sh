@@ -67,6 +67,9 @@ ln -s $DIR/snxrc ~/.snxrc
 rm ~/.config/rc.lua
 ln -s $DIR/rc.lua ~/.config/rc.lua
 
+rm ~/.xsession
+ln -s $DIR/xsession ~/.xsession
+
 echo ""
 echo "Setup of your dot files completed!"
 
