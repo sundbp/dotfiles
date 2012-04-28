@@ -86,7 +86,10 @@ submodules:
     easymotion:
     endwise:
     fugitive:
+    webapi:
     gist:
+      dependencies:
+        - webapi
     gundo:
     indent-object:
     kwbd:
@@ -112,3 +115,4 @@ submodules:
     vimwiki:
     zoomwin:
     rename2:
+    vroom:

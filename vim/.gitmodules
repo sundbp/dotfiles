@@ -50,7 +50,7 @@
 	url = https://github.com/ajf/puppet-vim.git
 [submodule "janus/vim/langs/scala"]
 	path = janus/vim/langs/scala
-	url = https://github.com/bdd/vim-scala.git
+  url = https://github.com/rosstimson/scala-vim-support.git
 [submodule "janus/vim/langs/handlebars"]
 	path = janus/vim/langs/handlebars
 	url = https://github.com/nono/vim-handlebars.git
@@ -143,7 +143,10 @@
 [submodule "janus/vim/tools/endwise"]
 	path = janus/vim/tools/endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "janus/vim/tools/gist-vim"]
+[submodule "janus/vim/tools/webapi"]
+	path = janus/vim/tools/webapi
+	url = https://github.com/mattn/webapi-vim.git
+[submodule "janus/vim/tools/gist"]
 	path = janus/vim/tools/gist
 	url = https://github.com/mattn/gist-vim.git
 [submodule "janus/vim/tools/vimwiki"]
@@ -170,3 +173,6 @@
 [submodule "janus/vim/tools/ctrlp"]
 	path = janus/vim/tools/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "janus/vim/tools/vroom"]
+	path = janus/vim/tools/vroom
+	url = https://github.com/skalnik/vim-vroom.git

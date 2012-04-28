@@ -7,9 +7,6 @@
 rm -rf vim
 
 cp -r ~/.vim vim
-cp ~/.vimrc vimrc
-cp ~/.gvimrc gvimrc
-cp ~/.vimrc.before vimrc.before
-cp ~/.vimrc.after vimrc.after
 
 find vim -name .git | xargs rm -rf
+find vim -name .gitignore | xargs rm -rf
