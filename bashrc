@@ -78,21 +78,37 @@ scm_ps1() {
   fi
   echo -n "$s"
 }
-export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+if [ "$TERM" = "linux" ];then
+  export PS1="\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+else
+  export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+fi
+
+export PS1="\[\033[G\]$PS1"
 
 # node.js stuff
 if [ -f ~/.nvm/nvm.sh ]; then
   source ~/.nvm/nvm.sh
 fi
 
-if [[ `hostname` =~ NT51P.* ]];then
-  export http_proxy=http://nt51p9342:9201/
+# http proxy stuff
+export NO_PROXY=localhost,127.0.0.1
+export no_proxy=$NO_PROXY
+
+if [[ `hostname` =~ NT51P9393 ]];then
+  export http_proxy=http://127.0.0.1:9201/
+  export https_proxy=$http_proxy
+fi
+if [[ `hostname` =~ NT51P9342 ]];then
+  export http_proxy=http://nt51p9393:9201/
   export https_proxy=$http_proxy
 fi
 if [[ `hostname` =~ tbserver ]];then
-  export http_proxy=http://nt51p9342:9201/
+  export http_proxy=http://nt51p9393:9201/
   export https_proxy=$http_proxy
 fi
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$https_proxy
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 

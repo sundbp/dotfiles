@@ -1,8 +1,14 @@
-let g:solarized_termcolors=256
+if has("gui_running")
+  let g:solarized_termcolors=256
+else
+  let g:solarized_termcolors=16
+endif
 set background=dark
 colorscheme solarized
 
 "colorscheme molokai
+
+set guifont=Monospace\ 11
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e

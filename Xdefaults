@@ -1,8 +1,6 @@
 !------------------------------------------------------------------------------
 ! u r x v t
 
-#URxvt*background: #1B1B1B
-#URxvt*foreground: #DEDEDE
 URxvt*letterSpace: -1
 URxvt*font: xft:Monospace:pixelsize=14
 URxvt*boldFont: xft:Monospace:bold:pixelsize=14
@@ -10,7 +8,7 @@ URxvt*saveLines: 12000
 URxvt*scrollBar: false
 URxvt*scrollstyle: rxvt
 URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher: firefox
+URxvt*urlLauncher: /usr/bin/google-chrome
 URxvt*matcher.button: 1
 URxvt*colorUL: #86a2be
 
@@ -58,14 +56,6 @@ Xft.hinstyle:   hintslight
 #define S_blue          #268bd2
 #define S_cyan          #2aa198
 #define S_green         #859900
-
-*background:            S_base03
-*foreground:            S_base00
-*fading:                40
-*fadeColor:             S_base03
-*cursorColor:           S_base1
-*pointerColorBackground:S_base01
-*pointerColorForeground:S_base1
 
 *background:            S_base03
 *foreground:            S_base00

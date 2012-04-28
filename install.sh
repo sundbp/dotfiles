@@ -73,5 +73,12 @@ ln -s $DIR/xsession ~/.xsession
 rm ~/.Xdefaults
 ln -s $DIR/Xdefaults ~/.Xdefaults
 
+rm ~/.i3/config
+mkdir -p ~/.i3
+ln -s $DIR/i3config ~/.i3/config
+
+rm ~/bin
+ln -s $DIR/bin ~/bin
+
 echo ""
 echo "Setup of your dot files completed!"
