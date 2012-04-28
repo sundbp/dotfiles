@@ -43,7 +43,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias tmux="tmux -2"
 alias rr="rbenv rehash"
+alias cgrep="grep --color-always"
 export EDITOR="vim -f"
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -96,15 +98,11 @@ export NO_PROXY=localhost,127.0.0.1
 export no_proxy=$NO_PROXY
 
 if [[ `hostname` =~ NT51P9393 ]];then
-  export http_proxy=http://127.0.0.1:9201/
+  export http_proxy=http://127.0.0.1:8123/
   export https_proxy=$http_proxy
 fi
 if [[ `hostname` =~ NT51P9342 ]];then
-  export http_proxy=http://nt51p9393:9201/
-  export https_proxy=$http_proxy
-fi
-if [[ `hostname` =~ tbserver ]];then
-  export http_proxy=http://nt51p9393:9201/
+  export http_proxy=http://nt51p9393:8123/
   export https_proxy=$http_proxy
 fi
 export HTTP_PROXY=$http_proxy
