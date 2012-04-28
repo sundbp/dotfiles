@@ -39,7 +39,7 @@ if [ "$TERM" = "rxvt-unicode-256color" ];then
   # $SSH_ENV
   else
       if [ -f "$SSH_ENV" ]; then
-        "$SSH_ENV" > /dev/null
+        . "$SSH_ENV" > /dev/null
       fi
       ps ux | grep "$SSH_AGENT_PID" | grep -v grep | grep ssh-agent > /dev/null
       if [ $? -eq 0 ]; then
