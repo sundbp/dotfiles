@@ -147,6 +147,7 @@ bar {
     background #000000
     statusline #ffd700
   }
+  output DVI-0
 }
 
 # VirtualBox

@@ -17,7 +17,7 @@ eval `gnome-keyring-daemon`
 
 nautilus --no-desktop --no-default-window
 dropbox start
-SpiderOak
+SpiderOak &
 synergys
 
 exec ck-launch-session i3

@@ -80,5 +80,8 @@ ln -s $DIR/i3config ~/.i3/config
 rm ~/bin
 ln -s $DIR/bin ~/bin
 
+rm ~/.fehbg
+ln -s $DIR/fehbg ~/.fehbg
+
 echo ""
 echo "Setup of your dot files completed!"
