@@ -18,6 +18,10 @@ eval `gnome-keyring-daemon`
 nautilus --no-desktop --no-default-window
 dropbox start
 SpiderOak &
-synergys
+if [[ `hostname` =~ nt51p9393 ]]; then
+  synergys
+else
+  synergyc
+fi
 
 exec ck-launch-session i3
