@@ -9,6 +9,9 @@
 # layout, use the i3-config-wizard
 #
 
+# nvidia drivers only do xinerama
+force_xinerama yes
+
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
@@ -78,12 +81,12 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
-workspace "1: mail" output DVI-0
-workspace "3: dev" output DVI-0
-workspace 10 output DVI-0
+#workspace "1: mail" output DVI-0
+#workspace "3: dev" output DVI-0
+#workspace 10 output DVI-0
 
-workspace "2: vbox" output DVI-1
-workspace "4: chrome" output DVI-1
+#workspace "2: vbox" output DVI-1
+#workspace "4: chrome" output DVI-1
 
 
 # switch to workspace
@@ -147,7 +150,7 @@ bar {
     background #000000
     statusline #ffd700
   }
-  output DVI-0
+  output xinerama-0
 }
 
 # VirtualBox

@@ -75,7 +75,9 @@ ln -s $DIR/Xdefaults ~/.Xdefaults
 
 rm ~/.i3/config
 mkdir -p ~/.i3
-ln -s $DIR/i3config ~/.i3/config
+i3configfile="i3config.$(hostname)"
+echo $i3configfile
+ln -s $DIR/$i3configfile ~/.i3/config
 
 rm ~/bin
 ln -s $DIR/bin ~/bin
