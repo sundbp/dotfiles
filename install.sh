@@ -78,6 +78,9 @@ mkdir -p ~/.i3
 i3configfile="i3config.$(hostname)"
 ln -s $DIR/$i3configfile ~/.i3/config
 
+rm ~/.i3status.conf
+ln -s $DIR/i3status.conf ~/.i3status.conf
+
 rm ~/bin
 ln -s $DIR/bin ~/bin
 
