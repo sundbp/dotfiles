@@ -97,12 +97,8 @@ fi
 export NO_PROXY=localhost,127.0.0.1
 export no_proxy=$NO_PROXY
 
-if [[ `hostname` =~ NT51P9393 ]];then
+if [[ `hostname` =~ nt51p.* ]];then
   export http_proxy=http://127.0.0.1:8123/
-  export https_proxy=$http_proxy
-fi
-if [[ `hostname` =~ NT51P9342 ]];then
-  export http_proxy=http://nt51p9393:8123/
   export https_proxy=$http_proxy
 fi
 export HTTP_PROXY=$http_proxy
