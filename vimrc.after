@@ -40,3 +40,5 @@ map <F8> :source ~/.session.vim <cr>
 " extra mappings for mru and buffer search
 nmap <c-o> :CtrlPMRU<cr>
 nmap <c-i> :CtrlPBuffer<cr>
+
+let g:slime_target = "tmux"
