@@ -128,3 +128,8 @@ endfunction
 nnoremap <silent> ,<C-s> :call MyRelatedSpecFileVSwitch()<CR>
 nnoremap <silent> <C-s>  :call MyRelatedSpecFileSwitch()<CR>
 
+function! RunPelusaCheck()
+  call RunSingleConque("./pelusa_check.sh" . " " . bufname('%'))
+endfunction
+nnoremap <silent> <Leader>p  :call RunPelusaCheck()<CR>
+

@@ -141,3 +141,5 @@ if [ -f /bin/stty ];then
   stty -ixon
 fi
 
+export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
+
