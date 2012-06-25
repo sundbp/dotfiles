@@ -29,4 +29,8 @@ if [ -f /usr/bin/synergy ]; then
   synergy &
 fi
 
+if [[ `hostname` =~ nt51p9468 ]];then
+  VBoxHeadless --startvm "xp64bit" &
+fi
+
 exec ck-launch-session i3

@@ -10,3 +10,6 @@
 [submodule "janus/vim-slime"]
 	path = janus/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git
+[submodule "janus/vim-scratch"]
+	path = janus/vim-scratch
+	url = http://github.com/duff/vim-scratch.git

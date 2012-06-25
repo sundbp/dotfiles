@@ -81,20 +81,18 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
-#workspace "1: mail" output DVI-0
-#workspace "3: dev" output DVI-0
-#workspace 10 output DVI-0
-
-#workspace "2: vbox" output DVI-1
-#workspace "4: chrome" output DVI-1
-
+workspace "1: vbox1" output xinerama-0
+workspace "2: vbox2" output xinerama-2
+workspace "3: vbox3" output xinerama-1
+workspace "4: misc" output xinerama-3
+workspace "5: chrome" output xinerama-3
 
 # switch to workspace
-bindsym $mod+1 workspace 1: mail
-bindsym $mod+2 workspace 2: vbox
-bindsym $mod+3 workspace 3: dev
-bindsym $mod+4 workspace 4: chrome
-bindsym $mod+5 workspace 5
+bindsym $mod+1 workspace 1: vbox1
+bindsym $mod+2 workspace 2: vbox2
+bindsym $mod+3 workspace 3: vbox3
+bindsym $mod+4 workspace 4: misc
+bindsym $mod+5 workspace 5: chrome
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -102,11 +100,11 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1: mail
-bindsym $mod+Shift+2 move workspace 2: vbox
-bindsym $mod+Shift+3 move workspace 3: dev
-bindsym $mod+Shift+4 move workspace 4: chrome
-bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+1 move workspace 1: vobx1
+bindsym $mod+Shift+2 move workspace 2: vbox2
+bindsym $mod+Shift+3 move workspace 3: vbox3
+bindsym $mod+Shift+4 move workspace 4: misc
+bindsym $mod+Shift+5 move workspace 5: chrome
 bindsym $mod+Shift+6 move workspace 6
 bindsym $mod+Shift+7 move workspace 7
 bindsym $mod+Shift+8 move workspace 8
@@ -150,13 +148,24 @@ bar {
     background #000000
     statusline #ffd700
   }
-  output xinerama-0
+  output xinerama-3
 }
 
+# startup
+exec --no-startup-id rdp-vbox
+
 # VirtualBox
-assign [class="^VirtualBox$"] 2: vbox
-for_window [title="^Oracle VM VirtualBox Manager$"] floating enable
-for_window [title="xp32bit.*"] border none
+#assign [title=".*VirtualBox.*1"] 1: vbox1
+#assign [title=".*VirtualBox.*2"] 2: vbox2
+#for_window [title="^Oracle VM VirtualBox Manager$"] floating enable
+
+assign [title="vbox1"] 1: vbox1
+assign [title="vbox2"] 2: vbox2
+assign [title="vbox3"] 3: vbox3
+
+for_window [title="vbox1"] border none
+for_window [title="vbox2"] border none
+for_window [title="vbox3"] border none
 
 # FireFox
 assign [class="^Firefox$"] 10
@@ -168,11 +177,10 @@ for_window [instance="^Lotus Notes$"] floating enable
 for_window [instance="^Lotus Notes$"] border none
 for_window [instance="^IBM Lotus Notes$"] floating enable
 for_window [instance="^IBM Lotus Notes$"] border none
-
-assign [instance=".*Lotus Notes.*"] 1: mail
+assign [instance=".*Lotus Notes.*"] 6
 
 # chrome
-assign [class="^Google-chrome$"] 4: chrome
+assign [class="^Google-chrome$"] 5: chrome
 
 # tempest
 for_window [instance="Starting Tempest.*"] floating enable
@@ -185,4 +193,15 @@ for_window [instance="^SplashForm$"] floating enable
 for_window [instance="^SplashForm$"] border none
 for_window [instance="^Tempest XL$"] floating enable
 for_window [instance="^Tempest XL$"] border none
-assign [instance="^Tempest XL$"] 5
+assign [instance="^Tempest XL$"] 7
+
+# TWS
+for_window [title="Login"] floating enable
+for_window [title="Login"] border none
+assign [title="Login"] 6
+for_window [title="Connecting to server..."] floating enable
+for_window [title="Connecting to server..."] border none
+assign [title="Connecting to server..."] 6
+for_window [title="Security Code Card Authentication"] floating enable
+for_window [title="Security Code Card Authentication"] border none
+assign [title="Security Code Card Authentication"] 6

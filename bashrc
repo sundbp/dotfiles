@@ -43,7 +43,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias tmux="tmux -2"
 alias rr="rbenv rehash"
-alias cgrep="grep --color-always"
+alias cgrep="grep --color=always"
 export EDITOR="vim -f"
 
 
@@ -94,7 +94,7 @@ if [ -f ~/.nvm/nvm.sh ]; then
 fi
 
 # http proxy stuff
-export NO_PROXY=localhost,127.0.0.1
+export NO_PROXY=localhost,127.0.0.1,nt51p9393.glennt.london.glencore.com
 export no_proxy=$NO_PROXY
 
 if [[ `hostname` =~ nt51p.* ]];then
