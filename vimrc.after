@@ -47,10 +47,20 @@ nmap <c-i> :CtrlPBuffer<cr>
 
 let g:slime_target = "tmux"
 
+" make sure we can just hit the shortcut key and always run the specs
+function! MyRunRspec()
+  let l:fname = expand("%:t")
+  if stridx(l:fname, "_spec.rb") == -1
+    call RunRspecRelated()
+  else
+    call RunRspecCurrentFileConque()
+  endif
+endfunction
+
 " Cmd-Shift-R for RSpec
-nmap <silent> <C-R> :call RunRspecCurrentFileConque()<CR>
+nmap <silent> <C-R> :call MyRunRspec()<CR>
 " Cmd-Shift-L for RSpec Current Line
-"nmap <silent> <C-L> :call RunRspecCurrentLineConque()<CR>
+nmap <silent> <Leader>l :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
 nmap <silent> ,<C-R> :call RunLastConqueCommand()<CR>
 
