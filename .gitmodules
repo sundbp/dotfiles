@@ -19,3 +19,9 @@
 [submodule "janus/vim-ruby-conque"]
 	path = janus/vim-ruby-conque
 	url = http://github.com/sundbp/vim-ruby-conque.git
+[submodule "fonts/ubuntu-mono-powerline"]
+	path = fonts/ubuntu-mono-powerline
+	url = http://github.com/scotu/ubuntu-mono-powerline.git
+[submodule "janus/vim-powerline"]
+	path = janus/vim-powerline
+	url = http://github.com/skwp/vim-powerline.git

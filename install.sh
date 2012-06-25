@@ -87,5 +87,9 @@ ln -s $DIR/bin ~/bin
 rm ~/.fehbg
 ln -s $DIR/fehbg ~/.fehbg
 
+rm ~/.fonts
+ln -s $DIR/fonts ~/.fonts
+fc-cache -vf
+
 echo ""
 echo "Setup of your dot files completed!"

@@ -8,7 +8,10 @@ colorscheme solarized
 
 "colorscheme molokai
 
-set guifont=Monospace\ 11
+set guifont=Menlo\ for\ Powerline\ 11
+"set guifont=Inconsolata-dz\ for\ Powerline\ 11
+"set guifont=Mensch\ for\ Powerline\ 11
+"set guifont=Monospace\ 11
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -49,3 +52,4 @@ nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
 nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
 nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
+
