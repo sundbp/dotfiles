@@ -30,6 +30,7 @@ if [ -f /usr/bin/synergy ]; then
 fi
 
 if [[ `hostname` =~ nt51p9468 ]];then
+  xmodmap -e "keycode 24 = q Q at at at at"
   VBoxHeadless --startvm "xp64bit" &
 fi
 
