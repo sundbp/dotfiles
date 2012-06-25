@@ -2,8 +2,8 @@
 ! u r x v t
 
 URxvt*letterSpace: -1
-URxvt*font: xft:Monospace:pixelsize=14
-URxvt*boldFont: xft:Monospace:bold:pixelsize=14
+URxvt*font: xft:Monaco for Powerline:pixelsize=14
+URxvt*boldFont: xft:Monaco for Powerline:bold:pixelsize=14
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 URxvt*scrollstyle: rxvt

@@ -8,7 +8,8 @@ colorscheme solarized
 
 "colorscheme molokai
 
-set guifont=Menlo\ for\ Powerline\ 11
+set guifont=Monaco\ for\ Powerline\ 11
+"set guifont=Menlo\ for\ Powerline\ 11
 "set guifont=Inconsolata-dz\ for\ Powerline\ 11
 "set guifont=Mensch\ for\ Powerline\ 11
 "set guifont=Monospace\ 11
@@ -47,9 +48,12 @@ nmap <c-i> :CtrlPBuffer<cr>
 let g:slime_target = "tmux"
 
 " Cmd-Shift-R for RSpec
-nmap <silent> <D-R> :call RunRspecCurrentFileConque()<CR>
+nmap <silent> <C-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
-nmap <silent> <D-L> :call RunRspecCurrentLineConque()<CR>
+nmap <silent> <C-L> :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
-nmap <silent> ,<D-R> :call RunLastConqueCommand()<CR>
+nmap <silent> ,<C-R> :call RunLastConqueCommand()<CR>
+
+nmap <silent> ,z :bp<CR>
+nmap <silent> ,x :bn<CR>
 
