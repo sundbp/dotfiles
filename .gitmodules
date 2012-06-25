@@ -13,3 +13,9 @@
 [submodule "janus/vim-scratch"]
 	path = janus/vim-scratch
 	url = http://github.com/duff/vim-scratch.git
+[submodule "janus/vim-conque"]
+	path = janus/vim-conque
+	url = http://github.com/rson/vim-conque.git
+[submodule "janus/vim-ruby-conque"]
+	path = janus/vim-ruby-conque
+	url = http://github.com/sundbp/vim-ruby-conque.git
