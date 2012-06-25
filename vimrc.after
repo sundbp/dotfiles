@@ -50,7 +50,7 @@ let g:slime_target = "tmux"
 " Cmd-Shift-R for RSpec
 nmap <silent> <C-R> :call RunRspecCurrentFileConque()<CR>
 " Cmd-Shift-L for RSpec Current Line
-nmap <silent> <C-L> :call RunRspecCurrentLineConque()<CR>
+"nmap <silent> <C-L> :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
 nmap <silent> ,<C-R> :call RunLastConqueCommand()<CR>
 

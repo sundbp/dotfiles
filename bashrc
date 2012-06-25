@@ -135,3 +135,9 @@ fi
 
 # stray UBUNTU_MENUPROXY
 unset UBUNTU_MENUPROXY
+
+# turn off XON/XOFF
+if [ -f /bin/stty ];then
+  stty -ixon
+fi
+
