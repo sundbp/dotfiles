@@ -25,3 +25,6 @@
 [submodule "janus/vim-powerline"]
 	path = janus/vim-powerline
 	url = http://github.com/skwp/vim-powerline.git
+[submodule "janus/autotag"]
+	path = janus/autotag
+	url = http://github.com/vim-scripts/AutoTag

@@ -134,3 +134,4 @@ function! RunPelusaCheck()
 endfunction
 nnoremap <silent> <Leader>p  :call RunPelusaCheck()<CR>
 
+:set tags+=gems.tags
