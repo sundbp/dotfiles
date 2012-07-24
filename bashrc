@@ -121,6 +121,10 @@ if [ -d ~/.cabal ];then
   export PATH="$PATH:$HOME/.cabal/bin"
 fi
 
+if [ -d ~/bin ];then
+  export PATH="$PATH:$HOME/bin"
+fi
+
 export PATH="./b:$PATH"
 
 # vpn related - SNX messes up resolv.conf

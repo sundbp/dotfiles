@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dist_count=`ls -d ~/pharo/Pharo-1.4-*.app 2>/dev/null |wc -l`
+if [ "$dist_count"  -ne 1 ]; then
+	dist=`zenity --title 'Select a Pharo 1.4 revision' --file-selection --filename ~/pharo/ --directory --file-filter 'Pharo-1.4-*.app'`
+else
+  dist=`ls -d ~/pharo/Pharo-1.4-*.app 2>/dev/null`
+fi
+
+echo "Attempting to start up $dist.."
+
+cd $dist
+./Pharo-1.4-one-click.sh
