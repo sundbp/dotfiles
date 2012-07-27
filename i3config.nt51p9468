@@ -205,3 +205,7 @@ assign [title="Connecting to server..."] 6
 for_window [title="Security Code Card Authentication"] floating enable
 for_window [title="Security Code Card Authentication"] border none
 assign [title="Security Code Card Authentication"] 6
+
+# Pharo
+for_window [class="Squeak"] fullscreen
+

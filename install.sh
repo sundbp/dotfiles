@@ -68,7 +68,12 @@ rm ~/.config/rc.lua
 ln -s $DIR/rc.lua ~/.config/rc.lua
 
 rm ~/.xsession
-ln -s $DIR/xsession ~/.xsession
+# use default file for a few, and special ones for others
+ln -s xsession xsession.nt51p9393
+ln -s xsession xsession.ronald
+ln -s xsession xsession.sundbp-N120
+xsessionfile="xsession.$(hostname)"
+ln -s $DIR/$xsessionfile ~/.xsession
 
 rm ~/.Xdefaults
 ln -s $DIR/Xdefaults ~/.Xdefaults
@@ -90,6 +95,9 @@ ln -s $DIR/fehbg ~/.fehbg
 rm ~/.fonts
 ln -s $DIR/fonts ~/.fonts
 fc-cache -vf
+
+rm ~/.config/pharo
+ln -s $DIR/pharo ~/.config/pharo
 
 echo ""
 echo "Setup of your dot files completed!"

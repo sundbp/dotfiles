@@ -23,8 +23,7 @@ if [ -f /usr/bin/SpiderOak ]; then
   SpiderOak &
 fi
 
-if [ -f /usr/bin/synergy ]; then
-  synergy &
-fi
+xmodmap -e "keycode 24 = q Q at at at at"
+VBoxHeadless --startvm "xp64bit" &
 
 exec ck-launch-session i3
