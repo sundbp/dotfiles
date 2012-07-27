@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh -X nt51p9468 x2x -to :0 -east
