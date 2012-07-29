@@ -154,8 +154,8 @@ bar {
     background #000000
     statusline #ffd700
   }
-  output xinerama-0
-  output xinerama-2
+  #output xinerama-0
+  #output xinerama-2
   output xinerama-1
   output xinerama-3
 }
