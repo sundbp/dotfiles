@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for i in `ps uf | grep rdesktop-vrdp | grep vbox | grep -v grep | awk '{print $2}'`;do
+  kill $i
+done
