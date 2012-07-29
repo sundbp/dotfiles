@@ -173,30 +173,8 @@ for_window [class="net-sourceforge-jnlp-runtime-Boot"] border none
 # FireFox
 assign [class="^Firefox$"] 10
 
-# Lotus Notes
-for_window [instance="Starting Lotus Notes.*"] floating enable
-for_window [instance="Starting Lotus Notes.*"] border none
-for_window [instance="^Lotus Notes$"] floating enable
-for_window [instance="^Lotus Notes$"] border none
-for_window [instance="^IBM Lotus Notes$"] floating enable
-for_window [instance="^IBM Lotus Notes$"] border none
-assign [instance=".*Lotus Notes.*"] 6
-
 # chrome
 assign [class="^Google-chrome$"] 5: chrome
-
-# tempest
-for_window [instance="Starting Tempest.*"] floating enable
-for_window [instance="Starting Tempest.*"] border none
-for_window [instance="^Tempest XL PROD Launcher....$"] border none
-for_window [instance="^Tempest XL PROD Launcher....$"] floating enable
-for_window [instance="^Tempest XL - Logon$"] floating enable
-for_window [instance="^Tempest XL - Logon$"] border none
-for_window [instance="^SplashForm$"] floating enable
-for_window [instance="^SplashForm$"] border none
-for_window [instance="^Tempest XL$"] floating enable
-for_window [instance="^Tempest XL$"] border none
-assign [instance="^Tempest XL$"] 7
 
 # TWS
 assign [title="Login"] 7
@@ -210,4 +188,4 @@ assign [title=".*\sbars$"] 7
 assign [title="IntercontinentalExchange.*"] 6
 
 # Windows 7 remote
-assign [title="win7-vbox"] assign 9
+assign [title="win7-vbox"] 9
