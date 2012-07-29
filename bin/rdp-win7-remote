@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rdesktop-vrdp -5 -T win7-vbox localhost:13389 &
