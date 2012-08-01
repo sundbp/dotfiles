@@ -7,10 +7,6 @@ runtime my_pelusa.vim
 
 " Misc settings below
 
-" set F6 to toggle paste mode
-nmap <F6> :set invpaste paste?<CR>
-set pastetoggle=<F6>
-
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
