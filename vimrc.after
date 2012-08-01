@@ -3,6 +3,9 @@ set runtimepath+=~/dev/dot_files/vim_scripts
 runtime my_gui.vim
 runtime my_ctrlp.vim
 runtime my_rspec.vim
+runtime my_pelusa.vim
+
+" Misc settings below
 
 " set F6 to toggle paste mode
 nmap <F6> :set invpaste paste?<CR>
@@ -11,12 +14,6 @@ set pastetoggle=<F6>
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Fugitive
-"  Git Hotness
-set statusline+=%{fugitive#statusline()} "  Git Hotness
-"switch back to current file and closes fugitive buffer
-nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
-
 " do not store global and local values in a session
 set ssop-=options " do not store global and local values in a session
 
@@ -24,14 +21,15 @@ set ssop-=options " do not store global and local values in a session
 map <F7> :mksession! ~/.session.vim <cr>
 map <F8> :source ~/.session.vim <cr>
 
+" use tmux for slime
 let g:slime_target = "tmux"
-
-function! RunPelusaCheck()
-  call RunSingleConque("./pelusa_check_no_colors.sh" . " " . bufname('%'))
-  "call RunSingleConque("./pelusa_check.sh" . " " . bufname('%'))
-endfunction
-nnoremap <silent> <Leader>p  :call RunPelusaCheck()<CR>
 
 " make sure we can use ctags down into all the gems we're using
 set tags+=gems.tags
+
+" Fugitive
+"  Git Hotness
+set statusline+=%{fugitive#statusline()} "  Git Hotness
+"switch back to current file and closes fugitive buffer
+nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 
