@@ -99,5 +99,8 @@ fc-cache -vf
 rm ~/.config/pharo
 ln -s $DIR/pharo ~/.config/pharo
 
+rm ~/.aprc
+ln -s $DIR/aprc ~/.aprc
+
 echo ""
 echo "Setup of your dot files completed!"
