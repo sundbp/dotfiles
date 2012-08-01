@@ -4,6 +4,7 @@ runtime my_gui.vim
 runtime my_ctrlp.vim
 runtime my_rspec.vim
 runtime my_pelusa.vim
+runtime my_vim-slime.vim
 
 " Misc settings below
 
@@ -16,9 +17,6 @@ set ssop-=options " do not store global and local values in a session
 " save/load session
 map <F7> :mksession! ~/.session.vim <cr>
 map <F8> :source ~/.session.vim <cr>
-
-" use tmux for slime
-let g:slime_target = "tmux"
 
 " make sure we can use ctags down into all the gems we're using
 set tags+=gems.tags
