@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rdesktop-vrdp -5 -r clipboard:PRIMARYCLIPBOARD -T vbox2 localhost &
+rdesktop-vrdp -5 -r clipboard:PRIMARYCLIPBOARD -T vbox1 -d @2 localhost &

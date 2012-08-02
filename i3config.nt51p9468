@@ -81,11 +81,17 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+plus scratchpad show
+
+# output assignments
 workspace "1: vbox1" output xinerama-0
 workspace "2: vbox2" output xinerama-2
 workspace "3: vbox3" output xinerama-1
 workspace "4: misc" output xinerama-3
 workspace "5: chrome" output xinerama-3
+workspace 7 output xinerama-1
 
 # switch to workspace
 bindsym $mod+1 workspace 1: vbox1
@@ -163,9 +169,7 @@ assign [title="vbox1"] 1: vbox1
 assign [title="vbox2"] 2: vbox2
 assign [title="vbox3"] 3: vbox3
 
-for_window [title="vbox1"] border none
-for_window [title="vbox2"] border none
-for_window [title="vbox3"] border none
+for_window [class="rdesktop"] border none
 
 # FireFox
 assign [class="^Firefox$"] 10
@@ -209,3 +213,5 @@ assign [title="Security Code Card Authentication"] 6
 # Pharo
 for_window [class="Squeak"] fullscreen
 
+# Windows 7 remote
+assign [title="win7-vbox"] 7

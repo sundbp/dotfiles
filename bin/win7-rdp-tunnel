@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh -v -N -L 13389:127.0.0.1:3389 sundbp@ps.vannavolga.info
