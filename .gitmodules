@@ -34,3 +34,7 @@
 	path = janus/autotag
 	url = http://github.com/vim-scripts/AutoTag
   ignore = untracked
+[submodule "janus/vim-powerline"]
+	path = janus/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+  ignore = untracked

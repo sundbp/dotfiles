@@ -31,3 +31,5 @@ nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 let g:tagbar_sort = 0
 let g:Powerline_theme="skwp"
 let g:Powerline_colorscheme="skwp"
+
+call Pl#Theme#InsertSegment('tagbar:currenttag', 'after', 'flags.mod')
