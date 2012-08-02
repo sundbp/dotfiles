@@ -19,10 +19,6 @@ if [ -f /usr/bin/dropbox ]; then
   dropbox start
 fi
 
-if [ -f /usr/bin/SpiderOak ]; then
-  SpiderOak &
-fi
-
 if [ -f /usr/bin/synergy ]; then
   synergy &
 fi

@@ -23,7 +23,11 @@ set tags+=gems.tags
 
 " Fugitive
 "  Git Hotness
-set statusline+=%{fugitive#statusline()} "  Git Hotness
+"set statusline+=%{fugitive#statusline()} "  Git Hotness
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 
+" Tagbar
+let g:tagbar_sort = 0
+let g:Powerline_theme="skwp"
+let g:Powerline_colorscheme="skwp"
