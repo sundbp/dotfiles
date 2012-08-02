@@ -78,20 +78,20 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
-workspace "1: mail" output DVI-0
-workspace "3: dev" output DVI-0
+workspace 1 output DVI-0
+workspace 3 output DVI-0
 workspace 10 output DVI-0
 
 workspace "2: vbox" output DVI-1
-workspace "4: chrome" output DVI-1
+workspace "5: chrome" output DVI-1
 
 
 # switch to workspace
-bindsym $mod+1 workspace 1: mail
+bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2: vbox
-bindsym $mod+3 workspace 3: dev
-bindsym $mod+4 workspace 4: chrome
-bindsym $mod+5 workspace 5
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5: chrome
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -99,11 +99,11 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1: mail
+bindsym $mod+Shift+1 move workspace 1
 bindsym $mod+Shift+2 move workspace 2: vbox
-bindsym $mod+Shift+3 move workspace 3: dev
-bindsym $mod+Shift+4 move workspace 4: chrome
-bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+3 move workspace 3
+bindsym $mod+Shift+4 move workspace 4
+bindsym $mod+Shift+5 move workspace 5: chrome
 bindsym $mod+Shift+6 move workspace 6
 bindsym $mod+Shift+7 move workspace 7
 bindsym $mod+Shift+8 move workspace 8
@@ -168,10 +168,10 @@ for_window [instance="^IBM Lotus Notes$"] border none
 for_window [instance="^Open Attachment$"] floating enable
 for_window [instance="^Open Attachment$"] border none
 
-assign [instance=".*Lotus Notes.*"] 1: mail
+assign [instance=".*Lotus Notes.*"] 1
 
 # chrome
-assign [class="^Google-chrome$"] 4: chrome
+assign [class="^Google-chrome$"] 5: chrome
 
 # tempest
 for_window [instance="Starting Tempest.*"] floating enable
@@ -184,4 +184,4 @@ for_window [instance="^SplashForm$"] floating enable
 for_window [instance="^SplashForm$"] border none
 for_window [instance="^Tempest XL$"] floating enable
 for_window [instance="^Tempest XL$"] border none
-assign [instance="^Tempest XL$"] 5
+assign [instance="^Tempest XL$"] 4
