@@ -1,0 +1,3 @@
+#!/bin/bash
+
+encfs "$HOME/Dropbox/Apps/Cryptonite App Folder" "$HOME/decrypted"

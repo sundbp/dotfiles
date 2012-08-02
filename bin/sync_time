@@ -1,0 +1,2 @@
+#!/bin/bash
+curr=`ssh ps "date +%m%d%H%M%Y.%S"`; sudo date $curr
