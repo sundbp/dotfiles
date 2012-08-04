@@ -8,6 +8,9 @@ runtime my_vim-slime.vim
 
 " Misc settings below
 
+" autowrite, useful for C-W C-O to issue :only to close all other windows
+set autowrite
+
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
