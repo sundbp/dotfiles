@@ -19,16 +19,6 @@ if [ -f /usr/bin/dropbox ]; then
   dropbox start
 fi
 
-if [ -f /usr/bin/SpiderOak ]; then
-  SpiderOak &
-fi
-
-if [ -f /usr/bin/synergy ]; then
-  synergy &
-fi
-
-if [[ `hostname` =~ ronald ]];then
-  VBoxHeadless --startvm "Windows 7" &
-fi
+VBoxHeadless --startvm win7 &
 
 exec ck-launch-session i3
