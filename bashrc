@@ -100,9 +100,9 @@ export no_proxy=$NO_PROXY
 if [[ `hostname` =~ nt51p.* ]];then
   export http_proxy=http://127.0.0.1:8123/
   export https_proxy=$http_proxy
+  export HTTP_PROXY=$http_proxy
+  export HTTPS_PROXY=$https_proxy
 fi
-export HTTP_PROXY=$http_proxy
-export HTTPS_PROXY=$https_proxy
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 

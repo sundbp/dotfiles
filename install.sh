@@ -43,14 +43,14 @@ rm ~/.dircolors
 ln -s $DIR/dircolors ~/.dircolors
 
 # vim and janus
-if [ ! `hostname -f` = "dev.vannavolga.info" ];then
-  rm ~/.vim
-  rm ~/.vimrc
-  rm ~/.gvimrc
-  ln -s $DIR/vim ~/.vim
-  ln -s $DIR/vim/janus/vim/vimrc ~/.vimrc
-  ln -s $DIR/vim/janus/vim/gvimrc ~/.gvimrc
-fi
+#if [ ! `hostname -f` = "dev.vannavolga.info" ];then
+#  rm ~/.vim
+#  rm ~/.vimrc
+#  rm ~/.gvimrc
+#  ln -s $DIR/vim ~/.vim
+#  ln -s $DIR/vim/janus/vim/vimrc ~/.vimrc
+#  ln -s $DIR/vim/janus/vim/gvimrc ~/.gvimrc
+#fi
 rm ~/.vimrc.before
 rm ~/.vimrc.after
 ln -s $DIR/vimrc.before ~/.vimrc.before
