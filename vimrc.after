@@ -39,3 +39,6 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme="skwp"
 let g:Powerline_colorscheme="skwp"
 call Pl#Theme#InsertSegment('tagbar:currenttag', 'after', 'flags.mod')
+
+" Homegrown todo list
+noremap <Leader>td :noautocmd vimgrep /TODO/j **/*.rb<CR>:cw<CR>
