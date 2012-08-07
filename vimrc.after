@@ -5,6 +5,7 @@ runtime my_ctrlp.vim
 runtime my_rspec.vim
 runtime my_pelusa.vim
 runtime my_vim-slime.vim
+runtime my_scratch.vim
 
 " Misc settings below
 
