@@ -8,9 +8,9 @@ function! MyRunRspec()
   endif
 endfunction
 
-" Cmd-Shift-R for RSpec
+" Cmd-R for RSpec
 nmap <silent> <C-R> :call MyRunRspec()<CR>
-" Cmd-Shift-L for RSpec Current Line
+" \l for RSpec Current Line
 nmap <silent> <Leader>l :call RunRspecCurrentLineConque()<CR>
 " ,Cmd-R for Last conque command
 nmap <silent> ,<C-R> :call RunLastConqueCommand()<CR>
