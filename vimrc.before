@@ -1,7 +1,2 @@
-" Powerline
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme='skwp'
-let g:Powerline_colorscheme='skwp'
-
 " we load this via the custom slimv, so need to disable it here
 call janus#disable_plugin('clojure')
