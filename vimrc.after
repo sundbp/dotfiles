@@ -61,3 +61,8 @@ let g:swank_port=4005
 let g:slimv_simple_compl=1
 let g:clj_highlight_builtins=1
 let g:clj_paren_rainbow=1
+
+" Diff helpers
+noremap <C-L> :diffupdate<CR><C-L>
+map <Leader>dl :diffget //2<CR>
+map <Leader>dr :diffget //3<CR>
