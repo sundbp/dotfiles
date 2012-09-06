@@ -8,6 +8,8 @@ runtime my_pelusa.vim
 runtime my_vim-slime.vim
 runtime my_scratch.vim
 runtime my_slimv.vim
+runtime my_fugitive.vim
+runtime my_tagbar.vim
 
 " Misc settings below
 
@@ -27,20 +29,6 @@ map <F8> :source ~/.session.vim <cr>
 " make sure we can use ctags down into all the gems we're using
 set tags+=gems.tags
 
-" Fugitive
-"  Git Hotness
-"set statusline+=%{fugitive#statusline()} "  Git Hotness
-"switch back to current file and closes fugitive buffer
-nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
-
-" Tagbar
-let g:tagbar_sort = 0
-let g:tagbar_type_ruby = { 'kinds' : ['m:modules', 'c:classes', 'd:describes', 'C:contexts', 'f:methods', 'F:singleton methods' ] }
-
 " Homegrown todo list
 noremap <Leader>td :noautocmd vimgrep /TODO/j **/*.rb<CR>:cw<CR>
 
-" Diff helpers
-noremap <C-L> :diffupdate<CR><C-L>
-map <Leader>dl :diffget //2<CR>
-map <Leader>dr :diffget //3<CR>
