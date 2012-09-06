@@ -34,6 +34,11 @@ nnoremap <Leader>gD :diffoff!<cr><c-w>h:bd<cr><c-w>k<cr>
 let g:tagbar_sort = 0
 
 " Powerline
-let g:Powerline_theme="skwp"
-let g:Powerline_colorscheme="skwp"
 call Pl#Theme#InsertSegment('tagbar:currenttag', 'after', 'flags.mod')
+
+" SLIMV and clojure stuff
+let g:swank_host="127.0.0.1"
+let g:swank_port=4005
+let g:slimv_simple_compl=1
+let g:clj_highlight_builtins=1
+let g:clj_paren_rainbow=1
