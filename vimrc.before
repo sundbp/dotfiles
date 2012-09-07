@@ -1,0 +1,2 @@
+" we load this via the custom slimv, so need to disable it here
+call janus#disable_plugin('clojure')

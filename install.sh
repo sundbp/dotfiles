@@ -102,5 +102,7 @@ ln -s $DIR/pharo ~/.config/pharo
 rm ~/.aprc
 ln -s $DIR/aprc ~/.aprc
 
+./bootstrap_slimv.sh
+
 echo ""
 echo "Setup of your dot files completed!"
