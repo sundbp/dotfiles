@@ -38,3 +38,7 @@
 	path = janus/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
   ignore = untracked
+[submodule "janus/numbers.vim"]
+	path = janus/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim.git
+  ignore = untracked
