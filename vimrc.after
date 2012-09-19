@@ -32,3 +32,4 @@ set tags+=gems.tags
 " Homegrown todo list
 noremap <Leader>td :noautocmd vimgrep /TODO/j **/*.rb<CR>:cw<CR>
 
+let g:swank_log=1

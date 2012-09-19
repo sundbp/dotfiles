@@ -104,5 +104,8 @@ ln -s $DIR/aprc ~/.aprc
 
 ./bootstrap_slimv.sh
 
+rm ~/.lein
+ln -s $DIR/lein ~/.lein
+
 echo ""
 echo "Setup of your dot files completed!"
