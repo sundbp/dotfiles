@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ip=`ifconfig eth0 | grep "inet addr" | awk '{print $2}' | cut -d ':' -f 2`
+ssh -v -N -L $ip:9090:127.0.0.1:8123 sundbp@ps.vannavolga.info
