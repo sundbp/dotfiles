@@ -107,5 +107,8 @@ ln -s $DIR/aprc ~/.aprc
 rm ~/.lein
 ln -s $DIR/lein ~/.lein
 
+rm ~/.emacs.d
+ln -s $DIR/emacs.d ~/.emacs.d
+
 echo ""
 echo "Setup of your dot files completed!"

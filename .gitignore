@@ -11,3 +11,10 @@ xsession.nt51p9393
 xsession.sundbp-N120
 janus/slimv
 lein/self-installs
+emacs.d/auto-save-list
+emacs.d/backups
+emacs.d/*~
+emacs.d/places
+emacs.d/elpa
+emacs.d/.smex-items
+emacs.d/url
