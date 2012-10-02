@@ -45,3 +45,6 @@
 [submodule "emacs.d/my-pkgs/evil"]
 	path = emacs.d/my-pkgs/evil
 	url = https://git.gitorious.org/evil/evil.git
+[submodule "emacs.d/my-pkgs/evil-leader"]
+	path = emacs.d/my-pkgs/evil-leader
+	url = https://github.com/cofi/evil-leader.git
