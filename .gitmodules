@@ -44,4 +44,4 @@
   ignore = untracked
 [submodule "emacs.d/my-pkgs/evil"]
 	path = emacs.d/my-pkgs/evil
-	url = git://gitorious.org/evil/evil.git
+	url = https://git.gitorious.org/evil/evil.git
