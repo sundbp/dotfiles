@@ -18,3 +18,4 @@ emacs.d/places
 emacs.d/elpa
 emacs.d/.smex-items
 emacs.d/url
+/emacs.d/#init.el#
