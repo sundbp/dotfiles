@@ -11,37 +11,26 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit
-                      starter-kit-bindings
-                      starter-kit-lisp
-                      starter-kit-ruby
-                      color-theme-solarized
+(defvar my-packages '(color-theme-solarized
                       clojure-mode
                       clojure-test-mode
-                      clojurescript-mode)
+                      clojurescript-mode
+                      starter-kit
+                      starter-kit-bindings
+                      starter-kit-lisp
+                      starter-kit-ruby)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; packages from git
-
-(add-to-list 'load-path "~/.emacs.d/my-pkgs/evil")
-(require 'evil)
-(evil-mode 1)
-
-(setq linum-format "%4d ")
-
-;; appearance
-(load-theme 'solarized-dark t)
-
-(defun terminal-init-rxvt-unicode ()
-  "Terminal initialization function for rxvt-unicode."
-  ;; Use the xterm color initialization code.
-  (load "term/xterm")
-  (xterm-register-default-colors)
-  (tty-set-up-initial-frame-faces))
+; my own config that is loaded AFTER packages are loaded
+; if I use the esk hooks then it ends up loading things before
+; all packages are loaded
+(setq my-config-dir (concat user-emacs-directory "my-config"))
+(when (file-exists-p my-config-dir)
+        (mapc 'load (directory-files my-config-dir t "^[^#].*el$")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -54,4 +43,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(esk-paren-face ((t (:foreground "color-238")))))
+ '(esk-paren-face ((t (:foreground "color-238"))))
+ '(whitespace-trailing ((t (:background "cyan" :foreground "#cd0000" :inverse-video nil :underline nil :slant normal :weight bold)))))
