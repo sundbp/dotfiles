@@ -46,7 +46,7 @@ alias rr="rbenv rehash"
 alias cgrep="grep --color=always"
 export EDITOR="vim -f"
 
-alias e='emacsclient -t'
+alias e='emacs -nw'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

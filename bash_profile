@@ -53,6 +53,6 @@ if [ "$TERM" = "rxvt-unicode-256color" ];then
 fi
 
 # let's source the bashrc at end of login
-if [ -f ~/.bashrc ]; then
+if [ -e ~/.bashrc ]; then
   source ~/.bashrc
 fi
