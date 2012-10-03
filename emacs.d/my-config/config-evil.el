@@ -13,8 +13,19 @@
 ;easy switching between files and buffers using ffip and ido
 (let ((maps (list evil-normal-state-map evil-insert-state-map evil-visual-state-map)))
  (dolist (map maps)
-   (define-key map "\C-p" 'find-file-in-project)
-   (define-key map "\C-b" 'ido-switch-buffer)))
+   (define-key map (kbd "C-p") 'find-file-in-project)
+   (define-key map (kbd "C-b") 'ido-switch-buffer)))
+
+;insert mode
+(defun after-whitespace-p ()
+  (string-match "[ \t\n]" (string (char-before))))
+
+(defun my-super-tab ()
+  (interactive)
+  (if (and (not (after-whitespace-p)) (and (boundp 'slime-mode) slime-mode))
+      (slime-complete-symbol)
+    (indent-for-tab-command)))
+(define-key evil-insert-state-map (kbd "TAB") 'my-super-tab)
 
 ;paredit barfage and slurpage
 (evil-leader/set-key ")" 'paredit-forward-slurp-sexp)

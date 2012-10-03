@@ -1,4 +1,4 @@
-{:user {:plugins [[lein-ritz "0.4.2"]
+{:user {:plugins [[lein-ritz "0.5.0"]
                   [lein-pedantic "0.0.3"]
                   [lein-localrepo "0.4.1"]
                   [lein-pprint "1.1.1"]]}

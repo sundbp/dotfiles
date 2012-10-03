@@ -15,6 +15,8 @@
                       clojure-mode
                       clojure-test-mode
                       clojurescript-mode
+                      slime-ritz
+                      slime-repl
                       starter-kit
                       starter-kit-bindings
                       starter-kit-lisp
@@ -43,5 +45,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(esk-paren-face ((t (:foreground "color-238"))))
+ '(esk-paren-face ((t (:foreground "color-239"))))
  '(whitespace-trailing ((t (:background "cyan" :foreground "#cd0000" :inverse-video nil :underline nil :slant normal :weight bold)))))
