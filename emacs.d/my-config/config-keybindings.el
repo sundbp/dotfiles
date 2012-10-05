@@ -1,6 +1,9 @@
-;ffip
+;; ffip
 (global-unset-key "\C-p")
 (global-set-key (kbd "C-p") 'find-file-in-project)
-;buffer search
+
+;; buffer search
 (global-unset-key "\C-b")
 (global-set-key (kbd "C-b") 'ido-switch-buffer)
+
+;; make sure that up-down-left-right works in terminal
