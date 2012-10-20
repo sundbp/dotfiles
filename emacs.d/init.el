@@ -17,6 +17,10 @@
                       clojurescript-mode
                       slime-ritz
                       slime-repl
+                      nrepl-ritz
+                      ac-nrepl
+                      ack-and-a-half
+                      multi-term
                       starter-kit
                       starter-kit-bindings
                       starter-kit-lisp
