@@ -14,6 +14,8 @@
                           "*.hs"
                           "*.ml"
                           "Gemfile"
+                          "Vagrantfile"
+                          "*.php"
                           "*.yml"
                           "*.gemspec"
                           "*.json"))
