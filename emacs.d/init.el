@@ -21,6 +21,7 @@
                       ac-nrepl
                       ack-and-a-half
                       multi-term
+                      tidy
                       starter-kit
                       starter-kit-bindings
                       starter-kit-lisp
