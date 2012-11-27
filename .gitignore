@@ -21,3 +21,4 @@ emacs.d/url
 emacs.d/swank/
 /emacs.d/#init.el#
 lein/immutant
+emacs.d/ac-comphist.dat
