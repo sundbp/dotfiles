@@ -18,6 +18,7 @@
                       slime-ritz
                       slime-repl
                       nrepl-ritz
+                      auto-complete
                       ac-nrepl
                       ack-and-a-half
                       multi-term
