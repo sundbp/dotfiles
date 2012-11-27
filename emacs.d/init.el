@@ -22,6 +22,8 @@
                       ack-and-a-half
                       multi-term
                       tidy
+                      yasnippet
+                      yas-jit
                       starter-kit
                       starter-kit-bindings
                       starter-kit-lisp
