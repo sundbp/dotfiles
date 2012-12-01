@@ -38,3 +38,6 @@
 
 ;; comment/uncomment
 (evil-leader/set-key "/" 'comment-or-uncomment-region)
+
+(evil-leader/set-key "f" 'ack)
+(evil-leader/set-key "F" 'ack-same)
