@@ -22,6 +22,7 @@
                       ac-nrepl
                       ack-and-a-half
                       multi-term
+                      mic-paren
                       tidy
                       yasnippet
                       yas-jit

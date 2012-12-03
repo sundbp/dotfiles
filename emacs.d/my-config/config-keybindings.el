@@ -15,3 +15,8 @@
 (define-key input-decode-map "\e[1;5D" [(control left)])
 (define-key input-decode-map "\eOc" [(control right)])
 (define-key input-decode-map "\e[1;5C" [(control right)])
+;; alt-pgup/pgdown
+(define-key input-decode-map "\e[5;5~" [(meta prior)])
+(define-key input-decode-map "\e[5;6~" [(meta next)])
+(define-key input-decode-map "\e[5;3~" [(meta prior)])
+(define-key input-decode-map "\e[6;3~" [(meta next)])
