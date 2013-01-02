@@ -43,14 +43,6 @@ rm ~/.dircolors
 ln -s $DIR/dircolors ~/.dircolors
 
 # vim and janus
-#if [ ! `hostname -f` = "dev.vannavolga.info" ];then
-#  rm ~/.vim
-#  rm ~/.vimrc
-#  rm ~/.gvimrc
-#  ln -s $DIR/vim ~/.vim
-#  ln -s $DIR/vim/janus/vim/vimrc ~/.vimrc
-#  ln -s $DIR/vim/janus/vim/gvimrc ~/.gvimrc
-#fi
 rm ~/.vimrc.before
 rm ~/.vimrc.after
 ln -s $DIR/vimrc.before ~/.vimrc.before
@@ -63,9 +55,6 @@ ln -s $DIR/pryrc ~/.pryrc
 
 rm ~/.snxrc
 ln -s $DIR/snxrc ~/.snxrc
-
-rm ~/.config/rc.lua
-ln -s $DIR/rc.lua ~/.config/rc.lua
 
 rm ~/.xsession
 # use default file for a few, and special ones for others
@@ -96,19 +85,17 @@ rm ~/.fonts
 ln -s $DIR/fonts ~/.fonts
 fc-cache -vf
 
-rm ~/.config/pharo
-ln -s $DIR/pharo ~/.config/pharo
-
 rm ~/.aprc
 ln -s $DIR/aprc ~/.aprc
-
-./bootstrap_slimv.sh
 
 rm ~/.lein
 ln -s $DIR/lein ~/.lein
 
-rm ~/.emacs.d
-ln -s $DIR/emacs.d ~/.emacs.d
+rm ~/.emacs-live.el
+ln -s $DIR/emacs-live.el ~/.emacs-live.el
+
+rm ~/.live-packs
+ln -s $DIR/live-packs ~/.live-packs
 
 echo ""
 echo "Setup of your dot files completed!"

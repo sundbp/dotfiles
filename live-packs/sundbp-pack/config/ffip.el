@@ -1,4 +1,3 @@
-;customize ffip
 (setq ffip-patterns (list "*.html"
                           "*.org"
                           "*.txt"

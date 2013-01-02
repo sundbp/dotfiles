@@ -87,7 +87,7 @@ else
   export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
 fi
 
-export PS1="\[\033[G\]$PS1"
+export PS1="\[\033[G\]$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # node.js stuff
 if [ -f ~/.nvm/nvm.sh ]; then

@@ -48,3 +48,6 @@
 [submodule "emacs.d/my-pkgs/evil-leader"]
 	path = emacs.d/my-pkgs/evil-leader
 	url = https://github.com/cofi/evil-leader.git
+[submodule "tmux/tmux-powerline"]
+	path = tmux/tmux-powerline
+	url = https://github.com/erikw/tmux-powerline.git

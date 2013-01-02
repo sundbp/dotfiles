@@ -1,10 +1,4 @@
-;; ffip
-(global-unset-key "\C-p")
-(global-set-key (kbd "C-p") 'find-file-in-project)
-
-;; buffer search
-(global-unset-key "\C-b")
-(global-set-key (kbd "C-b") 'ido-switch-buffer)
+;; My key bindings
 
 ;; make sure that Ctrl+up|down|left|right works in terminal
 (define-key input-decode-map "\eOa" [(control up)])
@@ -20,3 +14,12 @@
 (define-key input-decode-map "\e[5;6~" [(meta next)])
 (define-key input-decode-map "\e[5;3~" [(meta prior)])
 (define-key input-decode-map "\e[6;3~" [(meta next)])
+
+;; ffip
+(global-set-key  (kbd "C-x p") 'find-file-in-project)
+
+;; window movements
+(global-set-key  (kbd "C-x <up>") 'windmove-up)
+(global-set-key  (kbd "C-x <down>") 'windmove-down)
+(global-set-key  (kbd "C-x <left>") 'windmove-left)
+(global-set-key  (kbd "C-x <right>") 'windmove-right)
