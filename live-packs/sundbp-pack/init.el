@@ -10,8 +10,7 @@
   (package-refresh-contents))
 
 ;; The marmelade packages I use:
-(defvar my-marmelade-packages '(color-theme-solarized
-                                ack-and-a-half)
+(defvar my-marmelade-packages '(color-theme-solarized)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
@@ -22,4 +21,5 @@
 (live-load-config-file "cosmetics.el")
 (live-load-config-file "key-bindings.el")
 (live-load-config-file "ffip.el")
-(live-load-config-file "ack.el")
+(live-load-config-file "ag.el")
+(live-load-config-file "my-popwin.el")
