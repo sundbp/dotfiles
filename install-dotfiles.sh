@@ -56,34 +56,36 @@ ln -s $DIR/pryrc ~/.pryrc
 rm ~/.snxrc
 ln -s $DIR/snxrc ~/.snxrc
 
-rm ~/.xsession
-# use default file for a few, and special ones for others
-ln -s xsession xsession.nt51p9393
-ln -s xsession xsession.ronald
-ln -s xsession xsession.sundbp-N120
-xsessionfile="xsession.$(hostname)"
-ln -s $DIR/$xsessionfile ~/.xsession
+if [ `uname` == "Linux" ];then
+  rm ~/.xsession
+  # use default file for a few, and special ones for others
+  ln -s xsession xsession.nt51p9393
+  ln -s xsession xsession.ronald
+  ln -s xsession xsession.sundbp-N120
+  xsessionfile="xsession.$(hostname)"
+  ln -s $DIR/$xsessionfile ~/.xsession
 
-rm ~/.Xdefaults
-ln -s $DIR/Xdefaults ~/.Xdefaults
+  rm ~/.Xdefaults
+  ln -s $DIR/Xdefaults ~/.Xdefaults
 
-rm ~/.i3/config
-mkdir -p ~/.i3
-i3configfile="i3config.$(hostname)"
-ln -s $DIR/$i3configfile ~/.i3/config
+  rm ~/.i3/config
+  mkdir -p ~/.i3
+  i3configfile="i3config.$(hostname)"
+  ln -s $DIR/$i3configfile ~/.i3/config
 
-rm ~/.i3status.conf
-ln -s $DIR/i3status.conf ~/.i3status.conf
+  rm ~/.i3status.conf
+  ln -s $DIR/i3status.conf ~/.i3status.conf
+
+  rm ~/.fehbg
+  ln -s $DIR/fehbg ~/.fehbg
+
+  rm ~/.fonts
+  ln -s $DIR/fonts ~/.fonts
+  fc-cache -vf
+fi
 
 rm ~/bin
 ln -s $DIR/bin ~/bin
-
-rm ~/.fehbg
-ln -s $DIR/fehbg ~/.fehbg
-
-rm ~/.fonts
-ln -s $DIR/fonts ~/.fonts
-fc-cache -vf
 
 rm ~/.aprc
 ln -s $DIR/aprc ~/.aprc

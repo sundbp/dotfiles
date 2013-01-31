@@ -13,5 +13,5 @@ if [ "$(uname)" == "Linux" -a ! -e /usr/bin/emacs ];then
 fi
 
 if [ ! -d ~/.emacs.d ];then
-    git clone https://github.com/overtone/emacs-live.git ~/.emacs.d
+    bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
 fi

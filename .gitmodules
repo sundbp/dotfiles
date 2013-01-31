@@ -2,10 +2,6 @@
 	path = janus/solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
   ignore = untracked
-[submodule "janus/slim"]
-	path = janus/slim
-	url = http://github.com/bbommarito/vim-slim.git
-  ignore = untracked
 [submodule "janus/less"]
 	path = janus/less
 	url = http://github.com/groenewege/vim-less.git
