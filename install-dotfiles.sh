@@ -16,7 +16,7 @@ while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 # bash
-rm ~/.profile
+rm -f ~/.profile
 rm ~/.bash_profile
 rm ~/.bashrc
 rm ~/.bash_completion.d
@@ -56,6 +56,21 @@ ln -s $DIR/pryrc ~/.pryrc
 rm ~/.snxrc
 ln -s $DIR/snxrc ~/.snxrc
 
+rm ~/bin
+ln -s $DIR/bin ~/bin
+
+rm ~/.aprc
+ln -s $DIR/aprc ~/.aprc
+
+rm ~/.lein
+ln -s $DIR/lein ~/.lein
+
+rm ~/.emacs-live.el
+ln -s $DIR/emacs-live.el ~/.emacs-live.el
+
+rm ~/.live-packs
+ln -s $DIR/live-packs ~/.live-packs
+
 if [ `uname` == "Linux" ];then
   rm ~/.xsession
   # use default file for a few, and special ones for others
@@ -84,20 +99,10 @@ if [ `uname` == "Linux" ];then
   fc-cache -vf
 fi
 
-rm ~/bin
-ln -s $DIR/bin ~/bin
-
-rm ~/.aprc
-ln -s $DIR/aprc ~/.aprc
-
-rm ~/.lein
-ln -s $DIR/lein ~/.lein
-
-rm ~/.emacs-live.el
-ln -s $DIR/emacs-live.el ~/.emacs-live.el
-
-rm ~/.live-packs
-ln -s $DIR/live-packs ~/.live-packs
+if [ `uname` == "Darwin" ];then
+  rm ~/Library/Preferences/com.googlecode.iterm2.plist
+  ln -s $DIR/com.googlecode.iterm2.plist ~/Library/Preferences/
+fi
 
 echo ""
 echo "Setup of your dot files completed!"
