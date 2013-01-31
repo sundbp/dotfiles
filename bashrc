@@ -25,7 +25,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-export CLICOLORS=1
+export CLICOLOR=1
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
