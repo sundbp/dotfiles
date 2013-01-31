@@ -5,10 +5,9 @@
                   [lein-immutant "0.11.0"]]
         :dependencies [[ritz/ritz-nrepl-middleware "0.6.0"]
                        [ritz/ritz-debugger "0.6.0"]
-                       [ritz/ritz-repl-utils "0.6.0"]]
-        :repl-options {:nrepl-middleware
-                       [ritz.nrepl.middleware.javadoc/wrap-javadoc
-                        ritz.nrepl.middleware.simple-complete/wrap-simple-complete]}}
- :jdk1.7 {:resource-paths ["/usr/lib/jvm/jdk1.7.0_10/lib/tools.jar"
-                           "/usr/lib/jvm/jdk1.7.0_10/lib/sa-jdi.jar"]}
+                       [ritz/ritz-repl-utils "0.6.0"]
+                       [slamhound "1.3.1"]]
+        :aliases {"slamhound" ["run" "-m" "slam.hound"]}
+        :repl-options {:nrepl-middleware [ritz.nrepl.middleware.javadoc/wrap-javadoc
+                                          ritz.nrepl.middleware.simple-complete/wrap-simple-complete]}}
  :hooks [ritz.add-sources]}
