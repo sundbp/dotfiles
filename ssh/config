@@ -1,0 +1,8 @@
+Host *
+  ForwardAgent yes
+  ForwardX11 yes
+  ServerAliveInterval 60
+
+Host ps
+  HostName ps.vannavolga.info
+  User sundbp

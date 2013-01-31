@@ -71,6 +71,9 @@ ln -s $DIR/emacs-live.el ~/.emacs-live.el
 rm ~/.live-packs
 ln -s $DIR/live-packs ~/.live-packs
 
+rm ~/.ssh/config
+ln -s $DIR/ssh/config ~/.ssh/
+
 if [ `uname` == "Linux" ];then
   rm ~/.xsession
   # use default file for a few, and special ones for others
