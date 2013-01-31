@@ -31,13 +31,11 @@ export CLICOLOR=1
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -97,34 +95,16 @@ if [ -f ~/.nvm/nvm.sh ]; then
 fi
 
 # http proxy stuff
-export NO_PROXY=localhost,127.0.0.1,nt51p9393.glennt.london.glencore.com
+export NO_PROXY=localhost,127.0.0.1
 export no_proxy=$NO_PROXY
-
-if [[ `hostname` =~ nt51p.* ]];then
-  export http_proxy=http://127.0.0.1:8123/
-  export https_proxy=$http_proxy
-  export HTTP_PROXY=$http_proxy
-  export HTTPS_PROXY=$https_proxy
-fi
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-if [[ `hostname` =~ localhost ]];then
+if [ `uname` == "Darwin" ];then
   export MANPATH=/usr/local/share/man:$MANPATH
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+  source "`brew --prefix`/etc/grc.bashrc"
 fi
-
-# path
-if [ -d ~/.rbenv ];then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-if [ -d ~/bin ];then
-  export PATH="$PATH:$HOME/bin"
-fi
-
-export PATH="./b:/usr/local/bin:$PATH"
 
 # vpn related - SNX messes up resolv.conf
 alias fix-resolvconf='sudo rm /etc/resolv.conf && echo "nameserver 127.0.0.1" > /tmp/rconf && echo "search glennt.london.glencore.com" >> /tmp/rconf && sudo cp /tmp/rconf /etc/resolv.conf'
@@ -146,4 +126,15 @@ fi
 
 #export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 
-source "`brew --prefix`/etc/grc.bashrc"
+# path related bits at the end here
+if [ -d ~/.rbenv ];then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
+
+if [ -d ~/bin ];then
+  export PATH="$PATH:$HOME/bin"
+fi
+
+export PATH="./b:$PATH"
+
