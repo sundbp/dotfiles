@@ -76,12 +76,14 @@ ln -s $DIR/ssh/config ~/.ssh/
 
 if [ `uname` == "Linux" ];then
   rm ~/.xsession
+  rm ~/.xsessionrc
   # use default file for a few, and special ones for others
   ln -s xsession xsession.nt51p9393
   ln -s xsession xsession.ronald
   ln -s xsession xsession.sundbp-N120
   xsessionfile="xsession.$(hostname)"
   ln -s $DIR/$xsessionfile ~/.xsession
+  ln -s ~/.xsession ~/.xsessionrc
 
   rm ~/.Xdefaults
   ln -s $DIR/Xdefaults ~/.Xdefaults
