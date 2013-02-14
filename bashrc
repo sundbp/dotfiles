@@ -138,3 +138,10 @@ fi
 
 export PATH="./b:$PATH"
 
+export LANG=en_US.UTF-8
+export LANGUAGE="en_US:en"
+
+# gnome keyring
+if [ -f ~/.gkr ];then
+  source ~/.gkr
+fi

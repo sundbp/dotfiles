@@ -18,6 +18,9 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; no zoning!
+(setq live-disable-zone t)
+
 ;; then load my config files
 (live-load-config-file "cosmetics.el")
 (live-load-config-file "key-bindings.el")
