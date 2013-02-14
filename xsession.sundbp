@@ -2,21 +2,28 @@
 xrdb -merge ~/.Xdefaults
 
 # no capslock
-#setxkbmap -option ctrl:nocaps
+setxkbmap -option ctrl:nocaps
 
 # cursor
-#xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr
 
 #eval `cat ~/.fehbg`
 
 exec ck-launch-session gnome-settings-daemon &
 exec ck-launch-session /usr/lib/notification-daemon/notification-daemon &
-eval `gnome-keyring-daemon`
+eval `gnome-keyring-daemon -r > ~/.gkr`
 
-#nautilus --no-desktop --no-default-window
+nautilus --no-desktop --no-default-window
 
 if [ -f /usr/bin/dropbox ]; then
   dropbox start
 fi
+
+if [ -f /usr/bin/xautolock ];then
+  exec ck-launch-session xautolock -time 20 -locker "/usr/bin/i3lock -c 000000" &
+fi
+
+export LANG=en_US.UTF-8
+export LANGUAGE="en_US:en"
 
 exec ck-launch-session i3
