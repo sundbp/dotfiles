@@ -10,7 +10,8 @@
   (package-refresh-contents))
 
 ;; The marmelade packages I use:
-(defvar my-marmelade-packages '(color-theme-solarized)
+(defvar my-marmelade-packages '(color-theme-solarized
+                                slamhound)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
