@@ -19,6 +19,11 @@ if [ -f /usr/bin/dropbox ]; then
   dropbox start
 fi
 
+if [ -f /usr/bin/insync ]; then
+  exec ck-launch-session insync &
+fi
+
+
 if [ -f /usr/bin/xautolock ];then
   exec ck-launch-session xautolock -time 20 -locker "/usr/bin/i3lock -c 000000" &
 fi
