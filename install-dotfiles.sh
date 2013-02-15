@@ -20,9 +20,11 @@ rm -f ~/.profile
 rm ~/.bash_profile
 rm ~/.bashrc
 rm ~/.bash_completion.d
+rm ~/.bash_ssh_agent_funcs.sh
 ln -s $DIR/bash_profile ~/.bash_profile
 ln -s $DIR/bashrc ~/.bashrc
 ln -s $DIR/bash_completion.d ~/.bash_completion.d
+ln -s $DIR/bash_ssh_agent_funcs.sh ~/.bash_ssh_agent_funcs.sh
 
 # gemrc
 rm ~/.gemrc

@@ -145,3 +145,5 @@ export LANGUAGE="en_US:en"
 if [ -f ~/.gkr ];then
   source ~/.gkr
 fi
+
+source ~/.bash_ssh_agent_funcs.sh
