@@ -11,7 +11,8 @@ xsetroot -cursor_name left_ptr
 
 exec ck-launch-session gnome-settings-daemon &
 exec ck-launch-session /usr/lib/notification-daemon/notification-daemon &
-eval `gnome-keyring-daemon -r > ~/.gkr`
+# we prefer to use straight ssh-agent
+#eval `gnome-keyring-daemon -r > ~/.gkr`
 
 nautilus --no-desktop --no-default-window
 
