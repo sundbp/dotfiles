@@ -142,12 +142,14 @@ export LANG=en_US.UTF-8
 export LANGUAGE="en_US:en"
 
 # gnome keyring
-if [ -f ~/.gkr ];then
-  source ~/.gkr
+if [ "$TERM" = "rxvt-unicode-256color" -o "$TERM" = "screen-256color" ];then
+  if [ -f ~/.gkr ];then
+    source ~/.gkr
+  else
+    source ~/.bash_ssh_agent_funcs.sh
+    # only bother with ssh agent in interactive sessions
+    setup_ssh_agent_env
+  fi
 fi
 
-source ~/.bash_ssh_agent_funcs.sh
-# only bother with ssh agent in interactive sessions
-if [ "$TERM" = "rxvt-unicode-256color" ];then
-  setup_ssh_agent_env
-fi
+

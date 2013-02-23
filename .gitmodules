@@ -46,7 +46,7 @@
 	url = https://github.com/cofi/evil-leader.git
 [submodule "tmux/tmux-powerline"]
 	path = tmux/tmux-powerline
-	url = https://github.com/erikw/tmux-powerline.git
+	url = https://github.com/sundbp/tmux-powerline.git
 [submodule "live-packs/sundbp-pack/vendor/submodules/ag"]
 	path = live-packs/sundbp-pack/vendor/submodules/ag
 	url = https://github.com/Wilfred/ag.el.git
