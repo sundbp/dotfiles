@@ -27,3 +27,4 @@
 (live-load-config-file "ffip.el")
 (live-load-config-file "ag.el")
 (live-load-config-file "my-popwin.el")
+;;(live-load-config-file "my-git-gutter-fringe.el")

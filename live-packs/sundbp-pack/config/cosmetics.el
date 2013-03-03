@@ -27,8 +27,8 @@
   (tty-set-up-initial-frame-faces))
 
 ;; format of line numbers
-(setq linum-format "%4d ")
-(global-linum-mode t)
+;;(setq linum-format "%4d ")
+;;(global-linum-mode t)
 
 ;; display only tails of long lines, tabs and trailing whitespaces
 (setq whitespace-line-column 120

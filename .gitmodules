@@ -50,3 +50,9 @@
 [submodule "live-packs/sundbp-pack/vendor/submodules/ag"]
 	path = live-packs/sundbp-pack/vendor/submodules/ag
 	url = https://github.com/Wilfred/ag.el.git
+[submodule "live-packs/sundbp-pack/vendor/submodules/emacs-git-gutter-fringe"]
+	path = live-packs/sundbp-pack/vendor/submodules/emacs-git-gutter-fringe
+	url = https://github.com/syohex/emacs-git-gutter-fringe.git
+[submodule "live-packs/sundbp-pack/vendor/submodules/fringe-helper"]
+	path = live-packs/sundbp-pack/vendor/submodules/fringe-helper
+	url = https://github.com/nschum/fringe-helper.el.git
