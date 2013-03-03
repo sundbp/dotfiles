@@ -51,3 +51,7 @@
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
 (define-key magit-status-mode-map (kbd "q") 'magit-quit-session)
+
+;; stop blinking the cursor
+(blink-cursor-end)
+
