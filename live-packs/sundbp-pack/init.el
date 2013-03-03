@@ -28,3 +28,4 @@
 (live-load-config-file "ag.el")
 (live-load-config-file "my-popwin.el")
 ;;(live-load-config-file "my-git-gutter-fringe.el")
+(live-load-config-file "my-osx.el")
