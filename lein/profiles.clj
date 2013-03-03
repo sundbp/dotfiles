@@ -7,6 +7,7 @@
         :dependencies [;;[ritz/ritz-nrepl-middleware "0.6.0"]
                        ;;[ritz/ritz-debugger "0.6.0"]
                        ;;[ritz/ritz-repl-utils "0.6.0"]
+                       [org.clojure/tools.nrepl "0.2.2"]
                        [slamhound "1.3.1"]]
         :aliases {"slamhound" ["run" "-m" "slam.hound"]}
         ;;:repl-options {:nrepl-middleware [ritz.nrepl.middleware.javadoc/wrap-javadoc
