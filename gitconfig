@@ -6,3 +6,5 @@
 	password = so0Densk
 [help]
   autocorrect = 1
+[push]
+	default = simple
