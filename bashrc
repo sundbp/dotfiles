@@ -156,4 +156,5 @@ if [ "$TERM" = "rxvt-unicode-256color" -o "$TERM" = "screen-256color" ];then
   fi
 fi
 
-
+# autocorrect cd spelling mistakes
+shopt -s cdspell

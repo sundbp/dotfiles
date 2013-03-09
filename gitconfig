@@ -1,6 +1,8 @@
 [user]
-	name = Patrik Sundberg 
+	name = Patrik Sundberg
 	email = patrik.sundberg@gmail.com
 [github]
 	user = sundbp
 	password = so0Densk
+[help]
+  autocorrect = 1
