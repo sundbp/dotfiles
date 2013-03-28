@@ -22,3 +22,5 @@ emacs.d/swank/
 /emacs.d/#init.el#
 lein/immutant
 emacs.d/ac-comphist.dat
+lein/indices/
+/bin/.#lein
