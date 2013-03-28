@@ -160,4 +160,4 @@ fi
 shopt -s cdspell
 
 # clojure LOC counter
-alias loc-clj='find ./ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
