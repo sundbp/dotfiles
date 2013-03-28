@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 # start the ssh-agent
-SSH_ENV="$HOME/.ssh/environment"
+HOSTNAME=`hostname`
+SSH_ENV="$HOME/.ssh/$HOSTNAME-environment"
 
 # start the ssh-agent
 function start_ssh_agent {
