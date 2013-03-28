@@ -1,6 +1,6 @@
 ;; My key bindings
 
-;; C-up|down|left|right in terminal
+;; C-up|down|left|right in terminal (tmux and urxvt)
 (define-key input-decode-map "\eOa" [(control up)])
 (define-key input-decode-map "\e[1;5A" [(control up)])
 (define-key input-decode-map "\eOb" [(control down)])
@@ -10,19 +10,19 @@
 (define-key input-decode-map "\eOc" [(control right)])
 (define-key input-decode-map "\e[1;5C" [(control right)])
 
-;; M-up|down|left|right in terminal
+;; M-up|down|left|right in terminal (tmux)
 (define-key input-decode-map "\e[1;3A" [(meta up)])
 (define-key input-decode-map "\e[1;3B" [(meta down)])
 (define-key input-decode-map "\e[1;3D" [(meta left)])
 (define-key input-decode-map "\e[1;3C" [(meta right)])
 
-;; C-M-up|down|left|right in terminal
+;; C-M-up|down|left|right in terminal (tmux)
 (define-key input-decode-map "\e[1;7A" [(control meta up)])
 (define-key input-decode-map "\e[1;7B" [(control meta down)])
 (define-key input-decode-map "\e[1;7D" [(control meta left)])
 (define-key input-decode-map "\e[1;7C" [(control meta right)])
 
-;; M-pgup/pgdown in terminal
+;; M-pgup/pgdown in terminal (tmux)
 (define-key input-decode-map "\e[5;5~" [(meta prior)])
 (define-key input-decode-map "\e[5;6~" [(meta next)])
 (define-key input-decode-map "\e[5;3~" [(meta prior)])
