@@ -11,7 +11,8 @@
 
 ;; The marmelade packages I use:
 (defvar my-marmelade-packages '(color-theme-solarized
-                                slamhound)
+                                slamhound
+                                expectations-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
@@ -30,3 +31,4 @@
 ;;(live-load-config-file "my-git-gutter-fringe.el")
 (live-load-config-file "my-osx.el")
 (live-load-config-file "my-ansi-term.el")
+(live-load-config-file "my-nrepl.el")
