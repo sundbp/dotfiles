@@ -32,4 +32,8 @@ fi
 export LANG=en_US.UTF-8
 export LANGUAGE="en_US:en"
 
+if [ -f /usr/bin/shutter ];then
+  shutter --min_at_startup &
+end
+
 exec ck-launch-session i3
