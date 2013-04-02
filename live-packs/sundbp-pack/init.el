@@ -32,3 +32,4 @@
 (live-load-config-file "my-osx.el")
 (live-load-config-file "my-ansi-term.el")
 (live-load-config-file "my-nrepl.el")
+(live-load-config-file "my-clojure.el")
