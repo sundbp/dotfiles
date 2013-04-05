@@ -147,6 +147,7 @@ bar {
     background #000000
     statusline #ffd700
   }
+  mode hide
   #output xinerama-0
   #output xinerama-2
   #output xinerama-1
@@ -181,4 +182,4 @@ assign [title=".*\sbars$"] 7
 assign [title="IntercontinentalExchange.*"] 6
 
 # Windows 7 remote
-assign [title="win7-vbox"] 7
+assign [title="win7-bberg-vbox"] 7

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pid=`ps uf | grep win7-bberg-vbox | grep -v grep | awk '{print $2}'`
+kill "$pid"
