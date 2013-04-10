@@ -8,7 +8,7 @@
                        :update :always}]
          ["releases" {:url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/releases/"
                       :update :always}]]
-        :mirrors {"central" {:name "Internal nexus mirror of central"
+        :mirrors {"central" {:name "central-proxy"
                              :url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/central/"}
-                  #"clojars" {:name "Internal nexus mirror of clojars"
+                  #"clojars" {:name "clojars-proxy"
                               :url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/clojars/"}}}}
