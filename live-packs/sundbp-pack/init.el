@@ -33,3 +33,6 @@
 (live-load-config-file "my-ansi-term.el")
 (live-load-config-file "my-nrepl.el")
 (live-load-config-file "my-clojure.el")
+
+;; try to load non-git versioned pw file
+(load "pw" t)

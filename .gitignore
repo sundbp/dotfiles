@@ -24,3 +24,4 @@ lein/immutant
 emacs.d/ac-comphist.dat
 lein/indices/
 /bin/.#lein
+/live-packs/sundbp-pack/lib/pw.el
