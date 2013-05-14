@@ -161,3 +161,6 @@ shopt -s cdspell
 
 # clojure LOC counter
 alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
+
+# lsof helpers
+alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
