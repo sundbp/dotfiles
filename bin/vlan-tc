@@ -1,0 +1,32 @@
+#!/bin/bash
+default_interface="en0"
+default_gw="10.20.22.1"
+if [ "$2" = "" ];then
+  export vlan_interface=$default_interface
+else
+  export vlan_interface=$2
+fi
+if [ "$3" = "" ];then
+  export gw=$default_gw
+else
+  export gw=$3
+fi
+
+echo "Using interface $vlan_interface and gateway $gw"
+if [ "$1" = "start" ];then
+  sudo ifconfig vlan256 create
+  sudo ifconfig vlan256 vlan 256 vlandev $vlan_interface
+  sudo ipconfig set vlan256 DHCP
+  # give us some time to get IP before we add route.
+  # otherwise it wont be sent via vlan256 interface!
+  echo "Sleeping 5 seconds to allow interface to get IP via DHCP.."
+  sleep 5
+  sudo route -n add -net 10.20.0.0/16 $gw
+  echo "Done - connected to VLAN on interface vlan256."
+elif [ "$1" = "stop" ];then
+  sudo route -n delete -net 10.20.0.0/16 $gw
+  sudo ifconfig vlan256 destroy
+  echo "Done - diconnected from VLAN and interface vlan256 destroyed."
+else
+  echo "useage: vlan-tc start|stop [interface] [gw]"
+fi
