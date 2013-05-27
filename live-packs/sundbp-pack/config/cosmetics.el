@@ -1,7 +1,8 @@
 ;; setting related to visual appearance
 
 ;; use solarized
-(color-theme-solarized-dark)
+;;(color-theme-solarized-dark)
+(load-theme 'solarized-dark t)
 
 ;; stuff copied from customize system
 (custom-set-variables
