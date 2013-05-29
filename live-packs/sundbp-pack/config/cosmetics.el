@@ -17,6 +17,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  ;; '(esk-paren-face ((t (:foreground "color-239"))))
+ '(git-gutter:unchanged ((t (:background "#002b36"))))
  '(whitespace-trailing ((t (:background "cyan" :foreground "#cd0000" :inverse-video nil :underline nil :slant normal :weight bold)))))
 
 ;; Make sure we get the right terminal colors in rxvt
