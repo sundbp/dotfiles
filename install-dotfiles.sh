@@ -81,7 +81,6 @@ if [ `uname` == "Linux" ];then
   rm ~/.xsessionrc
   # use default file for a few, and special ones for others
   ln -s xsession xsession.nt51p9393
-  ln -s xsession xsession.ronald
   ln -s xsession xsession.sundbp-N120
   xsessionfile="xsession.$(hostname)"
   ln -s $DIR/$xsessionfile ~/.xsession
@@ -110,6 +109,9 @@ if [ `uname` == "Darwin" ];then
   rm ~/Library/Preferences/com.googlecode.iterm2.plist
   ln -s $DIR/com.googlecode.iterm2.plist ~/Library/Preferences/
 fi
+
+rm -f ~/pictures
+ln -s $DIR/pictures ~/pictures
 
 echo ""
 echo "Setup of your dot files completed!"

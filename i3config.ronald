@@ -31,6 +31,9 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# lock screen
+bindsym $mod+Shift+x exec xautolock -locknow
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -86,11 +89,11 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+plus scratchpad show
 
 workspace "1: vbox1" output xinerama-0
-workspace "2: vbox2" output xinerama-2
-workspace 4 output xinerama-3
+workspace "2: vbox2" output xinerama-3
+workspace 4 output xinerama-2
 workspace "5: chrome" output xinerama-1
 workspace 7 output xinerama-1
-workspace 9 output xinerama-0
+workspace 9 output xinerama-2
 
 # switch to workspace
 bindsym $mod+1 workspace 1: vbox1
@@ -154,10 +157,12 @@ bar {
     background #000000
     statusline #ffd700
   }
+  mode hide
+  tray_output xinerama-2
   #output xinerama-0
   #output xinerama-2
-  output xinerama-1
-  output xinerama-3
+  #output xinerama-1
+  #output xinerama-3
 }
 
 # My virtualbox vrdp magic
@@ -189,3 +194,8 @@ assign [title="IntercontinentalExchange.*"] 6
 
 # Windows 7 remote
 assign [title="win7-vbox"] 7
+
+# Citrix
+assign [class="Wfica_Seamless"] 8
+for_window [class="Wfica_Seamless"] floating enable
+for_window [class="Wfica_Seamless"] border none
