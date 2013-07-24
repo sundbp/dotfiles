@@ -19,6 +19,10 @@ if [ -f /usr/bin/dropbox ]; then
   dropbox start
 fi
 
-VBoxHeadless --startvm win7 &
+if [ -f /usr/bin/synergy ]; then
+  synergy &
+fi
+
+exec ck-launch-session nm-applet &
 
 exec ck-launch-session i3
