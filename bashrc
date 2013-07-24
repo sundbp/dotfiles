@@ -164,3 +164,11 @@ alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
 
 # lsof helpers
 alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+fi
+GPG_TTY=$(tty)
+export GPG_TTY
+

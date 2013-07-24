@@ -14,6 +14,8 @@ exec ck-launch-session /usr/lib/notification-daemon/notification-daemon &
 # we prefer to use straight ssh-agent
 #eval `gnome-keyring-daemon -r > ~/.gkr`
 
+eval $(gpg-agent --daemon --write-env-file "${HOME}/.gpg-agent-info")
+
 nautilus --no-desktop --no-default-window
 
 if [ -f /usr/bin/dropbox ]; then
