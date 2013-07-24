@@ -103,7 +103,9 @@ if [ `uname` == "Linux" ];then
 
   rm ~/.fonts
   ln -s $DIR/fonts ~/.fonts
-  fc-cache -vf
+  if [ -f /usr/bin/fc-cache ];then
+    fc-cache -vf
+  fi
 fi
 
 if [ `uname` == "Darwin" ];then
