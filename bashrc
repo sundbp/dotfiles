@@ -172,3 +172,7 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
+if [ -f /usr/local/share/chruby/chruby.sh ];then
+  source /usr/local/share/chruby/chruby.sh
+  chruby jruby-1.7.4
+fi
