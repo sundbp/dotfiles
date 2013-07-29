@@ -12,7 +12,8 @@
 ;; The marmelade packages I use:
 (defvar my-marmelade-packages '(slamhound
                                 expectations-mode
-                                coffee-mode)
+                                coffee-mode
+                                tagedit)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
