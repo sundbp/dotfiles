@@ -14,7 +14,7 @@
                                 expectations-mode
                                 coffee-mode
                                 tagedit
-                                zencoding-mode)
+                                emmet-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
