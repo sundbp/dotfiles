@@ -25,4 +25,8 @@ fi
 
 exec ck-launch-session nm-applet &
 
+xset -dpms &
+xset s noblank &
+xset s off &
+
 exec ck-launch-session i3
