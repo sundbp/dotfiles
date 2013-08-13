@@ -13,8 +13,7 @@
 (defvar my-marmelade-packages '(slamhound
                                 expectations-mode
                                 coffee-mode
-                                tagedit
-                                emmet-mode)
+                                tagedit)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
