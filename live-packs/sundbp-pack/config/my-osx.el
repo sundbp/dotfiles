@@ -9,4 +9,4 @@
              default-frame-alist)
   (cond
    ((and (window-system) (eq system-type 'darwin))
-    (add-to-list 'default-frame-alist '(font . "Monaco 14")))))
+    (add-to-list 'default-frame-alist '(font . "Monaco 16")))))
