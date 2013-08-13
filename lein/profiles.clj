@@ -1,5 +1,5 @@
 {:user {:plugins [[lein-pprint "1.1.1"]
-                  [lein-immutant "1.0.0"]
+                  [lein-immutant "1.0.1"]
                   [lein-ancient "0.4.2"]]
         :dependencies [[org.clojure/tools.nrepl "0.2.3"]
                        [slamhound "1.3.3"]
