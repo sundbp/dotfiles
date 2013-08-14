@@ -145,17 +145,6 @@ export PATH="./b:$PATH"
 export LANG=en_US.UTF-8
 export LANGUAGE="en_US:en"
 
-# gnome keyring
-if [ "$TERM" = "rxvt-unicode-256color" -o "$TERM" = "screen-256color" ];then
-  if [ -f ~/.gkr ];then
-    source ~/.gkr
-  else
-    source ~/.bash_ssh_agent_funcs.sh
-    # only bother with ssh agent in interactive sessions
-    setup_ssh_agent_env
-  fi
-fi
-
 # autocorrect cd spelling mistakes
 shopt -s cdspell
 
@@ -165,10 +154,6 @@ alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
 # lsof helpers
 alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
