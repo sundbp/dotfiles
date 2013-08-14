@@ -1,7 +1,8 @@
 # @2012 Patrik Sundberg
 
 # We want to start gpg-agent before keychain to pass arguments
-GPG_AGENTS=$(pgrep gpg-agent |wc -l)
+WHOAMI=$(whoami)
+GPG_AGENTS=$(pgrep -U $WHOAMI gpg-agent |wc -l)
 if [ $GPG_AGENTS -ne 1 ];then
    eval $(gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
 else
