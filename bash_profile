@@ -1,9 +1,8 @@
 # @2012 Patrik Sundberg
 
 # We want to start gpg-agent before keychain to pass arguments
-gpg-agent 2> /dev/null
-GPG_RUNNING=$?
-if [ $GPG_RUNNING -ne 0 ];then
+GPG_AGENTS=$(pgrep gpg-agent |wc -l)
+if [ $GPG_AGENTS -ne 1 ];then
    eval $(gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
 else
    . "${HOME}/.gpg-agent-info"
