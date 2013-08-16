@@ -1,3 +1,28 @@
+;;; nrepl.el --- Client for Clojure nREPL
+
+;; Copyright © 2013 Vital Reactor, LLC
+;;
+;; Author: Ian Eslick <ian@vitalreactor.com>
+;; URL: http://www.github.com/vitalreactor/nrepl-inspect
+;; Version: 0.1.0
+;; Keywords: languages, clojure, nrepl
+;; Package-Requires: ((clojure-mode "2.0.0"))
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;; This file is not part of GNU Emacs.
+
 (require 'cl)
 (require 'nrepl)
 
@@ -21,7 +46,7 @@
     (define-key map "g" 'nrepl-inspector-refresh)
 	(define-key map [tab] 'nrepl-inspector-next-inspectable-object)
 	(define-key map "\C-i" 'nrepl-inspector-next-inspectable-object)
-	(define-key map [(shift tab)]
+	(define-key map [(shift tab)] 
 	  'nrepl-inspector-previous-inspectable-object) ; Emacs translates S-TAB
 	(define-key map [backtab] 'nrepl-inspector-previous-inspectable-object) ; to BACKTAB on X.
 ;;  ("." 'nrepl-inspector-show-source)
@@ -39,7 +64,7 @@
   (setq buffer-read-only t)
   (set (make-local-variable 'truncate-lines) t))
 
-;;
+;; 
 ;; Top level
 ;;
 
@@ -159,7 +184,7 @@ positions before and after executing BODY."
 
 (defun nrepl-find-inspectable-object (direction limit)
   "Find the next/previous inspectable object.
-DIRECTION can be either 'next or 'prev.
+DIRECTION can be either 'next or 'prev.  
 LIMIT is the maximum or minimum position in the current buffer.
 
 Return a list of two values: If an object could be found, the
@@ -228,7 +253,7 @@ If ARG is negative, move forwards."
 (defun nrepl-inspector-operate-on-point ()
   "Invoke the command for the text at point.
 1. If point is on a value then recursivly call the inspector on
-that value.
+that value.  
 2. If point is on an action then call that action.
 3. If point is on a range-button fetch and insert the range."
   (interactive)
@@ -237,7 +262,7 @@ that value.
 	(case property
 	  (nrepl-value-idx
 	   (nrepl-inspector-push value))
-	  ;; TODO: range and action handlers
+	  ;; TODO: range and action handlers 
 	  (t (error "No object at point")))))
 
 (defun nrepl-inspector-operate-on-click (event)
