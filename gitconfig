@@ -3,3 +3,5 @@
 	email = patrik.sundberg@gmail.com
 [help]
   autocorrect = 1
+[push]
+	default = simple
