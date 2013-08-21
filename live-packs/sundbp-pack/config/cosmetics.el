@@ -56,3 +56,7 @@
 
 ;; stop blinking the cursor
 (blink-cursor-mode 0)
+
+;; highlight current line
+(global-hl-line-mode t)
+
