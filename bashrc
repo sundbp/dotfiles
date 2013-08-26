@@ -77,25 +77,25 @@ source ~/.bash_completion.d/git-completion.bash
 
 # prompt
 scm_ps1() {
-  local s=
-  if [[ -d ".svn" ]] ; then
-    s=\(svn\)
-  else
-    s=$(__git_ps1 "(git:%s)")
-  fi
-  echo -n "$s"
+    local s=
+    if [[ -d ".svn" ]] ; then
+        s=\(svn\)
+    else
+        s=$(__git_ps1 "(git:%s)")
+    fi
+    echo -n "$s"
 }
 if [ "$TERM" = "linux" ] || [ "$TERM" = "eterm-color" ];then
-  export PS1="\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+    export PS1="\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
 else
-  export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
+    export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
 fi
 
 export PS1="\[\033[G\]$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # node.js stuff
 if [ -f ~/.nvm/nvm.sh ]; then
-  source ~/.nvm/nvm.sh
+    source ~/.nvm/nvm.sh
 fi
 
 # http proxy stuff
@@ -105,9 +105,9 @@ export no_proxy=$NO_PROXY
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 if [ `uname` == "Darwin" ];then
-  export MANPATH=/usr/local/share/man:$MANPATH
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-  source "`brew --prefix`/etc/grc.bashrc"
+    export MANPATH=/usr/local/share/man:$MANPATH
+    export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+    source "`brew --prefix`/etc/grc.bashrc"
 fi
 
 # vpn related - SNX messes up resolv.conf
@@ -116,8 +116,8 @@ alias connect-vpn-glencore='snx && fix_resolvconf'
 
 # TERM
 if [ "$TERM" == "xterm" -a `hostname` == 'ronald' ]; then
-  # No it isn't, it's gnome-terminal
-  export TERM=xterm-256color
+    # No it isn't, it's gnome-terminal
+    export TERM=xterm-256color
 fi
 
 # stray UBUNTU_MENUPROXY
@@ -125,19 +125,19 @@ unset UBUNTU_MENUPROXY
 
 # turn off XON/XOFF
 if [ -f /bin/stty ];then
-  stty -ixon
+    stty -ixon
 fi
 
 #export RBX_ROOT=$HOME/.rbenv/versions/rbx-2.0.0-dev
 
 # path related bits at the end here
 if [ -d ~/.rbenv ];then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
 fi
 
 if [ -d ~/bin ];then
-  export PATH="$PATH:$HOME/bin"
+    export PATH="$PATH:$HOME/bin"
 fi
 
 export PATH="./b:$PATH"
@@ -158,6 +158,40 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 if [ -f /usr/local/share/chruby/chruby.sh ];then
-  source /usr/local/share/chruby/chruby.sh
-  chruby jruby-1.7.4
+    source /usr/local/share/chruby/chruby.sh
+    chruby jruby-1.7.4
 fi
+
+# marks
+export MARKPATH=$HOME/.marks
+mkdir -p $MARKPATH
+function j {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark {
+    rm -i "$MARKPATH/$1"
+}
+
+if [ `uname` == "Darwin" ];then
+    function marks {
+        \ls -l "$MARKPATH" | tail -n +2 | sed 's/  / /g' | cut -d' ' -f9- | awk -F ' -> ' '{printf "%-10s -> %s\n", $1, $2}'
+    }
+    find="gfind"
+else
+    function marks {
+        ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+    }
+    find="find"
+fi
+
+_completemarks() {
+  local curw=${COMP_WORDS[COMP_CWORD]}
+  local wordlist=$($find $MARKPATH -type l -printf "%f\n")
+  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+  return 0
+}
+
+complete -F _completemarks j unmark
