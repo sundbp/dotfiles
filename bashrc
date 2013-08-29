@@ -195,3 +195,6 @@ _completemarks() {
 }
 
 complete -F _completemarks j unmark
+
+# use our own showterm server
+export SHOWTERM_SERVER=http://showterm.vlan.tuloscapital.com/
