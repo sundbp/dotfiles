@@ -8,7 +8,8 @@
 
 (defun nrepl-reset ()
   (interactive)
-  (set-buffer "*nrepl*")
+  (nrepl-load-file (concat (nrepl-project-directory-for (nrepl-current-dir)) "dev/user.clj"))
+  (switch-to-buffer (nrepl-current-repl-buffer))
   (goto-char (point-max))
   (insert "(user/reset)")
   (nrepl-return)
