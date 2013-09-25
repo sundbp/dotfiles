@@ -39,3 +39,6 @@
 
 ;; expand region
 (global-set-key (kbd "M-=") 'er/expand-region)
+
+;; toggle between test and implementation
+(define-key clojure-mode-map (kbd "C-c .") 'toggle-test-impl)
