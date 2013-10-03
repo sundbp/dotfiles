@@ -2,10 +2,11 @@
 
 ;; first make sure the marmelade packages we rely on are installed
 (require 'package)
+(package-initialize)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
-
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (when (not package-archive-contents)
   (package-refresh-contents))
 
@@ -13,7 +14,9 @@
 (defvar my-marmelade-packages '(slamhound
                                 expectations-mode
                                 coffee-mode
-                                tagedit)
+                                tagedit
+                                helm
+                                helm-ag)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-marmelade-packages)
@@ -35,6 +38,7 @@
 (live-load-config-file "my-nrepl.el")
 (live-load-config-file "my-clojure.el")
 (live-load-config-file "my-html.el")
+(live-load-config-file "my-helm.el")
 
 ;; try to load non-git versioned pw file
 (load "pw" t)

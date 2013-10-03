@@ -97,3 +97,5 @@
   (if (string-match ".*_expectations.clj" (buffer-file-name))
       (find-src)
     (find-expectations)))
+
+(setenv "EXPECTATIONS_SHOW_RAW" "false")
