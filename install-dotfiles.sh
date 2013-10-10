@@ -107,11 +107,6 @@ if [ `uname` == "Linux" ];then
   fi
 fi
 
-if [ `uname` == "Darwin" ];then
-  rm ~/Library/Preferences/com.googlecode.iterm2.plist
-  ln -s $DIR/com.googlecode.iterm2.plist ~/Library/Preferences/
-fi
-
 rm -f ~/pictures
 ln -s $DIR/pictures ~/pictures
 
