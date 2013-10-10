@@ -5,3 +5,5 @@
 
 # install packages
 brew install coreutils grc encfs vim keychain gpg-agent
+brew install emacs --cocoa
+brew linkapps
