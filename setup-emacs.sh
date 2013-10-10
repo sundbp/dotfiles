@@ -16,10 +16,6 @@ if [ ! -d ~/.emacs.d ];then
     bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
 fi
 
-if [ ! -d ~/.live-packs/solarized-pack ];then
-  cd ~/.live-packs
-  git clone https://github.com/siancu/solarized-pack.git
-  cd solarized-pack
-  git submodule init
-  git submodile update
-fi
+cd live-packs/solarized-pack
+git submodule init
+git submodule update
