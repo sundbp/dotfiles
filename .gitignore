@@ -25,3 +25,4 @@ emacs.d/ac-comphist.dat
 lein/indices/
 /bin/.#lein
 /live-packs/sundbp-pack/lib/pw.el
+lein/repl-port
