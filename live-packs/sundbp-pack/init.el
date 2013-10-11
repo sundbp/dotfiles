@@ -7,8 +7,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(when (not package-archive-contents)
-  (package-refresh-contents))
+
+(package-refresh-contents)
 
 ;; The marmelade packages I use:
 (defvar my-marmelade-packages '(slamhound
