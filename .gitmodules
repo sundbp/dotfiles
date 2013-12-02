@@ -14,10 +14,6 @@
 	path = janus/vim-scratch
 	url = http://github.com/duff/vim-scratch.git
   ignore = untracked
-[submodule "janus/vim-ruby-conque"]
-	path = janus/vim-ruby-conque
-	url = http://github.com/sundbp/vim-ruby-conque.git
-  ignore = untracked
 [submodule "fonts/ubuntu-mono-powerline"]
 	path = fonts/ubuntu-mono-powerline
 	url = http://github.com/scotu/ubuntu-mono-powerline.git
