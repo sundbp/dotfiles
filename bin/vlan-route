@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo route -n add -net 10.20.0.0/16 10.20.22.1
