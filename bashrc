@@ -201,3 +201,11 @@ complete -F _completemarks j unmark
 
 # use our own showterm server
 export SHOWTERM_SERVER=http://showterm.vlan.tuloscapital.com/
+
+if [ `uname` == "Darwin" ];then
+   # for switching JVMs
+   alias java6_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"
+   alias java7_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+   # default to java7
+   java7_switch
+fi
