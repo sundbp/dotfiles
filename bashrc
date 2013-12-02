@@ -150,6 +150,9 @@ shopt -s cdspell
 
 # clojure LOC counter
 alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-clj-src='find src/ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-clj-test='find test/ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-clj-setup='find setup/ -name "*.clj"  -print0 | xargs -0 wc -l'
 
 # lsof helpers
 alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
