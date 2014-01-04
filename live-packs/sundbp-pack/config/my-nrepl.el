@@ -11,7 +11,7 @@
 (defun cider-reset ()
   (interactive)
   (cider-load-file (concat (nrepl-project-directory-for (nrepl-current-dir)) "dev/user.clj"))
-  (switch-to-buffer-other-window (nrepl-current-repl-buffer))
+  (switch-to-buffer-other-window (cider-current-repl-buffer))
   (goto-char (point-max))
   (insert "(user/reset)")
   (cider-repl-return)
