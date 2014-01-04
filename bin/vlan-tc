@@ -21,6 +21,7 @@ if [ "$1" = "start" ];then
   # otherwise it wont be sent via vlan256 interface!
   echo "Sleeping 5 seconds to allow interface to get IP via DHCP.."
   sleep 5
+  sudo route -n delete -net 10.20.0.0/16 $gw
   sudo route -n add -net 10.20.0.0/16 $gw
   echo "Done - connected to VLAN on interface vlan256."
 elif [ "$1" = "stop" ];then
