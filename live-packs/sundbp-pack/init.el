@@ -35,7 +35,7 @@
 ;;(live-load-config-file "my-git-gutter-fringe.el")
 (live-load-config-file "my-osx.el")
 (live-load-config-file "my-ansi-term.el")
-(live-load-config-file "my-nrepl.el")
+(live-load-config-file "my-cider.el")
 (live-load-config-file "my-clojure.el")
 (live-load-config-file "my-html.el")
 ;; (live-load-config-file "my-helm.el")
