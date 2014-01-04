@@ -54,6 +54,3 @@
 [submodule "live-packs/sundbp-pack/vendor/submodules/emmet-mode"]
 	path = live-packs/sundbp-pack/vendor/submodules/emmet-mode
 	url = https://github.com/smihica/emmet-mode.git
-[submodule "live-packs/sundbp-pack/vendor/submodules/helm-nrepl"]
-	path = live-packs/sundbp-pack/vendor/submodules/helm-nrepl
-	url = https://github.com/osener/helm-nrepl.git
