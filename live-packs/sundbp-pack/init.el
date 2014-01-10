@@ -12,7 +12,7 @@
 
 ;; The marmelade packages I use:
 (defvar my-marmelade-packages '(slamhound
-                                expectations-mode
+                                ;;expectations-mode
                                 coffee-mode
                                 tagedit
                                 helm
@@ -38,7 +38,8 @@
 (live-load-config-file "my-cider.el")
 (live-load-config-file "my-clojure.el")
 (live-load-config-file "my-html.el")
-(live-load-config-file "my-edit-server.el")
+;;(live-load-config-file "my-edit-server.el")
+(live-load-config-file "my-ac.el")
 
 ;; try to load non-git versioned pw file
 (load "pw" t)
