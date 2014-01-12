@@ -46,3 +46,4 @@
 (define-key cider-repl-mode-map [C-tab] 'ac-complete-words-in-all-buffer)
 (define-key cider-mode-map (kbd "M-RET") 'ac-nrepl-popup-doc)
 (define-key cider-mode-map (kbd "C-M-RET") 'cider-doc)
+(define-key cider-mode-map (kbd "C-c M-k") 'sundbp-cider-reset)
