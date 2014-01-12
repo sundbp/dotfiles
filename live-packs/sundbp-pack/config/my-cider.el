@@ -18,3 +18,6 @@
   (message "Started system refresh via tools.namespace."))
 
 (global-set-key (kbd "C-c M-k") 'cider-reset)
+
+(dolist (mode '(cider-repl-mode))
+  (add-to-list 'ac-modes mode))
