@@ -212,3 +212,6 @@ fi
 
 # docker
 alias d="docker"
+
+# emacs app
+alias emacs-app="open -a /Applications/Emacs.app"
