@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ -z $1 ]];then
+  echo "usage: kvm-tunnel target-host [e.g. tc1-m.tuloscapital.com]"
+  exit
+fi
+ssh -v -N -L 443:$1:443 sundbp@torvalla.tuloscapital.com &
+ssh -v -N -L 5900:$1:5900 sundbp@torvalla.tuloscapital.com
+kill %1
+echo "Tunnel down."

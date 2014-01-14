@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -z $1 ]];then
+  echo "usage: torvalla-proxy-tunnel local-port target-host target-port"
+  exit
+fi
+ssh -v -N -L $1:$2:$3 sundbp@torvalla.tuloscapital.com
