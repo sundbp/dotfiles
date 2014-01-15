@@ -10,8 +10,8 @@
 
 (defun sundbp-cider-reset ()
   (interactive)
-  (cider-load-file (concat (nrepl-project-directory-for (nrepl-current-dir)) "dev/user.clj"))
   (cider-switch-to-relevant-repl-buffer '())
+  (cider-load-file (concat (nrepl-project-directory-for (nrepl-current-dir)) "dev/user.clj"))
   (goto-char (point-max))
   (insert "(user/reset)")
   (cider-repl-return)
