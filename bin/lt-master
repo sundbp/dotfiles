@@ -1,0 +1,4 @@
+#!/bin/bash
+cd ~/dev/_others/LightTable
+export LT_HOME=$(pwd)/deploy
+./deploy/light "$@"

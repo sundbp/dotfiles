@@ -1,6 +1,7 @@
 (require 'cider)
 (require 'cider-repl)
 (require 'nrepl-client)
+(require 'cider-macroexpansion)
 
 (custom-set-variables '(cider-repl-use-pretty-printing t)
                       '(cider-repl-history-file "~/.cider-history"))
@@ -14,7 +15,7 @@
     (cider-switch-to-relevant-repl-buffer '())
     (cider-load-file user-file)
     (goto-char (point-max))
-    (insert "(user/reset-session)")
+    (insert "(user/recompile)")
     (cider-repl-return)
     (message "Started session refresh via tools.namespace.")))
 
