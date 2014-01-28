@@ -1,0 +1,12 @@
+#!/bin/sh
+
+##
+# Keep local path in sync with remote path on server.
+# Ignore .git metadata.
+#
+local=$1
+remote=$2
+
+cd "$local" &&
+  rsync -viru --exclude .git --exclude-from=.gitignore --delete . $remote &&
+  fswatch . "date +%H:%M:%S && rsync -iru --exclude .git --exclude-from=.gitignore --delete . $remote"

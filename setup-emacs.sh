@@ -19,3 +19,6 @@ fi
 cd live-packs/solarized-pack
 git submodule init
 git submodule update
+
+cd ~/.emacs.d
+git submodule update --recursive
