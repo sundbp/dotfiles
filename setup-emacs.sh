@@ -21,4 +21,5 @@ git submodule init
 git submodule update
 
 cd ~/.emacs.d
+git submodule init
 git submodule update --recursive
