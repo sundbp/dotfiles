@@ -1,0 +1,91 @@
+;; User keymap
+;; -----------------------------
+;; Keymaps are stored as a set of diffs that are merged together together
+;; to create the final set of keys. You can modify these diffs to either add
+;; or subtract bindings.
+;;
+;; Like behaviors, keys are bound by tag. When objects with those tags are active
+;; the key bindings are live. Keys can be bound to any number of Light Table commands,
+;; allowing you the flexibility to execute multiple operations together. To see a list
+;; of all the commands you can execute, start typing a word related to the thing you
+;; want to do in between the square brackets (e.g. type "editor").
+
+{:+ {:app {"pmeta-ctrl-f" [:window.fullscreen]
+           "ctrl-pmeta-c" [:toggle-console]
+           "pmeta-shift-c" [:console-tab]
+           "ctrl-c c" [:clear-console]
+           "ctrl-pmeta-r" [:instarepl]
+           "pmeta-x" [:show-commandbar]
+           "pmeta-shift-5" [:searcher.show]
+           "ctrl-shift-=" [:window.zoom-in]
+           "ctrl--" [:window.zoom-out]
+           "ctrl-x p" [:navigate-workspace-transient]}
+
+     :editor {"alt-w" [:editor.watch.watch-selection]
+              "alt-shift-w" [:editor.watch.unwatch]
+
+              "ctrl-right" [:paredit.grow.right]
+              "ctrl-left" [:paredit.shrink.right]
+              "ctrl-pmeta-left" [:paredit.grow.left]
+              "ctrl-pmeta-right" [:paredit.shrink.left]
+              "pmeta-=" [:paredit.select.parent]
+              "pmeta-s" [:paredit.unwrap.parent]
+              "ctrl-k" [:paredit-plus.kill]
+              "pmeta-space" [:lt.plugins.lt-sundbp/remove-whitespace-around-cursor]
+
+              "ctrl-t" [:find.fill-selection
+                        :find.show]
+
+              "pmeta-right" [:editor.group-right]
+              "pmeta-left" [:editor.group-left]
+              "ctrl-up" [:lt.plugins.lt-sundbp/navigate-up-one-paragraph]
+              "ctrl-down" [:lt.plugins.lt-sundbp/navigate-down-one-paragraph]
+
+              "pmeta-d" [:editor.delete-group-right]
+              "pmeta-w" [:editor.copy]
+              "ctrl-w" [:editor.cut]
+              "ctrl-y" [:editor.paste]
+
+              "ctrl-shift--" [:editor.undo]
+              "ctrl-x ctrl-s" [:save]
+              "ctrl-a" [:editor.line-start-smart]
+              "ctrl-h" [:editor.doc.toggle]
+              "pmeta-shift-." [:editor.doc-end
+                               :editor.selection.clear]
+              "pmeta-shift-," [:editor.doc-start
+                               :editor.selection.clear]
+              "pmeta-/" [:toggle-comment-selection]
+              "tab" [:smart-indent-selection]
+              "shift-tab" [:auto-complete.force]}
+
+     :editor.keys.hinting.active {"enter" [:passthrough]
+                                  "tab" [:auto-complete]}
+
+     ;;:editor.keys.normal {"ctrl-s" [:find.show]}
+
+     :editor.clj.instarepl {"ctrl-pmeta-l" [:instarepl.toggle-live]}
+
+     :tabs {"pmeta-[" [:tabs.prev]
+            "pmeta-]" [:tabs.next]
+            "ctrl-x k" [:tabs.close]
+            "ctrl-x right" [:tabset.next]
+            "ctrl-x left" [:tabset.prev]
+            "ctrl-shift-right" [:tabs.move-next-tabset]
+            "ctrl-shift-left" [:tabs.move-prev-tabset]}
+
+     :popup {"ctrl-g" [(:popup.escape)]}
+     :sidebar.clients {"ctrl-g" [:hide-connect]}
+     :sidebar.doc.search.input {"ctrl-g" [:docs.search.hide]}
+     :find-bar {"ctrl-g" [:find.clear :find.hide]}
+     :find-bar.replace {"ctrl-g" [:find.clear :find.hide]}
+     :browser.url-bar {"ctrl-g" [:browser.focus-content]},
+     :filter-list.input {"ctrl-g" [(:filter-list.input.escape! :force)]}
+     :options-input {"ctrl-g" [:options-input.escape!]}
+     :tree.rename {"ctrl-g" [:workspace.rename.cancel!]}}
+
+ :- {:editor {"ctrl-d" [:editor.doc.toggle]
+              "pmeta-s" [:save]}
+     :editor.keys.normal {"pmeta-f" [:find.fill-selection
+                                     :find.show]
+                          "tab" [:auto-complete]}
+     :tabs {"pmeta-w" [:tabs.close]}}}

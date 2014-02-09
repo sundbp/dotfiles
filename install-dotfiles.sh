@@ -110,5 +110,11 @@ fi
 rm -f ~/pictures
 ln -s $DIR/pictures ~/pictures
 
+# LightTable
+rm ~/Library/Application\ Support/LightTable/settings/user.keymap
+rm ~/Library/Application\ Support/LightTable/settings/user.behaviors
+ln -s $DIR/lt/user.keymap ~/Library/Application\ Support/LightTable/settings/user.keymap
+ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
+
 echo ""
 echo "Setup of your dot files completed!"
