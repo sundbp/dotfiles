@@ -3,6 +3,6 @@ Host *
   ForwardX11 yes
   ServerAliveInterval 60
 
-Host ps
-  HostName ps.vannavolga.info
+Host torvalla
+  HostName torvalla.tuloscapital.com
   User sundbp
