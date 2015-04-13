@@ -1,3 +1,17 @@
 #!/bin/bash
 
-ssh -v -L 127.0.0.1:8194:10.20.22.3:7777 -N 127.0.0.1
+if [[ $1 = "" ]];then
+  is_home=$(netstat -rn | grep default | grep 10.10.10.1 | wc -l)
+
+  if [[ $is_home -gt 0 ]];then
+    echo "Using home office settings.."
+    ssh -v -L 127.0.0.1:8194:10.20.22.3:7777 -N 127.0.0.1
+  else
+    echo "Using office settings.."
+    ssh -v -L 127.0.0.1:8194:10.20.24.20:7777 -N 127.0.0.1
+  fi
+else
+  echo "Using host $1.."
+  ssh -v -L 127.0.0.1:8194:$1:7777 -N 127.0.0.1
+fi
+
