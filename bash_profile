@@ -4,7 +4,7 @@
 WHOAMI=$(whoami)
 GPG_AGENTS=$(pgrep -U $WHOAMI gpg-agent |wc -l)
 if [ $GPG_AGENTS -ne 1 ];then
-   eval $(gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
+   eval $(/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
 else
    . "${HOME}/.gpg-agent-info"
    export GPG_AGENT_INFO
