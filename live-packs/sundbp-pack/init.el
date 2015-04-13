@@ -1,27 +1,29 @@
 ;; sundbp pack init file
 
 ;; first make sure the marmelade packages we rely on are installed
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;(require 'package)
+;;(package-initialize)
+;;(add-to-list 'package-archives
+;;             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;;(add-to-list 'package-archives
+;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(package-refresh-contents)
+;;(package-refresh-contents)
 
 ;; The marmelade packages I use:
-(defvar my-marmelade-packages '(slamhound
-                                ;;expectations-mode
-                                coffee-mode
-                                tagedit
-                                helm
-                                helm-ag)
-  "A list of packages to ensure are installed at launch.")
+;;(defvar my-marmelade-packages '(slamhound
+;;                                company
+;;                                company-quickhelp
+;;                                ;;expectations-mode
+;;                                coffee-mode
+;;                                tagedit
+;;                                helm
+;;                                helm-ag)
+;;  "A list of packages to ensure are installed at launch.")
 
-(dolist (p my-marmelade-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+;;(dolist (p my-marmelade-packages)
+;;  (when (not (package-installed-p p))
+;;    (package-install p)))
 
 ;; no zoning!
 (setq live-disable-zone t)
@@ -42,4 +44,5 @@
 (live-load-config-file "my-ac.el")
 
 ;; try to load non-git versioned pw file
+(load "refheap" t)
 (load "pw" t)

@@ -1,4 +1,4 @@
-(require 'clojure-test-mode)
+;;(require 'clojure-test-mode)
 
 (add-hook 'clojure-mode-hook
           (lambda ()
@@ -56,9 +56,9 @@
     (concat (expand-file-name project-root) "src")
     (concat project-root test-home)
     (file-name-sans-extension (buffer-file-name)))
-   "_expectations.clj"))
+   "_test.clj"))
 
-(defun find-expectations ()
+(defun find-tests ()
   (interactive)
   (let* ((project-root (locate-dominating-file
                          (file-name-directory (buffer-file-name)) "project.clj")))
@@ -77,7 +77,7 @@
     (concat project-root "src")
     (file-name-directory file-name))
    (replace-regexp-in-string
-    "_expectations"
+    "_test"
     ""
     (file-name-nondirectory file-name))))
 
@@ -94,8 +94,8 @@
 
 (defun toggle-test-impl ()
   (interactive)
-  (if (string-match ".*_expectations.clj" (buffer-file-name))
+  (if (string-match ".*_test.clj" (buffer-file-name))
       (find-src)
-    (find-expectations)))
+    (find-tests)))
 
 (setenv "EXPECTATIONS_SHOW_RAW" "false")

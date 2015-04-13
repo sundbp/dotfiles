@@ -42,8 +42,9 @@
 
 ;; toggle between test and implementation
 (define-key clojure-mode-map (kbd "C-c .") 'toggle-test-impl)
-(define-key clojure-mode-map [C-tab] 'ac-complete-words-in-same-mode-buffers)
-(define-key cider-repl-mode-map [C-tab] 'ac-complete-words-in-all-buffer)
-(define-key cider-mode-map (kbd "M-RET") 'ac-nrepl-popup-doc)
-(define-key cider-mode-map (kbd "C-M-RET") 'cider-doc)
+;; (define-key clojure-mode-map [C-tab] 'ac-complete-words-in-same-mode-buffers)
+;; (define-key cider-repl-mode-map [C-tab] 'ac-complete-words-in-all-buffer)
+;; (define-key cider-mode-map (kbd "M-RET") 'ac-nrepl-popup-doc)
+(define-key cider-mode-map (kbd "M-RET") 'cider-doc)
 (define-key cider-mode-map (kbd "C-c M-k") 'sundbp-cider-reset)
+(define-key cider-mode-map (kbd "C-c M-l") 'sundbp-cider-recompile)
