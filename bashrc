@@ -242,3 +242,9 @@ fi
 
 # python binaries
 export PATH="~/Library/Python/2.7/bin:$PATH"
+
+# convenience
+alias jj-tmux="mosh jj -- tmux a"
+alias jj-tmux-new="mosh jj -- tmux"
+alias ronald-tmux="mosh ronald -- tmux a"
+alias ronald-tmux-new="mosh ronald -- tmux"
