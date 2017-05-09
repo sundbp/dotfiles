@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# @2012 Patrik Sundberg
+# Patrik Sundberg <patrik.sundberg@gmail.com>
 #
 # This sets up my dot files.
 
 read -p "This DELETES your current dot files. Are you sure you want to proceed? [y or n]" -n 1 -r
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
-  echo "Skipping install.."
-  exit
+    echo "Skipping install.."
+    exit
 fi
 
 SOURCE="${BASH_SOURCE[0]}"
@@ -67,54 +67,59 @@ ln -s $DIR/aprc ~/.aprc
 rm ~/.lein
 ln -s $DIR/lein ~/.lein
 
-rm ~/.emacs-live.el
-ln -s $DIR/emacs-live.el ~/.emacs-live.el
+# Old emacs-live settings
+#rm ~/.emacs-live.el
+#ln -s $DIR/emacs-live.el ~/.emacs-live.el
+#rm ~/.live-packs
+#ln -s $DIR/live-packs ~/.live-packs
 
-rm ~/.live-packs
-ln -s $DIR/live-packs ~/.live-packs
+rm -rf ~/.emacs.d
+cd ~
+git clone https://github.com/syl20bnr/spacemacs .emacs.d
+cd $DIR
+rm ~/.spacemacs
+ln -s $DIR/spacemacs/.spacemacs ~/.spacemace
 
 rm ~/.ssh/config
 ln -s $DIR/ssh/config ~/.ssh/
 
 if [ `uname` == "Linux" ];then
-  rm ~/.xsession
-  rm ~/.xsessionrc
-  # use default file for a few, and special ones for others
-  ln -s xsession xsession.nt51p9393
-  ln -s xsession xsession.sundbp-N120
-  xsessionfile="xsession.$(hostname)"
-  ln -s $DIR/$xsessionfile ~/.xsession
-  ln -s ~/.xsession ~/.xsessionrc
+    # No X setup for now
+    #rm ~/.xsession
+    #rm ~/.xsessionrc
+    #xsessionfile="xsession.$(hostname)"
+    #ln -s $DIR/$xsessionfile ~/.xsession
+    #ln -s ~/.xsession ~/.xsessionrc
+    
+    #rm ~/.Xdefaults
+    #ln -s $DIR/Xdefaults ~/.Xdefaults
+    
+    #rm ~/.i3/config
+    #mkdir -p ~/.i3
+    #i3configfile="i3config.$(hostname)"
+    #ln -s $DIR/$i3configfile ~/.i3/config
+    
+    #rm ~/.i3status.conf
+    #ln -s $DIR/i3status.conf ~/.i3status.conf
+    
+    rm ~/.fehbg
+    ln -s $DIR/fehbg ~/.fehbg
 
-  rm ~/.Xdefaults
-  ln -s $DIR/Xdefaults ~/.Xdefaults
-
-  rm ~/.i3/config
-  mkdir -p ~/.i3
-  i3configfile="i3config.$(hostname)"
-  ln -s $DIR/$i3configfile ~/.i3/config
-
-  rm ~/.i3status.conf
-  ln -s $DIR/i3status.conf ~/.i3status.conf
-
-  rm ~/.fehbg
-  ln -s $DIR/fehbg ~/.fehbg
-
-  rm ~/.fonts
-  ln -s $DIR/fonts ~/.fonts
-  if [ -f /usr/bin/fc-cache ];then
-    fc-cache -vf
-  fi
+    rm ~/.fonts
+    ln -s $DIR/fonts ~/.fonts
+    if [ -f /usr/bin/fc-cache ];then
+        fc-cache -vf
+    fi
 fi
 
 rm -f ~/pictures
 ln -s $DIR/pictures ~/pictures
 
 # LightTable
-rm ~/Library/Application\ Support/LightTable/settings/user.keymap
-rm ~/Library/Application\ Support/LightTable/settings/user.behaviors
-ln -s $DIR/lt/user.keymap ~/Library/Application\ Support/LightTable/settings/user.keymap
-ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
+#rm ~/Library/Application\ Support/LightTable/settings/user.keymap
+#rm ~/Library/Application\ Support/LightTable/settings/user.behaviors
+#ln -s $DIR/lt/user.keymap ~/Library/Application\ Support/LightTable/settings/user.keymap
+#ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
 
 echo ""
 echo "Setup of your dot files completed!"
