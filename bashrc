@@ -150,7 +150,9 @@ shopt -s cdspell
 
 # clojure LOC counter
 alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-cljs='find . -name "*.cljs"  -print0 | xargs -0 wc -l'
 alias loc-clj-src='find src/ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-cljs-src='find src/ -name "*.cljs"  -print0 | xargs -0 wc -l'
 alias loc-clj-test='find test/ -name "*.clj"  -print0 | xargs -0 wc -l'
 alias loc-clj-setup='find setup/ -name "*.clj"  -print0 | xargs -0 wc -l'
 
@@ -204,14 +206,16 @@ export SHOWTERM_SERVER=http://showterm.vlan.tuloscapital.com/
 
 if [ `uname` == "Darwin" ];then
    # for switching JVMs
-   alias java6_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"
+   #alias java6_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"
    alias java7_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+   alias java8_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
    # default to java7
-   export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+   export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 fi
 
-# docker
+# docker & k8
 alias d="docker"
+alias k="kubectl"
 
 # emacs app
 alias emacs-app="open -a /Applications/Emacs.app"
@@ -220,4 +224,19 @@ alias emacs-app="open -a /Applications/Emacs.app"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # boot-clj settings
-export BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xmx2g -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+export BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xmx2g -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled"
+
+# AWS
+complete -C aws_completer aws
+
+# releasing
+function releasesimple() { `curl http://jenkins.vlan.tuloscapital.com:8080/job/non-modules-release/buildWithParameters?project=$1`; }
+function deployservice() { `curl http://jenkins.vlan.tuloscapital.com:8080/job/deploy-service/buildWithParameters?service=$1\&version=$2`; }
+function releaseservice(){ `curl  http://jenkins.vlan.tuloscapital.com:8080/job/release-service/buildWithParameters?project=$1\&module=$2` ;}
+
+# google-cloud-sdk
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+
+# python binaries
+export PATH="~/Library/Python/2.7/bin:$PATH"

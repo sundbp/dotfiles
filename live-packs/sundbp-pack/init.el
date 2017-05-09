@@ -1,12 +1,12 @@
 ;; sundbp pack init file
 
 ;; first make sure the marmelade packages we rely on are installed
-;;(require 'package)
-;;(package-initialize)
-;;(add-to-list 'package-archives
-;;             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;;(add-to-list 'package-archives
-;;             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;;(package-refresh-contents)
 

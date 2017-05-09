@@ -26,3 +26,7 @@ lein/indices/
 /bin/.#lein
 /live-packs/sundbp-pack/lib/pw.el
 lein/repl-port
+/lein/credentials.clj
+/lein/credentials.clj.gpg
+/lein/repl-history
+/live-packs/sundbp-pack/config/my-clojure.elc

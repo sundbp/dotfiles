@@ -1,17 +1,27 @@
 #!/bin/bash
 
 if [[ $1 = "" ]];then
-  is_home=$(netstat -rn | grep default | grep 10.10.10.1 | wc -l)
+  echo "Using office settings.."
+  ssh -v -L 127.0.0.1:8194:socat-forwarding:8003 -N 127.0.0.1
 
-  if [[ $is_home -gt 0 ]];then
-    echo "Using home office settings.."
-    ssh -v -L 127.0.0.1:8194:10.20.22.3:7777 -N 127.0.0.1
-  else
-    echo "Using office settings.."
-    ssh -v -L 127.0.0.1:8194:10.20.24.20:7777 -N 127.0.0.1
-  fi
+  #is_home=$(netstat -rn | grep default | grep 10.20.22.1 | wc -l)
+  #is_home_wifi=$(netstat -rn | grep default | grep 10.10.10.1 | wc -l)
+  #is_office=$(netstat -rn |grep default | grep 10.40.24.1 | wc -l)
+  #if [[ $is_home -gt 0 ]];then
+  #  echo "Using home office settings.."
+  #  ssh -v -L 127.0.0.1:8194:socat-forwarding:8001 -N 127.0.0.1
+  #elif [[ $is_home_wifi -gt 0 ]];then
+  #  echo "Using home settings.."
+  #  ssh -v -L 127.0.0.1:8194:socat-forwarding:8001 -N 127.0.0.1
+  #elif [[ $is_office -gt 0 ]];then
+  #  echo "Using office settings.."
+  #  ssh -v -L 127.0.0.1:8194:socat-forwarding:8003 -N 127.0.0.1
+  #else
+  #  echo "Using mobile settings.."
+  #  ssh -v -L 127.0.0.1:8194:socat-forwarding:8002 -N 127.0.0.1
+  #fi
 else
-  echo "Using host $1.."
-  ssh -v -L 127.0.0.1:8194:$1:7777 -N 127.0.0.1
+  echo "Using host $1:$2.."
+  ssh -v -L 127.0.0.1:8194:$1:$2 -N 127.0.0.1
 fi
 

@@ -43,7 +43,7 @@
 (setq cider-interactive-eval-result-prefix ";; => ")
 (setq cider-repl-use-clojure-font-lock t)
 
-(require 'clj-refactor)
-(add-hook 'clojure-mode-hook (lambda ()
-                               (clj-refactor-mode 1)
-                               (cljr-add-keybindings-with-prefix "C-c C-m")))
+;; (require 'clj-refactor)
+;; (add-hook 'clojure-mode-hook (lambda ()
+;;                                (clj-refactor-mode 1)
+;;                                (cljr-add-keybindings-with-prefix "C-c C-m")))

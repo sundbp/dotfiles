@@ -18,6 +18,7 @@
      :editor [:lt.objs.editor/no-wrap
               ;;:lt.objs.editor/line-numbers
               (:lt.objs.style/set-theme "default")
+              ;;(:lt.objs.style/set-theme "base16-solarized-light")
               :lt.objs.editor/highlight-current-line
               :lt.objs.editor.file/remove-trailing-whitespace
               :lt.plugins.trail-whitespace/show-trailing-whitespace]

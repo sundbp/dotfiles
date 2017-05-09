@@ -24,6 +24,8 @@
      :editor {"alt-w" [:editor.watch.watch-selection]
               "alt-shift-w" [:editor.watch.unwatch]
 
+              "backspace" [:paredit-plus.backward-delete]
+              "ctrl-d" [:paredit-plus.forward-delete]
               "ctrl-right" [:paredit.grow.right]
               "ctrl-left" [:paredit.shrink.right]
               "ctrl-pmeta-left" [:paredit.grow.left]
@@ -33,7 +35,7 @@
               "ctrl-k" [:paredit-plus.kill]
               "pmeta-space" [:lt.plugins.lt-sundbp/remove-whitespace-around-cursor]
 
-              "ctrl-t" [:find.fill-selection
+              "ctrl-s" [:find.fill-selection
                         :find.show]
 
               "pmeta-right" [:editor.group-right]
@@ -61,8 +63,6 @@
      :editor.keys.hinting.active {"enter" [:passthrough]
                                   "tab" [:auto-complete]}
 
-     ;;:editor.keys.normal {"ctrl-s" [:find.show]}
-
      :editor.clj.instarepl {"ctrl-pmeta-l" [:instarepl.toggle-live]}
 
      :tabs {"pmeta-[" [:tabs.prev]
@@ -73,7 +73,7 @@
             "ctrl-shift-right" [:tabs.move-next-tabset]
             "ctrl-shift-left" [:tabs.move-prev-tabset]}
 
-     :popup {"ctrl-g" [(:popup.escape)]}
+     :popup {"ctrl-g" [(:popup.escap)]}
      :sidebar.clients {"ctrl-g" [:hide-connect]}
      :sidebar.doc.search.input {"ctrl-g" [:docs.search.hide]}
      :find-bar {"ctrl-g" [:find.clear :find.hide]}
@@ -87,5 +87,7 @@
               "pmeta-s" [:save]}
      :editor.keys.normal {"pmeta-f" [:find.fill-selection
                                      :find.show]
-                          "tab" [:auto-complete]}
-     :tabs {"pmeta-w" [:tabs.close]}}}
+                          "tab" [:auto-complete]
+                          "backspace" [:editor.backspace-pair]}
+     :tabs {"pmeta-w" [:tabs.close]}
+     :popup {"pmeta-w" [:tabs.close]}}}

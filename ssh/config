@@ -7,6 +7,18 @@ Host torvalla
   HostName torvalla.tuloscapital.com
   User sundbp
 
+Host jj
+  HostName 10.10.10.5
+  User sundbp
+
+Host ronald
+  HostName 10.10.10.50
+  User sundbp
+
+Host router
+  HostName 10.10.10.1
+  User ubnt
+
 Host www.tuloscapital.com
   ProxyCommand ssh -q torvalla nc -q0 %h 22
 
@@ -20,3 +32,8 @@ Host tc1.tuloscapital.com
 Host tc2.tuloscapital.com
   User root
   ProxyCommand ssh -q vyos@r2.tuloscapital.com nc -q0 %h 22
+
+Host db1.tuloscapital.com
+  HostName 148.251.50.202
+  User root
+  ProxyCommand ssh -q vyos@r1.tuloscapital.com nc -q0 %h 22

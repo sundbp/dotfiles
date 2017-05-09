@@ -14,4 +14,5 @@
 (setq company-minimum-prefix-length 2)
 (setq company-tooltip-flip-when-above t)
 
+(require 'company-quickhelp)
 (company-quickhelp-mode 1)

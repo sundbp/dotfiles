@@ -99,3 +99,11 @@
     (find-tests)))
 
 (setenv "EXPECTATIONS_SHOW_RAW" "false")
+
+(defun clj-refactor-hook ()
+  (yas-minor-mode 1) ; for adding require/use/import
+  )
+
+(add-hook 'clojure-mode-hook #'clj-refactor-hook)
+
+(add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
