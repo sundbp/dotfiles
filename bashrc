@@ -235,8 +235,10 @@ function deployservice() { `curl http://jenkins.vlan.tuloscapital.com:8080/job/d
 function releaseservice(){ `curl  http://jenkins.vlan.tuloscapital.com:8080/job/release-service/buildWithParameters?project=$1\&module=$2` ;}
 
 # google-cloud-sdk
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+if [ `uname` == "Darwin" ];then
+   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc'
+   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc'
+fi
 
 # python binaries
 export PATH="~/Library/Python/2.7/bin:$PATH"
