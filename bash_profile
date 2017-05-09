@@ -6,8 +6,6 @@ GPG_AGENTS=$(pgrep -U $WHOAMI gpg-agent |wc -l)
 if [ $GPG_AGENTS -ne 1 ];then
    if [ `uname` == "Darwin" ];then
       eval $(/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
-   else
-      eval $(gpg-agent --daemon --no-grab --write-env-file $HOME/.gpg-agent-info)
    fi
 else
    . "${HOME}/.gpg-agent-info"
