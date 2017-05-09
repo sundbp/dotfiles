@@ -8,7 +8,7 @@ if [ $GPG_AGENTS -ne 1 ];then
       eval $(/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase --write-env-file "${HOME}/.gpg-agent-info")
    fi
 else
-   . "${HOME}/.gpg-agent-info"
+   test -e "$HOME/.gpg-agent-info" && source "${HOME}/.gpg-agent-info"
    export GPG_AGENT_INFO
 fi
 
