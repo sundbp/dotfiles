@@ -1,17 +1,16 @@
-{:user {:plugins [[lein-ancient "0.4.2" :exclusions [org.clojure/clojure commons-codec]]
-                  [cider/cider-nrepl "0.8.2"]
-                  [refactor-nrepl "0.2.2"]]
-        :dependencies [[slamhound "1.5.5"]
-                       [spyscope "0.1.5"]]
-        :injections [(require 'spyscope.core)]
-        :aliases {"slamhound" ["run" "-m" "slam.hound"]}
-        :mirrors {"central" {:name "central-proxy"
-                           :url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/central/"}
-                 "clojars" {:name "clojars-proxy"
-                            :url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/clojars/"}}
-        :deploy-repositories [["snapshots" {:url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/snapshots/"
-                                            :username "tulos"
-                                            :password "tulos123"}]
-                              ["releases" {:url "http://nexus.vlan.tuloscapital.com:8081/nexus/content/repositories/releases/"
-                                           :username "tulos"
-                                           :password "tulos123"}]]}}
+{:repl {:dependencies [[org.clojure/clojure "1.9.0-alpha15"]]
+        :repl-options {:timeout 120000}}
+ :user {:plugins [[com.billpiel/sayid "0.0.10"]]
+        :dependencies [[jsofra/data-scope "0.1.0"]]
+        :injections [(require 'data-scope.charts)
+                     (require 'data-scope.graphs)
+                     (require 'data-scope.inspect)
+                     (require 'data-scope.pprint)]
+        :deploy-repositories [
+                              ;; ["snapshots" {:url "http://artifactory.default.svc.cluster.local/artifactory/libs-snapshot-local/"
+                              ;;               :username "admin"}]
+                              ;; ["releases" {:url "http://artifactory.default.svc.cluster.local/artifactory/libs-release-local/"
+                              ;;              :username "admin"}]
+                              ["releases" {:url "http://10.10.10.5:8081/artifactory/libs-release-local/"
+                                           :username "sundbp"}]]
+        }}
