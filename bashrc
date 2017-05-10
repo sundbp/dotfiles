@@ -87,7 +87,7 @@ scm_ps1() {
 }
 if [ "$TERM" = "linux" ] || [ "$TERM" = "eterm-color" ];then
     export PS1="\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
-elif ["$TERM" = "dumb" ];then
+elif [ "$TERM" = "dumb" ];then
     export PS1="> "
 else
     export PS1="\[\033]0;\u@\h:\w\007\]\[\033[00;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h:\[\033[00;34m\]\w \[\033[0;33m\]\$(scm_ps1)\[\033[00m\]$\[\033[00m\] "
@@ -115,12 +115,6 @@ fi
 # vpn related - SNX messes up resolv.conf
 alias fix-resolvconf='sudo rm /etc/resolv.conf && echo "nameserver 127.0.0.1" > /tmp/rconf && echo "search glennt.london.glencore.com" >> /tmp/rconf && sudo cp /tmp/rconf /etc/resolv.conf'
 alias connect-vpn-glencore='snx && fix_resolvconf'
-
-# TERM
-if [ "$TERM" == "xterm" -a `hostname` == 'ronald' ]; then
-    # No it isn't, it's gnome-terminal
-    export TERM=xterm-256color
-fi
 
 # stray UBUNTU_MENUPROXY
 unset UBUNTU_MENUPROXY
