@@ -67,12 +67,6 @@ ln -s $DIR/aprc ~/.aprc
 rm ~/.lein
 ln -s $DIR/lein ~/.lein
 
-# Old emacs-live settings
-#rm ~/.emacs-live.el
-#ln -s $DIR/emacs-live.el ~/.emacs-live.el
-#rm ~/.live-packs
-#ln -s $DIR/live-packs ~/.live-packs
-
 rm -rf ~/.emacs.d
 cd ~
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
@@ -116,10 +110,12 @@ rm -f ~/pictures
 ln -s $DIR/pictures ~/pictures
 
 # LightTable
-#rm ~/Library/Application\ Support/LightTable/settings/user.keymap
-#rm ~/Library/Application\ Support/LightTable/settings/user.behaviors
-#ln -s $DIR/lt/user.keymap ~/Library/Application\ Support/LightTable/settings/user.keymap
-#ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
+if [ `uname` == "Darwin" ];then
+    rm ~/Library/Application\ Support/LightTable/settings/user.keymap
+    rm ~/Library/Application\ Support/LightTable/settings/user.behaviors
+    ln -s $DIR/lt/user.keymap ~/Library/Application\ Support/LightTable/settings/user.keymap
+    ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
+fi
 
 echo ""
 echo "Setup of your dot files completed!"
