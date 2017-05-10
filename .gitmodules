@@ -30,27 +30,3 @@
 	path = janus/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
   ignore = untracked
-[submodule "emacs.d/my-pkgs/evil"]
-	path = emacs.d/my-pkgs/evil
-	url = https://git.gitorious.org/evil/evil.git
-[submodule "emacs.d/my-pkgs/evil-leader"]
-	path = emacs.d/my-pkgs/evil-leader
-	url = https://github.com/cofi/evil-leader.git
-[submodule "tmux/tmux-powerline"]
-	path = tmux/tmux-powerline
-	url = https://github.com/sundbp/tmux-powerline.git
-[submodule "live-packs/sundbp-pack/vendor/submodules/ag"]
-	path = live-packs/sundbp-pack/vendor/submodules/ag
-	url = https://github.com/Wilfred/ag.el.git
-[submodule "live-packs/sundbp-pack/vendor/submodules/emacs-git-gutter-fringe"]
-	path = live-packs/sundbp-pack/vendor/submodules/emacs-git-gutter-fringe
-	url = https://github.com/syohex/emacs-git-gutter-fringe.git
-[submodule "live-packs/sundbp-pack/vendor/submodules/fringe-helper"]
-	path = live-packs/sundbp-pack/vendor/submodules/fringe-helper
-	url = https://github.com/nschum/fringe-helper.el.git
-[submodule "live-packs/solarized-pack"]
-	path = live-packs/solarized-pack
-	url = https://github.com/siancu/solarized-pack.git
-[submodule "live-packs/sundbp-pack/vendor/submodules/emmet-mode"]
-	path = live-packs/sundbp-pack/vendor/submodules/emmet-mode
-	url = https://github.com/smihica/emmet-mode.git
