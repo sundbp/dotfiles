@@ -72,7 +72,7 @@ cd ~
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
 cd $DIR
 rm ~/.spacemacs
-ln -s $DIR/spacemacs/.spacemacs ~/.spacemace
+ln -s $DIR/spacemacs/.spacemacs ~/.spacemacs
 
 rm ~/.ssh/config
 ln -s $DIR/ssh/config ~/.ssh/
