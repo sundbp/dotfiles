@@ -97,3 +97,5 @@ lein/repl-port
 /fish/functions/z.awk
 /fish/functions/zadd.awk
 
+/fish/conf.d/done.fish
+/fish/functions/humanize_duration.fish
