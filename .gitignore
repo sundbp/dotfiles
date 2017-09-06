@@ -98,3 +98,6 @@ lein/repl-port
 
 /fish/conf.d/done.fish
 /fish/functions/humanize_duration.fish
+/fish/fishd.b8e8563fbaa2
+/fish/fishd.jackjack
+/fish/fishd.ronald
