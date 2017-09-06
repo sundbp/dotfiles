@@ -56,7 +56,7 @@ if test (uname) = "Darwin"
   source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc'
 end
 
-set -x LESS "-R"
+set -x LESS "-R -X"
 
 abbr -a f fuck
 abbr -a ll 'exa -abghl --git --color=always'
