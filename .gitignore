@@ -67,7 +67,6 @@ lein/repl-port
 /fish/functions/diff.fish
 /fish/functions/dig.fish
 /fish/functions/fish_prompt.fish
-/fish/functions/fish_user_key_bindings.fish
 /fish/functions/fisher.fish
 /fish/functions/fuck.fish
 /fish/functions/fzf_key_bindings.fish
