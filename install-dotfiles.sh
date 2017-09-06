@@ -142,5 +142,8 @@ if [ `uname` == "Darwin" ];then
     ln -s $DIR/lt/user.behaviors ~/Library/Application\ Support/LightTable/settings/user.behaviors
 fi
 
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+
 echo ""
 echo "Setup of your dot files completed!"
