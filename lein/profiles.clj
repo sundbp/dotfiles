@@ -12,5 +12,7 @@
                               ;; ["releases" {:url "http://artifactory.default.svc.cluster.local/artifactory/libs-release-local/"
                               ;;              :username "admin"}]
                               ["releases" {:url "http://10.10.10.5:8081/artifactory/libs-release-local/"
+                                           :username "sundbp"}]
+                              ["snapshots" {:url "http://10.10.10.5:8081/artifactory/libs-snapshot-local/"
                                            :username "sundbp"}]]
         }}

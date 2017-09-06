@@ -14,12 +14,7 @@ fi
 
 eval `keychain --eval --inherit any id_rsa`
 
-# let's source the bashrc at end of login
-if [ -e ~/.bashrc ]; then
-  source ~/.bashrc
-fi
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source ~/.iterm2_shell_integration.`basename $SHELL`
 
 #rbenv
 eval "$(rbenv init -)"

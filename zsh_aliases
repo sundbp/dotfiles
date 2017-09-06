@@ -1,0 +1,40 @@
+alias ll="exa -abghl --git --color=always"
+alias la="exa -abghl --git --color=automatic"
+alias c='pygmentize -O style=monokai -f console256 -g'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias more='less'
+
+# clojure LOC counter
+alias loc-clj='find . -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-cljs='find . -name "*.cljs"  -print0 | xargs -0 wc -l'
+alias loc-clj-src='find src/ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-cljs-src='find src/ -name "*.cljs"  -print0 | xargs -0 wc -l'
+alias loc-clj-test='find test/ -name "*.clj"  -print0 | xargs -0 wc -l'
+alias loc-clj-setup='find setup/ -name "*.clj"  -print0 | xargs -0 wc -l'
+
+# lsof helpers
+alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
+
+# docker & k8
+alias d="docker"
+alias k="kubectl"
+
+# emacs app
+alias emacs-app="open -a /Applications/Emacs.app"
+
+# convenience
+alias jj-tmux="mosh jj -- tmux a"
+alias jj-tmux-new="mosh jj -- tmux"
+alias ronald-tmux="mosh ronald -- tmux a"
+alias ronald-tmux-new="mosh ronald -- tmux"
+
+if [[ `uname` == "Darwin" ]];then
+    # for switching JVMs
+    alias java7_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
+    alias java8_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
+    # default to java7
+    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+fi

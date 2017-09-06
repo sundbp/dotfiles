@@ -158,11 +158,6 @@ alias lsof-offenders="lsof | awk '{ print \$1; }' | uniq -c | sort -rn | head"
 GPG_TTY=$(tty)
 export GPG_TTY
 
-if [ -f /usr/local/share/chruby/chruby.sh ];then
-    source /usr/local/share/chruby/chruby.sh
-    chruby jruby-1.7.4
-fi
-
 # marks
 export MARKPATH=$HOME/.marks
 mkdir -p $MARKPATH
@@ -202,7 +197,6 @@ export SHOWTERM_SERVER=http://showterm.vlan.tuloscapital.com/
 
 if [ `uname` == "Darwin" ];then
    # for switching JVMs
-   #alias java6_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.6`"
    alias java7_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`"
    alias java8_switch="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
    # default to java7
@@ -244,3 +238,20 @@ alias jj-tmux="mosh jj -- tmux a"
 alias jj-tmux-new="mosh jj -- tmux"
 alias ronald-tmux="mosh ronald -- tmux a"
 alias ronald-tmux-new="mosh ronald -- tmux"
+alias swarm1-tmux="mosh 51.15.135.85 -- tmux a"
+alias swarm1-tmux-new="mosh 51.15.135.85 -- tmux"
+alias swarm2-tmux="mosh 163.172.165.78 -- tmux a"
+alias swarm2-tmux-new="mosh 163.172.165.78 -- tmux"
+
+# direnv
+_direnv_hook() {
+  local previous_exit_status=$?;
+  eval "$(direnv export bash)";
+  return $previous_exit_status;
+};
+if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
+  PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
+fi
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -4,6 +4,6 @@
 #ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 
 # install packages
-brew install coreutils grc encfs vim keychain gpg-agent
+brew install coreutils grc encfs vim keychain gpg-agent thefuck
 brew install emacs --cocoa
 brew linkapps

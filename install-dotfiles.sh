@@ -26,6 +26,14 @@ ln -s $DIR/bashrc ~/.bashrc
 ln -s $DIR/bash_completion.d ~/.bash_completion.d
 ln -s $DIR/bash_ssh_agent_funcs.sh ~/.bash_ssh_agent_funcs.sh
 
+# zsh
+if [[ ! -d $HOME/.oh-my-zsh ]];then
+    curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+fi
+rm ~/.zprofile ~/.zshrc
+ln -s $DIR/zprofile ~/.zprofile
+ln -s $DIR/zshrc ~/.zshrc
+
 # gemrc
 rm ~/.gemrc
 ln -s $DIR/gemrc ~/.gemrc
