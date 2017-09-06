@@ -34,6 +34,23 @@ rm ~/.zprofile ~/.zshrc
 ln -s $DIR/zprofile ~/.zprofile
 ln -s $DIR/zshrc ~/.zshrc
 
+# fish
+if [ `uname` == "Darwin" ];then
+  if [ ! -f /usr/local/bin/fish ];then
+    brew install fish
+  fi
+else
+  if [ ! -f /usr/bin/fish ];then
+    sudo apt-add-repository ppa:fish-shell/release-2
+    sudo apt-get update
+    sudo apt-get install fish
+  fi
+fi
+rm ~/.config/fish
+mkdir -p ~/.config
+ln -s $DIR/fish ~/.config/fish
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
 # gemrc
 rm ~/.gemrc
 ln -s $DIR/gemrc ~/.gemrc
