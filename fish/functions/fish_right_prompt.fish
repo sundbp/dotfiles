@@ -1,7 +1,12 @@
 function fish_right_prompt
-  if test $CMD_DURATION -gt 1000
-    set_color -o magenta
-    printf "took ~%.1fs " (math "$CMD_DURATION / 1000")
+  set -l code $status
+  if test $CMD_DURATION -gt 3000
+    if test $code -ne 0
+      set_color -o red
+    else
+      set_color -o 484
+    end
+    printf "~%.1fs " (math "$CMD_DURATION / 1000")
     set_color -o normal
   end
   set_color 666
