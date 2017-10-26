@@ -15,7 +15,10 @@ else
 end
 
 if status --is-interactive
-  keychain --eval --quiet -Q id_rsa | source
+  set -l result (keychain --quiet --eval ~/.ssh/id_rsa ~/.ssh/long_key)
+  if test $status -eq 0
+    eval $result
+  end
 end
 
 # direnv
