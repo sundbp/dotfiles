@@ -138,11 +138,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 17
+   dotspacemacs-default-font '("Input Mono"
+                               :size 16
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -328,6 +328,10 @@ you should place your code here."
   (global-set-key  (kbd "C-x <down>") 'windmove-down)
   (global-set-key  (kbd "C-x <left>") 'windmove-left)
   (global-set-key  (kbd "C-x <right>") 'windmove-right)
+  (define-key input-decode-map "\e[1;3A" [(meta up)])
+  (define-key input-decode-map "\e[1;3B" [(meta down)])
+  (define-key input-decode-map "\e[1;3C" [(meta right)])
+  (define-key input-decode-map "\e[1;3D" [(meta left)])
   (eval-after-load "clojure-mode"
     '(progn
        (define-key clojure-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
@@ -336,7 +340,12 @@ you should place your code here."
     '(progn
        (define-key cider-repl-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
        (define-key cider-repl-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)))
+  (eval-after-load "ruby-mode"
+    '(progn
+       (define-key ruby-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
+       (define-key ruby-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)))
   (setq evil-lisp-state-default-state 'emacs)
+  (setq cider-repl-history-file "~/.cider-history")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
