@@ -12,14 +12,3 @@ if [ "$(uname)" == "Linux" -a ! -e /usr/bin/emacs ];then
     sudo apt-get install emacs24 emacs24-el emacs24-common-non-dfsg
 fi
 
-if [ ! -d ~/.emacs.d ];then
-    bash <(curl -fksSL https://raw.github.com/overtone/emacs-live/master/installer/install-emacs-live.sh)
-fi
-
-cd live-packs/solarized-pack
-git submodule init
-git submodule update
-
-cd ~/.emacs.d
-git submodule init
-git submodule update --recursive
