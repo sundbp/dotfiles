@@ -16,3 +16,7 @@ mv exa-linux-x86_64 /usr/local/bin/exa
 add-apt-repository ppa:mfikes/planck
 apt-get update
 apt-get install planck
+
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
