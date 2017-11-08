@@ -8,7 +8,7 @@ set WHOAMI (whoami)
 set GPG_AGENTS (pgrep -U $WHOAMI gpg-agent |wc -l)
 if [ $GPG_AGENTS -ne 1 ]
   if test (uname) = "Darwin"
-    eval (/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase --write-env-file {$HOME}/.gpg-agent-info)
+    eval (/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase)
   end
 else
   test -e {$HOME}/.gpg-agent-info ; and posix-source {$HOME}/.gpg-agent-info
