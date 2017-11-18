@@ -1,7 +1,7 @@
 Host *
   ForwardAgent yes
   ForwardX11 yes
-  ServerAliveInterval 60
+  ServerAliveInterval 30
 
 Host torvalla
   HostName torvalla.tuloscapital.com
