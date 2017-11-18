@@ -1,6 +1,7 @@
 [user]
 	name = Patrik Sundberg
 	email = patrik.sundberg@gmail.com
+	signingkey = 02CC8962B38F3DAF
 [help]
   autocorrect = 1
 [push]
