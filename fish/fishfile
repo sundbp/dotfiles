@@ -1,11 +1,13 @@
 fisherman/await
 edc/bass
+oh-my-fish/theme-cbjohnson
 fisherman/debug
+fisherman/done
 fisherman/fzf
 fisherman/get
 fisherman/getopts
 fisherman/grc
-fisherman/javahome
+fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/nvm
 fisherman/rbenv
