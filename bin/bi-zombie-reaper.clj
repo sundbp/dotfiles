@@ -15,6 +15,9 @@
 
 
 (defn- parse-docker-datetime
+  "Parse the test returned by docker format .CreatedAt into a JS Date.
+  It doesn't explicitly deal with timezones, but it shouldn't really matter
+  for the case at hand."
   [dt-str]
   (let [parts (clojure.string/split dt-str #"\s")
         date-parts (clojure.string/split (first parts) #"\-")
