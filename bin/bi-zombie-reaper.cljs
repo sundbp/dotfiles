@@ -34,7 +34,7 @@
 (def app-servers ["10.11.1.101"
                   "10.11.1.102"
                   "10.11.1.103"
-                  ;;"10.11.2.101"
+                  "10.11.2.101"
                   "10.11.2.102"
                   "10.11.2.103"
                   "10.11.3.101"
@@ -49,13 +49,13 @@
               [h
                (->> (sh
                      (gstring/format
-                      "ssh %s docker ps --format '{:id \"{{.ID}}\" :image \"{{.Image}}\" :created-at \"{{.CreatedAt}}\" :name \"{{.Names}}\"}'" h))
+                      "ssh %s sudo docker ps --format '{:id \"{{.ID}}\" :image \"{{.Image}}\" :created-at \"{{.CreatedAt}}\" :name \"{{.Names}}\"}'" h))
                     :out
                     (gstring/format "[%s]")
                     reader/read-string)]))
        (map (fn [[h cs]]
               [h (->> cs
-                      (filter #(re-matches #".*wps-multi.*" (:image %)))
+                      (filter #(re-matches #".*(tranche|master|demo|test|staging|frozen|test).*" (:name %)))
                       (map (fn [c] (-> c
                                        (update-in [:created-at] parse-docker-datetime)
                                        (assoc :host h)))
@@ -128,7 +128,7 @@
 
 
 (println "\nThese client code names have more than 1 container running: (name, num instances)")
-(doseq [[n cs] duplicates-by-name]
+(doseq [[n cs] (sort-by first < duplicates-by-name)]
   (println (gstring/format "%24s %d (containers to kill %s)"
                            n
                            (count cs)
