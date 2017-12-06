@@ -24,4 +24,7 @@ alias j7='ju 1.7'
 alias j8='ju 1.8'
 alias j9='ju 9'
 
-j8 quiet
+if test (uname) = "Darwin"
+  j8 quiet
+end
+
