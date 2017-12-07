@@ -14,8 +14,6 @@ if test (uname) = "Darwin"
   if [ $GPG_AGENTS -ne 1 ]
     gpgconf --launch gpg-agent
   end
-else
-  test -e {$HOME}/.gpg-agent-info ; and posix-source {$HOME}/.gpg-agent-info
 end
 
 if status --is-interactive
