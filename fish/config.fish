@@ -8,18 +8,22 @@ end
 # We want to start gpg-agent before keychain to pass arguments
 set WHOAMI (whoami)
 set GPG_AGENTS (pgrep -U $WHOAMI gpg-agent |wc -l)
-if [ $GPG_AGENTS -ne 1 ]
-  if test (uname) = "Darwin"
-    eval (/usr/local/MacGPG2/bin/gpg-agent --daemon --allow-preset-passphrase)
+if test (uname) = "Darwin"
+  set -x GPG_TTY (tty)
+  set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
+  if [ $GPG_AGENTS -ne 1 ]
+    gpgconf --launch gpg-agent
   end
 else
   test -e {$HOME}/.gpg-agent-info ; and posix-source {$HOME}/.gpg-agent-info
 end
 
 if status --is-interactive
-  set -l result (keychain --quiet --eval ~/.ssh/id_rsa ~/.ssh/long_key)
-  if test $status -eq 0
-    eval $result
+  if test 1 = (ssh-add -l | grep id_rsa | wc -l)
+    ssh-add ~/.ssh/id_rsa
+  end
+  if test 1 = (ssh-add -l | grep long_key | wc -l)
+    ssh-add ~/.ssh/long_key
   end
 end
 
