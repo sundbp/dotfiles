@@ -17,10 +17,10 @@ if test (uname) = "Darwin"
 end
 
 if status --is-interactive
-  if test 1 = (ssh-add -l | grep id_rsa | wc -l)
+  if test 0 -eq (ssh-add -l | grep id_rsa | wc -l)
     ssh-add ~/.ssh/id_rsa
   end
-  if test 1 = (ssh-add -l | grep long_key | wc -l)
+  if test 0 -eq (ssh-add -l | grep long_key | wc -l)
     ssh-add ~/.ssh/long_key
   end
 end
