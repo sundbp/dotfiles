@@ -60,7 +60,8 @@
   #{"origin/PRTL-1800"
     "origin/feature/PRTL-1905"
     "origin/feature/boardid"
-    "origin/boardid"})
+    "origin/boardid"
+    "origin/feature/PRTL-1441"})
 
 (defn- delete-branches
   [branches-to-delete]

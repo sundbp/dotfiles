@@ -6,13 +6,21 @@ if test -z $INSIDE_EMACS
 end
 
 # We want to start gpg-agent before keychain to pass arguments
-set WHOAMI (whoami)
-set GPG_AGENTS (pgrep -U $WHOAMI gpg-agent |wc -l)
-if test (uname) = "Darwin"
-  set -x GPG_TTY (tty)
-  set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
-  if [ $GPG_AGENTS -ne 1 ]
-    gpgconf --launch gpg-agent
+# set WHOAMI (whoami)
+# set GPG_AGENTS (pgrep -U $WHOAMI gpg-agent |wc -l)
+# if test (uname) = "Darwin"
+#   set -x GPG_TTY (tty)
+#   set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
+#   if [ $GPG_AGENTS -ne 1 ]
+#     gpgconf --launch gpg-agent
+#   end
+#   echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
+# end
+
+if status --is-interactive
+  set -l result (keychain --quiet --eval ~/.ssh/id_rsa ~/.ssh/long_key)
+  if test $status -eq 0
+    eval $result
   end
 end
 
