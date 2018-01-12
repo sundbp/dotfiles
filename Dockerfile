@@ -39,10 +39,5 @@ RUN sudo chsh -s /usr/bin/fish sundbp && \
 RUN emacs --batch .bashrc -l /home/sundbp/.emacs.d/init.el -f save-buffer
 
 ENV SHELL /usr/bin/fish
-# this helps make things like emacs and vim use good terminal settings
-# note: it doesn't matter if this is set by the shell, it needs to be
-#   done earlier to have the desired effect it seems, as docker then
-#   sets it to xterm
-ENV TERM xterm-256color
 
 CMD /home/sundbp/.entrypoint.sh
