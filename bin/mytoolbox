@@ -32,8 +32,11 @@ if [[ $? -eq 1 ]];then
         sleep 10
     fi
 fi
+lines=$(tput lines)
+cols=$(tput cols)
 if [[ "$@" == "" ]];then
-    docker exec -it mytoolbox fish
+    docker exec -it mytoolbox /bin/bash -c "stty cols $cols; stty rows $lines; fish"
 else
-    docker exec -it mytoolbox /bin/bash -c "'$@'"
+    cmd="$@"
+    docker exec -it mytoolbox /bin/bash -c "stty cols $cols; stty rows $lines; $cmd"
 fi
