@@ -1,7 +1,15 @@
 My dot_files. Feel free to copy and use as you want.
 
-To install dotfiles as a docker container:
+To trigger a new docker image toolbox to be built:
+git checkout docker
+git merge master
+git push
 
-wget https://gitlab.com/sundbp/dotfiles/raw/master/bin/mytoolbox
+This triggers a new image build on Docker Hub.
+
+To run toolbox:
+
+wget https://github.com/sundbp/dotfiles/raw/master/bin/mytoolbox
 chmod 755 mytoolbox
 sudo mv mytoolbox /usr/local/bin
+mytoolbox
