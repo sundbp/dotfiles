@@ -3,20 +3,21 @@ echo "starting socat fwding.."
 socat TCP-LISTEN:24125,reuseaddr,fork "UNIX-CLIENT:$SSH_AUTH_SOCK" &
 socat_pid=$!
 trap "kill -- $socat_pid" EXIT
+TAG=${TAG:-latest}
 if [[ `uname` == "Darwin" ]];then
     docker_cmd="docker run -d --name mytoolbox -it --network=host -p 24125 \
                        -e SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
                        -e TB_SETUP_AGENT_FWD=true \
                        -e TB_FWD_HOST=docker.for.mac.localhost \
                        -e RUNNING_IN_TB=true \
-                       sundbp/toolbox"
+                       sundbp/toolbox:$TAG"
 else
     docker_cmd="docker run -d --name mytoolbox -it --network=host -p 24125 \
                        -e SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
                        -e TB_SETUP_AGENT_FWD=true \
                        -e TB_FWD_HOST=localhost \
                        -e RUNNING_IN_TB=true \
-                       sundbp/toolbox"
+                       sundbp/toolbox:$TAG"
 fi
 docker ps | grep mytoolbox > /dev/null
 if [[ $? -eq 1 ]];then
