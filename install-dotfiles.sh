@@ -4,11 +4,13 @@
 #
 # This sets up my dot files.
 
-read -p "This DELETES your current dot files. Are you sure you want to proceed? [y or n]" -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]
-then
-    echo "Skipping install.."
-    exit
+if [[ "$1" != "-f" ]];then
+    read -p "This DELETES your current dot files. Are you sure you want to proceed? [y or n]" -n 1 -r
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        echo "Skipping install.."
+        exit
+    fi
 fi
 
 SOURCE="${BASH_SOURCE[0]}"
@@ -35,21 +37,16 @@ ln -s $DIR/zprofile ~/.zprofile
 ln -s $DIR/zshrc ~/.zshrc
 
 # fish
-if [ `uname` == "Darwin" ];then
-  if [ ! -f /usr/local/bin/fish ];then
-    brew install fish
-  fi
-else
-  if [ ! -f /usr/bin/fish ];then
-    sudo apt-add-repository ppa:fish-shell/release-2
-    sudo apt-get update
-    sudo apt-get install fish
-  fi
-fi
 rm ~/.config/fish
 mkdir -p ~/.config
 ln -s $DIR/fish ~/.config/fish
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+rm ~/.config/fish/functions/fzf_key_bindings.fish
+if [ `uname` == "Linux" ];then
+    ln -s ~/.fzf/shell/key-bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
+else
+    ln -s /usr/local/Cellar/fzf/0.17.0/shell/key-bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
+fi
 
 # gemrc
 rm ~/.gemrc
@@ -95,6 +92,7 @@ ln -s $DIR/lein ~/.lein
 rm -rf ~/.emacs.d
 cd ~
 git clone https://github.com/syl20bnr/spacemacs .emacs.d
+cd .emacs.d && git checkout develop
 cd $DIR
 rm ~/.spacemacs
 ln -s $DIR/spacemacs/.spacemacs ~/.spacemacs
@@ -143,7 +141,7 @@ if [ `uname` == "Darwin" ];then
 fi
 
 # nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 
 echo ""
 echo "Setup of your dot files completed!"

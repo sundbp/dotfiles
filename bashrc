@@ -96,9 +96,9 @@ fi
 export PS1="\[\033[G\]$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 # node.js stuff
-if [ -f ~/.nvm/nvm.sh ]; then
-    source ~/.nvm/nvm.sh
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # http proxy stuff
 export NO_PROXY=localhost,127.0.0.1

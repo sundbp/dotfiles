@@ -1,0 +1,37 @@
+#!/bin/bash
+if [[ `uname` == "Darwin" ]];then
+    echo "starting socat fwding.."
+    socat TCP-LISTEN:24125,reuseaddr,fork "UNIX-CLIENT:$SSH_AUTH_SOCK" &
+    socat_pid=$!
+    trap "kill -- $socat_pid" EXIT
+    docker_cmd="docker run -d --name mytoolbox -it --network=host -p 24125 \
+                       --env SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
+                       --env TB_SETUP_AGENT_FWD=true \
+                       sundbp/toolbox"
+else
+    docker_cmd="docker run -d --name mytoolbox -it --network=host \
+                       -v $(readlink -f $SSH_AUTH_SOCK):/tmp/fwd-ssh-agent.socket \
+                       -e SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
+                       sundbp/toolbox"
+fi
+docker ps | grep mytoolbox > /dev/null
+if [[ $? -eq 1 ]];then
+    docker ps -a | grep mytoolbox > /dev/null
+    if [[ $? -eq 1 ]];then
+        echo "firing up mytoolbox via cmd:"
+        echo $docker_cmd
+        $docker_cmd
+    else
+        echo "starting stopped toolbox.."
+        docker start mytoolbox
+        echo "waiting 10s for it to start.."
+        sleep 10
+    fi
+fi
+if [[ "$@" == "" ]];then
+    docker exec -it mytoolbox /bin/bash -c 'tmux attach'
+else
+    docker exec -it mytoolbox /bin/bash -c "'$@'"
+fi
+
+
