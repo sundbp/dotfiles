@@ -19,12 +19,13 @@ RUN cd dev/dotfiles && \
     ./setup-vim.sh
 
 USER root
-ADD . /home/sundbp/dev/dotfiles/
+COPY . /home/sundbp/dev/dotfiles/
 COPY toolbox-entrypoint.sh /home/sundbp/.entrypoint.sh
 RUN chown -R sundbp:sundbp /home/sundbp/dev && \
     chmod 755 /home/sundbp/.entrypoint.sh
 
 USER sundbp
+ENV TB_BUILD true
 RUN cd dev/dotfiles && \
     ./install-dotfiles.sh -f
 ENV LANG en_US.UTF-8
@@ -32,7 +33,8 @@ ENV HOME /home/sundbp
 
 RUN sudo chsh -s /usr/bin/fish sundbp && \
     bash -l -c 'source ~/.nvm/nvm.sh && nvm install v9.4.0' && \
-    fish -l -c 'fisher -q (cat ~/dev/dotfiles/fish/fishfile)'
+    fish -l -c 'fisher -q (cat ~/dev/dotfiles/fish/fishfile)' && \
+    chown -R sundbp:sundbp ~/dev
 
 ENV SHELL /usr/bin/fish
 
