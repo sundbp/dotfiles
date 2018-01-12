@@ -36,6 +36,9 @@ RUN sudo chsh -s /usr/bin/fish sundbp && \
     fish -l -c 'fisher -q (cat ~/dev/dotfiles/fish/fishfile)' && \
     chown -R sundbp:sundbp ~/dev
 
+RUN emacs --batch .bashrc -l /home/sundbp/.emacs.d/init.el -f save-buffer
+
 ENV SHELL /usr/bin/fish
+ENV RUNNING_IN_TB true
 
 CMD /home/sundbp/.entrypoint.sh

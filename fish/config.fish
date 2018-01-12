@@ -5,6 +5,11 @@ if test -z $INSIDE_EMACS
   test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
 
+if not test -z $RUNNING_IN_TB
+  # we set the terminal explicitly when running in my toolbox
+  set -gx TERM xterm-256color
+end
+
 # We want to start gpg-agent before keychain to pass arguments
 # set WHOAMI (whoami)
 # set GPG_AGENTS (pgrep -U $WHOAMI gpg-agent |wc -l)
