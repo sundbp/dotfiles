@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# fire up an emacs daemon in the background, handy to have around
+emacs --daemon
+
 if [[ ! -z "$TB_SETUP_AGENT_FWD" ]];then
     echo "Setting up agent forwarding via socat.."
     rm -f $SSH_AUTH_SOCK
