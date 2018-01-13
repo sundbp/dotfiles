@@ -30,6 +30,12 @@ if status --is-interactive
     end
   end
 end
+begin
+  set -l HOSTNAME (hostname)
+  if test -z "$SSH_AUTH_SOCK"; and test -f ~/.keychain/$HOSTNAME-fish
+    source ~/.keychain/$HOSTNAME-fish
+  end
+end
 
 if status --is-interactive
   if test 0 -eq (ssh-add -l | grep id_rsa | wc -l)
