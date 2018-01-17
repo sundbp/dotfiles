@@ -4,14 +4,15 @@ socat TCP-LISTEN:24125,reuseaddr,fork "UNIX-CLIENT:$SSH_AUTH_SOCK" &
 socat_pid=$!
 trap "kill -- $socat_pid" EXIT
 TAG=${TAG:-latest}
-volumes=${TB_VOLUMES:-"/home /etc"}
+volumes=${TB_VOLUMES:-"/home /etc /var"}
 volumes=($volumes)
 volumes_args=("")
 for v in "${volumes[@]}";do
     volumes_args=("${volumes_args[@]}" "-v $v:/h$v")
 done
+tb_name="$(whoami)-toolbox"
 if [[ `uname` == "Darwin" ]];then
-    docker_cmd="docker run -d --name mytoolbox -it --network=host -p 24125 \
+    docker_cmd="docker run -d --name ${tb_name} -it --network=host -p 24125 \
                        ${volumes_args[@]} \
                        -e SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
                        -e TB_SETUP_AGENT_FWD=true \
@@ -19,7 +20,7 @@ if [[ `uname` == "Darwin" ]];then
                        -e RUNNING_IN_TB=true \
                        sundbp/toolbox:$TAG"
 else
-    docker_cmd="docker run -d --name mytoolbox -it --network=host -p 24125 \
+    docker_cmd="docker run -d --name ${tb_name} -it --network=host -p 24125 \
                        ${volumes_args[@]} \
                        -e SSH_AUTH_SOCK=/tmp/fwd-ssh-agent.socket \
                        -e TB_SETUP_AGENT_FWD=true \
@@ -27,16 +28,16 @@ else
                        -e RUNNING_IN_TB=true \
                        sundbp/toolbox:$TAG"
 fi
-docker ps | grep mytoolbox > /dev/null
+docker ps | grep ${tb_name} > /dev/null
 if [[ $? -eq 1 ]];then
-    docker ps -a | grep mytoolbox > /dev/null
+    docker ps -a | grep ${tb_name} > /dev/null
     if [[ $? -eq 1 ]];then
-        echo "firing up mytoolbox via cmd:"
+        echo "firing up toolbox via cmd:"
         echo $docker_cmd
         $docker_cmd
     else
         echo "starting stopped toolbox.."
-        docker start mytoolbox
+        docker start ${tb_name}
         echo "waiting 10s for it to start.."
         sleep 10
     fi
@@ -44,8 +45,8 @@ fi
 lines=$(tput lines)
 cols=$(tput cols)
 if [[ "$@" == "" ]];then
-    docker exec -it mytoolbox /bin/bash -c "stty cols $cols; stty rows $lines; fish"
+    docker exec -it ${tb_name} /bin/bash -c "stty cols $cols; stty rows $lines; fish"
 else
     cmd="$@"
-    docker exec -it mytoolbox /bin/bash -c "stty cols $cols; stty rows $lines; $cmd"
+    docker exec -it ${tb_name} /bin/bash -c "stty cols $cols; stty rows $lines; $cmd"
 fi
