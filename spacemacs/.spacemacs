@@ -491,6 +491,7 @@ you should place your code here."
   (define-key input-decode-map "\e[1;3B" [(meta down)])
   (define-key input-decode-map "\e[1;3C" [(meta right)])
   (define-key input-decode-map "\e[1;3D" [(meta left)])
+  (setq nrepl-sync-request-timeout nil)
   (eval-after-load "clojure-mode"
     '(progn
        (define-key clojure-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
