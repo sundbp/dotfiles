@@ -502,8 +502,8 @@ you should place your code here."
     '(progn
        (define-key cider-repl-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
        (define-key cider-repl-mode-map (kbd "C-<left>") 'sp-forward-barf-sexp)
-       (define-key clojure-mode-map (kbd ";") 'sp-comment)
-       (define-key clojure-mode-map (kbd "C-M-;") 'comment-or-uncomment-sexp)))
+       (define-key cider-repl-mode-map (kbd ";") 'sp-comment)
+       (define-key cider-repl-mode-map (kbd "C-M-;") 'comment-or-uncomment-sexp)))
   (eval-after-load "ruby-mode"
     '(progn
        (define-key ruby-mode-map (kbd "C-<right>") 'sp-forward-slurp-sexp)
