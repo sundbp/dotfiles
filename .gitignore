@@ -100,3 +100,6 @@ lein/repl-port
 /fish/fishd.b8e8563fbaa2
 /fish/fishd.jackjack
 /fish/fishd.ronald
+
+/boot/cache
+/boot/lib

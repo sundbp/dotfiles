@@ -152,5 +152,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 mkdir -p ~/.rbenv/plugins
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
+# boot
+rm ~/.boot
+ln -s $DIR/boot ~/.boot
+
 echo ""
 echo "Setup of your dot files completed!"

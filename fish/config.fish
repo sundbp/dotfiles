@@ -86,7 +86,6 @@ end
 
 set -x LESS "-R -X"
 
-alias f='fuck'
 alias ll='exa -abghl --git --color=always'
 alias la='exa -abghl --git --color=automatic'
 alias c='pygmentize -O style=monokai -f console256 -g'
@@ -109,3 +108,4 @@ alias java9-switch='set -x JAVA_HOME (/usr/libexec/java_home -v 9)'
 alias grep='grep --color=auto'
 alias pf='permafrost'
 alias e='emacsclient'
+alias k='kubectl'
