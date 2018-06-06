@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt-get install -y direnv python3-dev python3-pip rbenv libhttp-parser2.1 \
+sudo apt-get install -y direnv python3-dev python3-pip rbenv  \
      wget curl git socat netcat-openbsd software-properties-common keychain locales-all
 
 sudo -H pip3 install --upgrade pip
