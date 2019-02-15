@@ -40,10 +40,10 @@ ln -s $DIR/zshrc ~/.zshrc
 rm ~/.config/fish
 mkdir -p ~/.config
 if [[ -z $TB_BUILD ]];then
-    ln -s $DIR/fish ~/.config/fish
+    ln -s $DIR/dotconfig/fish ~/.config/fish
 else
     # for toolbox docker image we must copy as for some reason things to haywire with link
-    cp -r $DIR/fish ~/.config/
+    cp -r $DIR/dotconfig/fish ~/.config/
 fi
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 rm ~/.config/fish/functions/fzf_key_bindings.fish

@@ -1,10 +1,9 @@
 function fish_prompt
+  # Cache exit status
+  set -l last_status $status
   if test $TERM = "dumb"
 	  echo "\$ "
   else
-    # Cache exit status
-    set -l last_status $status
-
     # Just calculate these once, to save a few cycles when displaying the prompt
     if not set -q __fish_prompt_hostname
       set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
@@ -26,19 +25,20 @@ function fish_prompt
     set -l bred (set_color -o red)
     set -l bcyan (set_color -o cyan)
     set -l bwhite (set_color -o white)
+    set -l bgreen (set_color -o green)
 
     # Configure __fish_git_prompt
     set -g __fish_git_prompt_show_informative_status true
     set -g __fish_git_prompt_showcolorhints true
 
     # Color prompt char red for non-zero exit status
-    set -l pcolor $bpurple
+    set -l pcolor $bgreen
     if [ $last_status -ne 0 ]
       set pcolor $bred
     end
 
     # Top
-    echo -n $cyan$USER$normal at $yellow$__fish_prompt_hostname$normal in $bred(prompt_pwd)$normal
+    echo -n $cyan$USER$normal at $yellow$__fish_prompt_hostname$normal in $bpurple(prompt_pwd)$normal
     __fish_git_prompt
 
     echo

@@ -32,7 +32,21 @@
                      "origin/tranche4"
                      "origin/test"
                      "origin/test1"
-                     "origin/demo"})
+                     "origin/demo"
+                     "origin/release/staging"
+                     "origin/release/6.25.0"
+                     "origin/release/6.26.0"
+                     "origin/release/6.26.1"
+                     "origin/release/6.27.0"
+                     "origin/release/6.27.1"
+                     "origin/release/6.27.2"
+                     "origin/release/6.27.3"
+                     "origin/release/6.27.4"
+                     "origin/release/6.28"
+                     "origin/release/6.29"
+                     "origin/release/6.30"
+                     "origin/release/6.31"
+                     "origin/release/6.32"})
 
 (println "Pruning remote origin:\n" (sh "git remote prune origin") "\n\n")
 

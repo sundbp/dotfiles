@@ -1,0 +1,1 @@
+/Users/sundbp/.config/fisherman/nvm/yarn.fish

@@ -1,0 +1,1 @@
+/Users/sundbp/.config/fisherman/done/conf.d/done.fish

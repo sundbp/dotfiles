@@ -1,12 +1,25 @@
 (require 'boot.repl)
 
 (swap! boot.repl/*default-dependencies*
-       concat '[[cider/cider-nrepl "0.17.0-SNAPSHOT"]
-                [refactor-nrepl "2.4.0-SNAPSHOT"]])
+       concat '[[cider/cider-nrepl "0.20.1-SNAPSHOT"]
+                [refactor-nrepl "2.4.0"]])
 
 (swap! boot.repl/*default-middleware*
        concat ['refactor-nrepl.middleware/wrap-refactor
                'cider.nrepl/cider-middleware])
+
+
+;; Get credentials from a ccrypt encrypted file.
+(configure-repositories!
+ (let [sh-res (clojure.java.shell/sh "ccat"
+                                     "--keyfile"
+                                     (str (boot.App/bootdir) "/enckey")
+                                     (str (boot.App/bootdir) "/credentials.edn.cpt"))
+       creds-data (if (zero? (:exit sh-res))
+                    (-> sh-res :out clojure.edn/read-string)
+                    {})]
+   (fn [{:keys [url] :as repo-map}]
+     (merge repo-map (get creds-data url)))))
 
 ;; (set-env! :dependencies #(conj % '[jsofra/data-scope "0.1.3-SNAPSHOT"]))
 ;; (boot.core/load-data-readers!)
@@ -21,14 +34,3 @@
 ;;                                     ["releases"
 ;;                                      {:url "http://10.10.10.5:8081/artifactory/libs-release-local/"
 ;;                                       :update :always}]]))
-
-;; Get credentials from a GPG encrypted file.
-;; (import java.io.File)
-;; (try
-;;   (configure-repositories!
-;;    (let [creds-file (File. (boot.App/bootdir) "credentials.gpg")
-;;          creds-data (gpg-decrypt creds-file :as :edn)]
-;;      (fn [{:keys [url] :as repo-map}]
-;;        (merge repo-map (creds-data url)))))
-;;   (catch Throwable _
-;;     nil))

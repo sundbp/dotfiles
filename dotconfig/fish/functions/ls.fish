@@ -1,0 +1,1 @@
+/Users/sundbp/.config/fisherman/grc/functions/ls.fish

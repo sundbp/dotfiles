@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y sudo apt-utils net-tools iputils-ping tmux
+RUN apt-get update && apt-get install -y sudo apt-utils net-tools iputils-ping tmux iproute2 dnsutils
 RUN useradd -ms /bin/bash sundbp && \
     adduser sundbp sudo && \
     echo "sundbp            ALL = (ALL) NOPASSWD: ALL" >> /etc/sudoers && \
